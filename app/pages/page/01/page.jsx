@@ -37,7 +37,7 @@ export default function Page1() {
                       <p>
                         <input
                           type="range"
-                          // value={value}
+                          value={0}
                           // onChange={(e) => setValue(e.target.value)}
                           className="w-40 h-2  bg-gray-300 rounded-lg appearance-none cursor-pointer"
                           style={{
@@ -51,14 +51,14 @@ export default function Page1() {
                       </div>
                       </div>
                       <div className="flex items-center justify-center gap-2">
-                      <div className="w-8 h-8  bg-gray-400 flex justify-center items-center rounded-full">
+                      <div className="w-8 h-8  bg-gray-200 flex justify-center items-center rounded-full">
                         <Play />
                       </div>
                       <p><Volume2 /></p>
                       <p>
                         <input
                           type="range"
-                          // value={value}
+                          value={100}
                           // onChange={(e) => setValue(e.target.value)}
                           className="w-16 h-2  bg-gray-300 rounded-lg appearance-none cursor-pointer"
                           style={{
