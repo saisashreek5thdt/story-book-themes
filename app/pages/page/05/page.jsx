@@ -5,7 +5,7 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/pages/tw26ezhjtqyyobfkcb5a",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -55,7 +55,7 @@ export default function Page1() {
             <div className="rounded">
               <Image
                 src={imgURL1}
-                className="bg-cover h-[600px] w-[550px]"
+                className="bg-cover bg-white h-[600px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}

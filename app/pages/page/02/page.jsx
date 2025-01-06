@@ -5,7 +5,7 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -22,17 +22,14 @@ export default function Page1() {
               <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
                 <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
                   <p>
-                    Ten year old Veer is a very intelligent and curious boy. He
-                    and his Dadaji are great friends. They sleep in the same
-                    room. At bedtime, before falling asleep.
+                    He was very interested in learning about India&apos;s Space Research Programme. The topic constantly played on his mind.
                   </p>
                   <p className="py-4">
-                    Dadaji makes up interesting stories on any topic that he
-                    feels little Veer should be aware of.
+                  One night, after completing his homework, packing his bag for school, and getting his uniform ready, Veer jumped into bed and snuggled against Dadaji.
                   </p>
                   <p className="py-2">
-                    Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space.
+                    {/* Veer loves to hear these storie&apos;s. Veer&apos;s school
+                    was soon to hold a workshop on Space. */}
                   </p>
                   <div className="py-2">
                     <Image
@@ -55,7 +52,7 @@ export default function Page1() {
             <div className="rounded">
               <Image
                 src={imgURL1}
-                className="bg-cover h-[600px] w-[550px]"
+                className="bg-cover bg-white h-[600px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}

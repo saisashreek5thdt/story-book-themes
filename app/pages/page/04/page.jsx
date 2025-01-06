@@ -5,7 +5,7 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/pages/vfnq2jupoyu5jfligple",
   });
 
   const gifImgUrl = getCldImageUrl({
