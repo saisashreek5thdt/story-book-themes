@@ -20,27 +20,30 @@ export default function Page1() {
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
+                <div className="px-14 py-12 mt-6 text-lg text-justify font-medium">
                   <p>
                     He was very interested in learning about India&apos;s Space Research Programme. The topic constantly played on his mind.
                   </p>
                   <p className="py-4">
                   One night, after completing his homework, packing his bag for school, and getting his uniform ready, Veer jumped into bed and snuggled against Dadaji.
                   </p>
-                  <p className="py-2">
-                    {/* Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space. */}
+                  <p className="py-4">
+                  Veer - Dadaji, tell me a story about space, the moon, and astronauts.
                   </p>
-                  <div className="py-2">
+                  <p className="py-2">
+                  Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school, and had seen his excited preparations.
+                  </p>
+                  {/* <div className="py-2">
                     <Image
+                      className=""
                       src={gifImgUrl}
                       alt="Astronaut Gif"
-                      width={120}
-                      height={120}
+                      width={50}
+                      height={50}
                     />
-                  </div>
+                  </div> */}
                 </div>
-                <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
+                <hr className="w-full -mt-2 h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>

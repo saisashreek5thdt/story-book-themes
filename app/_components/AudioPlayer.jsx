@@ -48,6 +48,7 @@ export default function AudioPlayer() {
   };
 
   return (
+    
     <div className="h-20 w-[550px] flex flex-col items-center justify-center gap-4">
       {/* Audio Element */}
       <audio

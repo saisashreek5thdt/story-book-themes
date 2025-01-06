@@ -20,28 +20,27 @@ export default function Page1() {
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
+                <div className="px-14 py-12 mt-2 text-lg text-justify font-medium">
                   <p>
-                    Ten year old Veer is a very intelligent and curious boy. He
-                    and his Dadaji are great friends. They sleep in the same
-                    room. At bedtime, before falling asleep.
+                  Veer - Wow! Tell me quickly, Dadaji. Dadaji - Once upon a time, a young princess wanted to go to the moon.
                   </p>
                   <p className="py-4">
-                    Dadaji makes up interesting stories on any topic that he
-                    feels little Veer should be aware of.
+                   The king didn't know how to fulfill his daughter's foolish wish. He promised a huge reward for anyone who would please his daughter. Many courtiers came forward with various ideas but none could please the princess.
+                  </p>
+                  <p className="py-4">
+                  One day, a saint came and took the challenge. He asked the king to bring his daughter before him. Saint - Tell me, little one, how big is the moon?
                   </p>
                   <p className="py-2">
-                    Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space.
+                  Princess - It is as wide as my index finger.
                   </p>
-                  <div className="py-2">
+                  {/* <div className="py-2">
                     <Image
                       src={gifImgUrl}
                       alt="Astronaut Gif"
                       width={120}
                       height={120}
                     />
-                  </div>
+                  </div> */}
                 </div>
                 <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}

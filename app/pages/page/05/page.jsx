@@ -20,28 +20,33 @@ export default function Page1() {
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
+                <div className="px-14 py-12 mt-24 text-xl text-justify font-medium">
                   <p>
-                    Ten year old Veer is a very intelligent and curious boy. He
-                    and his Dadaji are great friends. They sleep in the same
-                    room. At bedtime, before falling asleep.
+                  When I lift it towards the moon, it completely covers it, and then I can't see the moon at all. 
                   </p>
                   <p className="py-4">
-                    Dadaji makes up interesting stories on any topic that he
-                    feels little Veer should be aware of.
+                  Saint - Do you know how high it is?
                   </p>
+                  
+                  <p className="py-4">
+                  Princess - It's visible just above that tree in the palace garden.
+                  </p>
+                  <p className="py-4">
+                  I think it is just as high as that tree.
+                  </p>
+                  
                   <p className="py-2">
-                    Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space.
+                  Saint - What does the moon look like? Princess - It is white and bright like silver.
                   </p>
-                  <div className="py-2">
+                  
+                  {/* <div className="py-2">
                     <Image
                       src={gifImgUrl}
                       alt="Astronaut Gif"
                       width={120}
                       height={120}
                     />
-                  </div>
+                  </div> */}
                 </div>
                 <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}
@@ -55,7 +60,7 @@ export default function Page1() {
             <div className="rounded">
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white h-[600px] w-[550px]"
+                className="bg-cover h-[600px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
