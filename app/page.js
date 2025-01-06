@@ -1,5 +1,5 @@
 "use client";
-import { getCldImageUrl } from "next-cloudinary";
+import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -21,7 +21,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full min-h-screen bg-cover bgCover select-none">
+      <div className="w-full min-h-screen bg-cover select-none">
+        
         <div className="flex justify-center items-center min-h-screen">
           <div className="grid grid-cols-2 p-4">
             <div className="rounded-lg">
