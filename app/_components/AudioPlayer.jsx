@@ -1,0 +1,91 @@
+import { Repeat, Play, Pause, Volume2 } from "lucide-react";
+import { useRef, useState } from "react";
+
+export default function AudioPlayer() {
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [volume, setVolume] = useState(100);
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  const handleAudioProgressChange = (e) => {
+    const seekTime = (e.target.value / 100) * duration;
+    audioRef.current.currentTime = seekTime;
+    setCurrentTime(seekTime);
+  };
+
+  const handleVolumeChange = (e) => {
+    const newVolume = e.target.value;
+    setVolume(newVolume);
+    audioRef.current.volume = newVolume / 100;
+  };
+
+  const handleTimeUpdate = () => {
+    setCurrentTime(audioRef.current.currentTime);
+  };
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
+  return (
+    <div className="h-20 w-[550px] flex flex-col items-center justify-center gap-4">
+      {/* Audio Element */}
+      <audio
+        ref={audioRef}
+        src="/audio/sample.mp3" 
+        onLoadedMetadata={() => setDuration(audioRef.current.duration)}
+        onTimeUpdate={handleTimeUpdate}
+      />
+
+      <div className="flex gap-20">
+        {/* Audio Progress Slider */}
+        <div className="flex items-center justify-center gap-2">
+          <p>{formatTime(currentTime)}</p>
+          <input
+            type="range"
+            className="w-40 h-2 bg-gray-300 rounded-lg cursor-pointer accent-blue-500"
+            min={0}
+            max={100}
+            value={(currentTime / duration) * 100 || 0}
+            onChange={handleAudioProgressChange}
+          />
+          <p>{formatTime(duration)}</p>
+          <div>
+            <Repeat />
+          </div>
+        </div>
+
+        {/* Play and Volume Control */}
+        <div className="flex items-center justify-center gap-2">
+          <div
+            className="w-8 h-8 bg-gray-400 flex justify-center items-center rounded-full cursor-pointer"
+            onClick={togglePlayPause}
+          >
+            {isPlaying ? <Pause /> : <Play />}
+          </div>
+          <Volume2 />
+          <input
+            type="range"
+            className="w-16 h-2 bg-gray-300 rounded-lg cursor-pointer accent-green-500"
+            min={0}
+            max={100}
+            value={volume}
+            onChange={handleVolumeChange}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
