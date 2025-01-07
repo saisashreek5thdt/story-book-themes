@@ -19,8 +19,8 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-2 text-xl text-justify font-medium">
+              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
+                <div className="px-14 py-12 -mt-6 text-xl text-justify font-medium">
                   <p>
                   Dadaji - What is so special about the moon today? Veer - Dadaji, this morning while cleaning my room, I saw the picture of a spacecraft on the moon on the front page of a newspaper.
                   </p>
@@ -40,7 +40,7 @@ export default function Page1() {
                     />
                   </div> */}
                 </div>
-                <hr className="w-full -mt-8 h-[2px] opacity-70 bg-gray-300" />
+                <hr className="w-full -mt-14 h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
@@ -52,7 +52,7 @@ export default function Page1() {
             <div className="rounded">
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white h-[600px] w-[550px] "
+                className="bg-cover bg-white h-[530px] w-[550px] "
                 alt="Cover Image"
                 width={400}
                 height={1400}

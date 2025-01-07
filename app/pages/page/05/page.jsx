@@ -19,8 +19,8 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-24 text-xl text-justify font-medium">
+              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
+                <div className="px-14 py-12 mt-12 text-xl text-justify font-medium">
                   <p>
                   When I lift it towards the moon, it completely covers it, and then I can't see the moon at all. 
                   </p>
@@ -48,7 +48,7 @@ export default function Page1() {
                     />
                   </div> */}
                 </div>
-                <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
+                <hr className="w-full -mt-2 h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
@@ -60,7 +60,7 @@ export default function Page1() {
             <div className="rounded">
               <Image
                 src={imgURL1}
-                className="bg-cover h-[600px] w-[550px]"
+                className="bg-cover h-[530px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
