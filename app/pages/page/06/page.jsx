@@ -82,10 +82,6 @@ export default function Page6() {
               <AudioPlayer />
             </div>
           </div>
-<<<<<<< HEAD
-          <div className="cursor-pointer" onClick={pageClickHander}>
-            <div className="rounded">
-=======
 
           {/* Image Section */}
           <div
@@ -93,7 +89,6 @@ export default function Page6() {
             onClick={pageClickHander}
           >
             <div className="rounded h-full w-full">
->>>>>>> shivansh
               <Image
                 src={imgURL1}
                 className="bg-cover h-[530px] w-[550px]"
