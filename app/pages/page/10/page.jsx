@@ -2,6 +2,7 @@
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
+import { useRouter } from "next/navigation";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
@@ -12,6 +13,11 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
 
+  const router = useRouter();
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/11");
+  }
   return (
     <div className="w-full min-h-screen bg-cover select-none">
       <div className="flex justify-center items-center min-h-screen">
@@ -54,7 +60,7 @@ export default function Page1() {
 
           {/* Image Section */}
           <div className="cursor-pointer">
-            <div className="rounded">
+            <div className="rounded"onClick={pageClickHander}>
               <Image
                 src={imgURL1}
                 className="bg-cover h-[600px] w-[550px]"
