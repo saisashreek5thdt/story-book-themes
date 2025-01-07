@@ -40,6 +40,7 @@ export default function Page1() {
                       alt="Astronaut Gif"
                       width={120}
                       height={120}
+                      unoptimized
                     />
                   </div>
                 </div>
