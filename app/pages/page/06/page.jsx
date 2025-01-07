@@ -29,7 +29,7 @@ export default function Page6() {
   return (
     <div className="w-full min-h-screen bg-cover select-none">
       <div className="flex justify-center items-center min-h-screen">
-        <div className="grid grid-cols-2 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 p-4">
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
