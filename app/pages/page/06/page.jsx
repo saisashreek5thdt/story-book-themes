@@ -58,8 +58,6 @@ export default function Page6() {
               </div>
             </div>
           </div>
-
-          {/* Image Section */}
           <div className="cursor-pointer" onClick={pageClickHander}>
             <div className="rounded">
               <Image
