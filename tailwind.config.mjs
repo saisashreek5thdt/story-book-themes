@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -5,13 +6,6 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
-  },
-  plugins: [],
+  theme: {},
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };

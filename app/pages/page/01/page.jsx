@@ -2,15 +2,23 @@
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
-
+import { useRouter } from "next/navigation";
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
+  const router = useRouter();
+
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/02");
+  };
+
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -19,7 +27,7 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
+              <div className="flex flex-col items-center h-[520px] w-[550px] justify-center">
                 <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
                   <p>
                     Ten year old Veer is a very intelligent and curious boy. He
@@ -40,10 +48,11 @@ export default function Page1() {
                       alt="Astronaut Gif"
                       width={120}
                       height={120}
+                      unoptimized
                     />
                   </div>
                 </div>
-                <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
+                <hr className="w-full -mt-16 h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
@@ -52,13 +61,14 @@ export default function Page1() {
           
           {/* Image Section */}
           <div className="cursor-pointer">
-            <div className="rounded">
+            <div className="rounded" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover h-[600px] w-[550px]"
+                className="bg-cover bg-white h-[520px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
+                unoptimized
               />
             </div>
           </div>

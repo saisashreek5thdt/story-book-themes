@@ -12,6 +12,7 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
   const router = useRouter();
 
   const pageClickHander = (e) => {
@@ -57,8 +58,8 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer">
-            <div className="rounded"onClick={pageClickHander}>
+          <div className="cursor-pointer" onClick={pageClickHander}>
+            <div className="rounded">
               <Image
                 src={imgURL1}
                 className="bg-cover h-[600px] w-[550px]"

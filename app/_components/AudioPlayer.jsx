@@ -29,8 +29,16 @@ export default function AudioPlayer() {
     audioRef.current.volume = newVolume / 100;
   };
 
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
   const handleTimeUpdate = () => {
-    setCurrentTime(audioRef.current.currentTime);
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
   };
 
   const formatTime = (time) => {
@@ -40,12 +48,13 @@ export default function AudioPlayer() {
   };
 
   return (
+    
     <div className="h-20 w-[550px] flex flex-col items-center justify-center gap-4">
       {/* Audio Element */}
       <audio
         ref={audioRef}
-        src="/audio/sample.mp3" 
-        onLoadedMetadata={() => setDuration(audioRef.current.duration)}
+        src="https://res.cloudinary.com/dydh2rfnk/video/upload/v1735797748/NBT-Chandrayaan3/audios/obaczxdevotey9zxrrxt.mp3"
+        onLoadedMetadata={handleLoadedMetadata}
         onTimeUpdate={handleTimeUpdate}
       />
 
@@ -58,7 +67,7 @@ export default function AudioPlayer() {
             className="w-40 h-2 bg-gray-300 rounded-lg cursor-pointer accent-blue-500"
             min={0}
             max={100}
-            value={(currentTime / duration) * 100 || 0}
+            value={duration > 0 ? (currentTime / duration) * 100 : 0} // Ensure value is valid
             onChange={handleAudioProgressChange}
           />
           <p>{formatTime(duration)}</p>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
@@ -12,12 +12,6 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
-
-  const router = useRouter();
-  const pageClickHander = (e) => {
-    e.preventDefault();
-    router.push("/pages/page/10");
-  };
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -39,10 +33,15 @@ export default function Page1() {
                   </p>
                   <p className="py-2">
                     Dadaji - Yes. You are right. In the last ten years, India
-                    has made great progress in space exploration. We have become
-                    atmanirbhar (self-reliant) in all fields from sea to space
-                    and talent to technology. India now holds the world record
-                    for sending 104 satellites in just one day!
+                    has made great progress in space exploration.
+                  </p>
+                  <p className="py-2">
+                    We have become atmanirbhar (self-reliant) in all fields from
+                    sea to space and talent to technology.
+                  </p>
+                  <p className="py-2">
+                    India now holds the world record for sending 104 satellites
+                    in just one day!
                   </p>
                 </div>
                 <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
@@ -51,10 +50,10 @@ export default function Page1() {
               </div>
             </div>
           </div>
-          
+
           {/* Image Section */}
           <div className="cursor-pointer">
-            <div className="rounded"onClick={pageClickHander}>
+            <div className="rounded">
               <Image
                 src={imgURL1}
                 className="bg-cover h-[600px] w-[550px]"
