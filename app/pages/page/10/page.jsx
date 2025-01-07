@@ -1,13 +1,19 @@
 "use client";
+import { useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 
 export default function Page1() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/jwvbo0kh5u7i7ykbliqo.png",
   });
+
+  const toggleExpand = () => {
+    setIsExpanded((prev) => !prev);
+  };
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -26,8 +32,19 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-5 mt-6 text-xl text-justify font-medium">
+              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
+              <div
+                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+                >
+                  <div
+                    className={`pr-2 ${
+                      isExpanded ? "overflow-auto" : "overflow-hidden"
+                    }`}
+                    style={{
+                      maxHeight: "335px",
+                      transition: "max-height 0.3s ease",
+                    }}
+                  >
                   <p>
                     Veer - I know. I saw the satellites video on YouTube. It was
                     so interesting. Tell me Dadaji, what is so special about
@@ -53,8 +70,16 @@ export default function Page1() {
                     million dollars which is almost half the cost of a Hollywood
                     movie.
                   </p>
+                  </div>
+                  <button
+                    onClick={toggleExpand}
+                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                  >
+                    {isExpanded ? "Read Less" : "Read More"}
+                  </button>
+                  
                 </div>
-                <hr className="w-full mt-[5px] h-[5px] opacity-70 bg-gray-300" />
+                
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
@@ -67,7 +92,7 @@ export default function Page1() {
             <div className="rounded h-full w-full">
               <Image
                 src={imgURL1}
-                className="h-full w-full object-cover"
+                className="bg-cover h-[530px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}

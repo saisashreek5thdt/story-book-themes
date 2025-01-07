@@ -1,15 +1,21 @@
 "use client";
+import { useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 
 export default function Page6() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/y6xd9kgtgabbyyo7zupp.png",
   });
 
   const router = useRouter();
+  
+  const toggleExpand = () => {
+    setIsExpanded((prev) => !prev);
+  };
 
   const pageClickHander = (e) => {
     e.preventDefault();
@@ -22,30 +28,54 @@ export default function Page6() {
         <div className="grid grid-cols-1 md:grid-cols-2 p-4">
           {/* Text Section */}
           <div className="cursor-pointer">
-            <div className="bg-white text-slate-700 h-[600px] w-full md:w-[550px] flex flex-col justify-center">
-              <div className="px-6 md:px-14 py-6 md:py-12 text-lg md:text-xl text-justify font-medium">
-                <p>
-                  Dadaji - Veer, this is what everyone has been made to
-                  believe. The fact is, that other nations have explored space
-                  just a few decades back.
-                </p>
-                <p className="py-4">
-                  But many of our ancient Indian texts, like the Vedas,
-                  discussed about space and astronomy thousands of years ago.
-                </p>
-                <p className="py-4">
-                  Do you know that India was once the vishvaguru, or the
-                  teacher of the world?
-                </p>
-                <p className="py-4">
-                  Veer&apos;s eyes widened. He had not known this about his
-                  country. He became even more alert and interested in what
-                  Dadaji was saying.
-                </p>
-                <p className="py-4">
-                  The clever grandpa knew that Veer was keen to learn of the
-                  glory of India&apos;s past. He continued on the same lines.
-                </p>
+            <div className="bg-white text-slate-700">
+              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
+              <div
+                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+                >
+                  <div
+                    className={`pr-2 ${
+                      isExpanded ? "overflow-auto" : "overflow-hidden"
+                    }`}
+                    style={{
+                      maxHeight: "335px",
+                      transition: "max-height 0.3s ease",
+                    }}
+                  >
+                  <p>
+                    Dadaji - Veer, this is what everyone has been made to
+                    believe. The fact is, that other nations have explored space
+                    just a few decades back.
+                  </p>
+                  <p className="py-4">
+                    But many of our ancient Indian texts, like the Vedas,
+                    discussed about space and astronomy thousands of years ago.
+                  </p>
+                  <p className="py-4">
+                    Do you know that India was once the vishvaguru, or the
+                    teacher of the world?
+                  </p>
+                  <p className="py-4">
+                    Veer&apos;s eyes widened. He had not known this about his
+                    country. He became even more alert and interested in what
+                    Dadaji was saying.
+                  </p>
+                  <p className="py-4">
+                    The clever grandpa knew that Veer was keen to learn of the
+                    glory of India&apos;s past. He continued on the same lines.
+                  </p>
+                  </div>
+                  <button
+                    onClick={toggleExpand}
+                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                  >
+                    {isExpanded ? "Read Less" : "Read More"}
+                  </button>
+                {/* </div> */}
+                </div>
+                
+                {/* Use the AudioPlayer component */}
+                <AudioPlayer />
               </div>
               <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
               {/* Use the AudioPlayer component */}
@@ -61,7 +91,7 @@ export default function Page6() {
             <div className="rounded h-full w-full">
               <Image
                 src={imgURL1}
-                className="h-full w-full object-cover "
+                className="bg-cover h-[530px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}

@@ -1,9 +1,11 @@
 "use client";
+import { useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/vfnq2jupoyu5jfligple",
   });
@@ -19,15 +21,28 @@ export default function Page1() {
     router.push("/pages/page/05");
   };
 
+  const toggleExpand = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
   return (
     <div className="w-full min-h-screen bg-cover select-none">
       <div className="flex justify-center items-center min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 p-4">
           {/* Text Section */}
-          <div className="cursor-pointer">
+          <div className="cursor-pointer ">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-2 text-lg text-justify font-medium">
+              <div className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}>
+                <div
+                  className={`pr-2 ${
+                    isExpanded ? "overflow-auto" : "overflow-hidden"
+                  }`}
+                  style={{
+                    maxHeight: "330px",
+                    transition: "max-height 0.3s ease",
+                  }}
+                >
                   <p>Veer - Wow! Tell me quickly, Dadaji.</p>
                   <p className="py-4">
                     Dadaji - Once upon a time, a young princess wanted to go to
@@ -60,8 +75,15 @@ export default function Page1() {
                       height={120}
                     />
                   </div> */}
+                  </div>
+                  <button
+                    onClick={toggleExpand}
+                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                  >
+                    {isExpanded ? "Read Less" : "Read More"}
+                  </button>
                 </div>
-                <hr className="w-full -mt-12 h-[2px] opacity-70 bg-gray-300" />
+                
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
@@ -73,7 +95,7 @@ export default function Page1() {
             <div onClick={pageClickHander} className="rounded h-full w-full">
               <Image
                 src={imgURL1}
-                className=" bg-white h-full w-full object-cover"
+                className="bg-white h-full w-full object-cover"
                 alt="Cover Image"
                 width={800}
                 height={1400}
