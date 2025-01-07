@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
+import { useRouter } from "next/navigation";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
@@ -11,6 +12,13 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
+  const router = useRouter();
+
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/11");
+  };
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -28,9 +36,9 @@ export default function Page1() {
                   </p>
                   <p className="py-1">
                     Dadaji - You have asked a very good question. I will explain
-                    in detail. Just then, Veer’s mother entered the room with a
-                    tray with two glasses of hot milk for both of them. Dadaji
-                    took a sip.
+                    in detail. Just then, Veer&apos;s mother entered the room
+                    with a tray with two glasses of hot milk for both of them.
+                    Dadaji took a sip.
                   </p>
                   <p className="py-1">
                     Veer adjusted his pillow to be even more comfortable. The
@@ -39,10 +47,12 @@ export default function Page1() {
                   <p className="py-1">
                     Dadaji - The landing of Chandrayaan 3 is a matter of great
                     pride for us because India is the first country to
-                    successfully land on the south pole of the moon. Our
-                    scientists have achieved it at a very low cost of 620
-                    million dollars which is almost half the cost of a
-                    Hollywood movie.
+                    successfully land on the south pole of the moon.
+                  </p>
+                  <p className="py-1">
+                    Our scientists have achieved it at a very low cost of 620
+                    million dollars which is almost half the cost of a Hollywood
+                    movie.
                   </p>
                 </div>
                 <hr className="w-full mt-[5px] h-[5px] opacity-70 bg-gray-300" />
@@ -53,7 +63,7 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={pageClickHander}>
             <div className="rounded">
               <Image
                 src={imgURL1}

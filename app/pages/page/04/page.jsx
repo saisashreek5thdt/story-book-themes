@@ -28,20 +28,26 @@ export default function Page1() {
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
                 <div className="px-14 py-12 mt-2 text-lg text-justify font-medium">
-                  <p>
-                    Veer - Wow! Tell me quickly, Dadaji. Dadaji - Once upon a
-                    time, a young princess wanted to go to the moon.
+                  <p>Veer - Wow! Tell me quickly, Dadaji.</p>
+                  <p className="py-4">
+                    Dadaji - Once upon a time, a young princess wanted to go to
+                    the moon.
                   </p>
                   <p className="py-4">
                     The king didn't know how to fulfill his daughter's foolish
                     wish. He promised a huge reward for anyone who would please
-                    his daughter. Many courtiers came forward with various ideas
-                    but none could please the princess.
+                    his daughter.
+                  </p>
+                  <p className="py-4">
+                    Many courtiers came forward with various ideas but none
+                    could please the princess.
                   </p>
                   <p className="py-4">
                     One day, a saint came and took the challenge. He asked the
-                    king to bring his daughter before him. Saint - Tell me,
-                    little one, how big is the moon?
+                    king to bring his daughter before him.
+                  </p>
+                  <p className="py-4">
+                    Saint - Tell me, little one, how big is the moon?
                   </p>
                   <p className="py-2">
                     Princess - It is as wide as my index finger.

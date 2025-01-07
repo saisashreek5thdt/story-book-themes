@@ -2,6 +2,7 @@
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
+import { useRouter } from "next/navigation";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
@@ -11,6 +12,13 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
+  const router = useRouter();
+
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/09");
+  };
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -28,17 +36,22 @@ export default function Page1() {
                   </p>
                   <p className="py-1">
                     Dadaji - For over fourteen hundred years, cruel invaders
-                    attacked our land, ruled it, and caused great harm. They
-                    destroyed the famous universities of Nalanda, Takshashila,
-                    and Vikramshila, where many of our precious texts were
-                    kept. That is how we lost our ancient knowledge.
+                    attacked our land, ruled it, and caused great harm.
+                  </p>
+                  <p className="py-2">
+                    They destroyed the famous universities of Nalanda,
+                    Takshashila, and Vikramshila, where many of our precious
+                    texts were kept. That is how we lost our ancient knowledge.
                   </p>
                   <p className="py-0">
                     Just imagine! Veer, the great mathematician Aryabhatt who
                     discovered 'zero' was an esteemed teacher at Nalanda
-                    University. The Chinese scholar Hiuen Tsang studied at
-                    Nalanda University and even became a teacher there, so
-                    great was its name and fame.
+                    University.
+                  </p>
+                  <p className="py-2">
+                    The Chinese scholar Hiuen Tsang studied at Nalanda
+                    University and even became a teacher there, so great was its
+                    name and fame.
                   </p>
                 </div>
                 <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
@@ -49,7 +62,7 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={pageClickHander}>
             <div className="rounded">
               <Image
                 src={imgURL1}
