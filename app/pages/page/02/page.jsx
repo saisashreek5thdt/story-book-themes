@@ -31,7 +31,7 @@ export default function Page1() {
                   <p>
                     He was very interested in learning about India&apos;s Space Research Programme. The topic constantly played on his mind.
                   </p>
-                  <p className="py-4">
+                  <p className="py-2">
                   One night, after completing his homework, packing his bag for school, and getting his uniform ready, Veer jumped into bed and snuggled against Dadaji.
                   </p>
                   <p className="py-4">
