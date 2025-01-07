@@ -5,7 +5,7 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/pages/jwvbo0kh5u7i7ykbliqo.png",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -20,36 +20,38 @@ export default function Page1() {
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
+                <div className="px-14 py-5 mt-6 text-xl text-justify font-medium">
                   <p>
-                    Ten year old Veer is a very intelligent and curious boy. He
-                    and his Dadaji are great friends. They sleep in the same
-                    room. At bedtime, before falling asleep.
+                    Veer - I know. I saw the satellites video on YouTube. It was
+                    so interesting. Tell me Dadaji, what is so special about
+                    Chandrayaan 3?
                   </p>
-                  <p className="py-4">
-                    Dadaji makes up interesting stories on any topic that he
-                    feels little Veer should be aware of.
+                  <p className="py-1">
+                    Dadaji - You have asked a very good question. I will explain
+                    in detail. Just then, Veer’s mother entered the room with a
+                    tray with two glasses of hot milk for both of them. Dadaji
+                    took a sip.
                   </p>
-                  <p className="py-2">
-                    Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space.
+                  <p className="py-1">
+                    Veer adjusted his pillow to be even more comfortable. The
+                    milk was too hot for him. He would wait a bit to drink it.
                   </p>
-                  <div className="py-2">
-                    <Image
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={120}
-                      height={120}
-                    />
-                  </div>
+                  <p className="py-1">
+                    Dadaji - The landing of Chandrayaan 3 is a matter of great
+                    pride for us because India is the first country to
+                    successfully land on the south pole of the moon. Our
+                    scientists have achieved it at a very low cost of 620
+                    million dollars which is almost half the cost of a
+                    Hollywood movie.
+                  </p>
                 </div>
-                <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
+                <hr className="w-full mt-[5px] h-[5px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
             </div>
           </div>
-          
+
           {/* Image Section */}
           <div className="cursor-pointer">
             <div className="rounded">
