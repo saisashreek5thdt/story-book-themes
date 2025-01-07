@@ -42,7 +42,7 @@ export default function Page1() {
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: isExpanded ? "320px" : "320px",
+                      maxHeight:"320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >

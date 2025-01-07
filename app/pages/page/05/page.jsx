@@ -41,7 +41,7 @@ export default function Page1() {
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: isExpanded ? "320px" : "320px",
+                      maxHeight: "320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
@@ -61,14 +61,14 @@ export default function Page1() {
 
                   <p className="py-2">Saint - What does the moon look like?</p>
                   <p className="py-2">Princess - It is white and bright like silver.</p>
-                  {/* <div className="py-2">
+                  <div className="py-2">
                     <Image
                       src={gifImgUrl}
                       alt="Astronaut Gif"
                       width={120}
                       height={120}
                     />
-                  </div> */}
+                  </div>
                   </div>
                   <button
                     onClick={toggleExpand}
