@@ -1,16 +1,16 @@
-"use client"
+"use client";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 
-export default function Page1() {
+export default function Page6() {
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/pages/y6xd9kgtgabbyyo7zupp.png",
   });
 
-  const gifImgUrl = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
-  });
+ // const gifImgUrl = getCldImageUrl({
+  //  src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
+ // });
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -22,26 +22,20 @@ export default function Page1() {
               <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
                 <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
                   <p>
-                    Ten year old Veer is a very intelligent and curious boy. He
-                    and his Dadaji are great friends. They sleep in the same
-                    room. At bedtime, before falling asleep.
+                    Dadaji - Veer, this is what everyone has been made to believe. 
+                    The fact is, that other nations have explored space just a few 
+                    decades back. But many of our ancient Indian texts, like the 
+                    Vedas, discussed about space and astronomy thousands of years 
+                    ago. Do you know that India was once the vishvaguru, or the 
+                    teacher of the world?
                   </p>
                   <p className="py-4">
-                    Dadaji makes up interesting stories on any topic that he
-                    feels little Veer should be aware of.
+                    Veer’s eyes widened. He had not known this about his country. 
+                    He became even more alert and interested in what Dadaji was 
+                    saying. The clever grandpa knew that Veer was keen to learn of 
+                    the glory of India’s past. He continued on the same lines.
                   </p>
-                  <p className="py-2">
-                    Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space.
-                  </p>
-                  <div className="py-2">
-                    <Image
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={120}
-                      height={120}
-                    />
-                  </div>
+                 
                 </div>
                 <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}

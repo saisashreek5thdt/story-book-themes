@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/pages/bf80rptamqi3qqw9szmp.png",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -20,19 +20,18 @@ export default function Page1() {
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
+                <div className="px-14 py-9 mt-6 text-xl text-justify font-medium">
                   <p>
-                    Ten year old Veer is a very intelligent and curious boy. He
-                    and his Dadaji are great friends. They sleep in the same
-                    room. At bedtime, before falling asleep.
+                    Dadaji - Thousands of years before people could not even
+                    dream of space and aircrafts, ancient Indian wise men had
+                    compiled the Vimaanshastra, or the science of flying. Gods
+                    and kings often covered long distances on their flying
+                    chariots.
                   </p>
                   <p className="py-4">
-                    Dadaji makes up interesting stories on any topic that he
-                    feels little Veer should be aware of.
-                  </p>
-                  <p className="py-2">
-                    Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space.
+                    Veer - Yes, Dadaji. I remember! In the Ramayana too, Ravana
+                    kidnapped Sita and flew in his Pushpak Vimaan. But then, why
+                    did it take us so long to explore space?
                   </p>
                   <div className="py-2">
                     <Image
@@ -49,7 +48,7 @@ export default function Page1() {
               </div>
             </div>
           </div>
-          
+
           {/* Image Section */}
           <div className="cursor-pointer">
             <div className="rounded">
