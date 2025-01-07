@@ -13,10 +13,17 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
 
+  const router = useRouter();
+
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/10");
+  };
+
   return (
     <div className="w-full min-h-screen bg-cover select-none">
       <div className="flex justify-center items-center min-h-screen">
-        <div className="grid grid-cols-2 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 p-4">
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
@@ -52,11 +59,11 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer">
-            <div className="rounded">
+          <div className="cursor-pointer flex justify-center items-center h-[600px] w-full md:w-[550px]">
+            <div className="rounded h-full w-full"onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover h-[600px] w-[550px]"
+                className="h-full w-full object-cover"
                 alt="Cover Image"
                 width={800}
                 height={1400}
