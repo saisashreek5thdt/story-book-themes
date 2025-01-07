@@ -1,16 +1,24 @@
-"use client"
+"use client";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
+import { useRouter } from "next/navigation";
 
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/pages/suuqij877k2egsskidti.png",
   });
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
+  const router = useRouter();
+
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/09");
+  };
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -20,28 +28,31 @@ export default function Page1() {
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
+                <div className="px-14 py-8 mt-6 text-xl text-justify font-medium">
                   <p>
-                    Ten year old Veer is a very intelligent and curious boy. He
-                    and his Dadaji are great friends. They sleep in the same
-                    room. At bedtime, before falling asleep.
+                    Dadaji - Dadaji was expecting this question. He knew that
+                    Veer wanted to get into the root of the matter. He was
+                    prepared to answer.
                   </p>
-                  <p className="py-4">
-                    Dadaji makes up interesting stories on any topic that he
-                    feels little Veer should be aware of.
+                  <p className="py-1">
+                    Dadaji - For over fourteen hundred years, cruel invaders
+                    attacked our land, ruled it, and caused great harm.
                   </p>
                   <p className="py-2">
-                    Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space.
+                    They destroyed the famous universities of Nalanda,
+                    Takshashila, and Vikramshila, where many of our precious
+                    texts were kept. That is how we lost our ancient knowledge.
                   </p>
-                  <div className="py-2">
-                    <Image
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={120}
-                      height={120}
-                    />
-                  </div>
+                  <p className="py-0">
+                    Just imagine! Veer, the great mathematician Aryabhatt who
+                    discovered 'zero' was an esteemed teacher at Nalanda
+                    University.
+                  </p>
+                  <p className="py-2">
+                    The Chinese scholar Hiuen Tsang studied at Nalanda
+                    University and even became a teacher there, so great was its
+                    name and fame.
+                  </p>
                 </div>
                 <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}
@@ -49,9 +60,9 @@ export default function Page1() {
               </div>
             </div>
           </div>
-          
+
           {/* Image Section */}
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={pageClickHander}>
             <div className="rounded">
               <Image
                 src={imgURL1}

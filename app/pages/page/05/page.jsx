@@ -42,11 +42,8 @@ export default function Page1() {
                     I think it is just as high as that tree.
                   </p>
 
-                  <p className="py-2">
-                    Saint - What does the moon look like? Princess - It is white
-                    and bright like silver.
-                  </p>
-
+                  <p className="py-2">Saint - What does the moon look like?</p>
+                  <p className="py-2">Princess - It is white and bright like silver.</p>
                   {/* <div className="py-2">
                     <Image
                       src={gifImgUrl}
