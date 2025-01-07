@@ -1,9 +1,11 @@
 "use client";
+import { useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/dutpnurbiui06mdjay4d",
   });
@@ -11,6 +13,10 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
+  const toggleExpand = () => {
+    setIsExpanded((prev) => !prev);
+  };
 
   const router = useRouter();
 
@@ -26,8 +32,17 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
-                <div className="px-14 py-12 -mt-6 text-xl text-justify font-medium">
+              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center ">
+                <div className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}>
+                <div
+                  className={`pr-2 ${
+                    isExpanded ? "overflow-auto" : "overflow-hidden"
+                  }`}
+                  style={{
+                    maxHeight: isExpanded ? "330px" : "330px",
+                    transition: "max-height 0.3s ease",
+                  }}
+                >
                   <p>Dadaji - What is so special about the moon today?</p>
                   <p className="py-4">
                     Veer - Dadaji, this morning while cleaning my room, I saw
@@ -56,8 +71,14 @@ export default function Page1() {
                       height={120}
                     />
                   </div> */}
+                  </div>
+                  <button
+                    onClick={toggleExpand}
+                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                  >
+                    {isExpanded ? "Read Less" : "Read More"}
+                  </button>
                 </div>
-                <hr className="w-full -mt-14 h-[2px] opacity-70 bg-gray-300" />
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>

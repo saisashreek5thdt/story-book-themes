@@ -48,8 +48,9 @@ export default function AudioPlayer() {
   };
 
   return (
-    
-    <div className="h-20 w-[550px] flex flex-col items-center justify-center gap-4">
+    <>
+    <hr className="w-full -mt-2 h-[2px] opacity-70 bg-gray-300" />
+    <div className="h-14 w-[550px] flex flex-col items-center justify-center gap-4">
       {/* Audio Element */}
       <audio
         ref={audioRef}
@@ -96,5 +97,6 @@ export default function AudioPlayer() {
         </div>
       </div>
     </div>
+    </>
   );
 }
