@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
-
+import { useRouter } from "next/navigation";
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/vfnq2jupoyu5jfligple",
@@ -11,6 +11,13 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
+  const router = useRouter();
+
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/05");
+  };
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -22,16 +29,22 @@ export default function Page1() {
               <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
                 <div className="px-14 py-12 mt-2 text-lg text-justify font-medium">
                   <p>
-                  Veer - Wow! Tell me quickly, Dadaji. Dadaji - Once upon a time, a young princess wanted to go to the moon.
+                    Veer - Wow! Tell me quickly, Dadaji. Dadaji - Once upon a
+                    time, a young princess wanted to go to the moon.
                   </p>
                   <p className="py-4">
-                   The king didn't know how to fulfill his daughter's foolish wish. He promised a huge reward for anyone who would please his daughter. Many courtiers came forward with various ideas but none could please the princess.
+                    The king didn't know how to fulfill his daughter's foolish
+                    wish. He promised a huge reward for anyone who would please
+                    his daughter. Many courtiers came forward with various ideas
+                    but none could please the princess.
                   </p>
                   <p className="py-4">
-                  One day, a saint came and took the challenge. He asked the king to bring his daughter before him. Saint - Tell me, little one, how big is the moon?
+                    One day, a saint came and took the challenge. He asked the
+                    king to bring his daughter before him. Saint - Tell me,
+                    little one, how big is the moon?
                   </p>
                   <p className="py-2">
-                  Princess - It is as wide as my index finger.
+                    Princess - It is as wide as my index finger.
                   </p>
                   {/* <div className="py-2">
                     <Image
@@ -48,16 +61,17 @@ export default function Page1() {
               </div>
             </div>
           </div>
-          
+
           {/* Image Section */}
           <div className="cursor-pointer">
-            <div className="rounded">
+            <div onClick={pageClickHander} className="rounded">
               <Image
                 src={imgURL1}
                 className="bg-cover h-[530px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
+                unoptimized
               />
             </div>
           </div>

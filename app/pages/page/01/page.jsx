@@ -2,7 +2,7 @@
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
-
+import { useRouter } from "next/navigation";
 export default function Page1() {
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
@@ -11,6 +11,14 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
+  const router = useRouter();
+
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/02");
+  };
+
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -52,13 +60,14 @@ export default function Page1() {
           
           {/* Image Section */}
           <div className="cursor-pointer">
-            <div className="rounded">
+            <div className="rounded" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
                 className="bg-cover bg-white h-[520px] w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
+                unoptimized
               />
             </div>
           </div>
