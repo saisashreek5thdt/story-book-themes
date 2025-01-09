@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+    src: "https://res.cloudinary.com/dydh2rfnk/image/upload/v1734601267/NBT-Chandrayaan3/assets/bgImages/page10/qylalkxzceli2q7jaloo.png",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -22,7 +22,7 @@ export default function Page1() {
 
   const pageClickHander = (e) => {
     e.preventDefault();
-    router.push("/pages/page/02");
+    router.push("/pages/page/12");
   };
 
   return (
@@ -32,9 +32,9 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
@@ -46,18 +46,28 @@ export default function Page1() {
                     }}
                   >
                     <p>
-                      Ten year old Veer is a very intelligent and curious boy.
-                      He and his Dadaji are great friends. They sleep in the
-                      same room. At bedtime, before falling asleep.
-                    </p>
-                    <p className="py-4">
-                      Dadaji makes up interesting stories on any topic that he
-                      feels little Veer should be aware of.
-                    </p>
-                    <p className="py-2">
-                      Veer loves to hear these storie&apos;s. Veer&apos;s school
-                      was soon to hold a workshop on Space.
-                    </p>
+                    Veer - I know. I saw the satellites video on youtube. It was
+                    so interesting. Tell me Dadaji, what is so special about
+                    Chandrayaan 3?
+                  </p>
+                  <p className="py-4">
+                    Dadaji - You have asked a very good question. I will explain
+                    in detail. Just then, Veer&apos;s mother entered the room
+                    with a tray with two glasses of hot milk for both of them.
+                    Dadaji took a sip.
+                  </p>
+                  <p className="py-4">
+                    Veer adjusted his pillow to be even more comfortable. The
+                    milk was too hot for him. He would wait a bit to drink it.
+                  </p>
+                  <p className="py-2">
+                    Dadaji - The landing of Chandrayaan 3 is a matter of great
+                    pride for us because India is the first country to
+                    successfully land on the south pole of the moon. Our
+                    scientists have achieved it at a very low cost of 620
+                    million dollars which is almost half the cost of a Hollywood
+                    movie.
+                  </p>
                   </div>
                   <button
                     onClick={toggleExpand}

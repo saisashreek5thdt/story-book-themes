@@ -22,7 +22,7 @@ export default function Page1() {
 
   const pageClickHander = (e) => {
     e.preventDefault();
-    router.push("/pages/page/02");
+    router.push("/pages/page/15");
   };
 
   return (
@@ -32,9 +32,9 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
@@ -45,19 +45,22 @@ export default function Page1() {
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                    <p>
-                      Ten year old Veer is a very intelligent and curious boy.
-                      He and his Dadaji are great friends. They sleep in the
-                      same room. At bedtime, before falling asleep.
-                    </p>
-                    <p className="py-4">
-                      Dadaji makes up interesting stories on any topic that he
-                      feels little Veer should be aware of.
-                    </p>
-                    <p className="py-2">
-                      Veer loves to hear these storie&apos;s. Veer&apos;s school
-                      was soon to hold a workshop on Space.
-                    </p>
+                   <p>
+                  Dadaji - Veer, first of all you should know that Chandrayaan is
+                  the name of the Indian Lunar Exploration Program.
+                  </p>
+                  <p className="py-4">
+                  India launched Chandrayaan 2 in 2019. The lander was on the right
+              path, but unfortunately due to a small error, communication was
+              lost in the final 300 meters, and it could not make a smooth
+              landing on the surface of the moon. It crashed.
+                  </p>
+                  <p className="py-4">
+                  Veer - Dadaji, tell me a story about space, the moon, and astronauts.
+                  </p>
+                  <p className="py-2">
+                  Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school, and had seen his excited preparations.
+                  </p>
                   </div>
                   <button
                     onClick={toggleExpand}

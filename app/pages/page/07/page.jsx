@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+    src: "NBT-Chandrayaan3/assets/pages/bf80rptamqi3qqw9szmp.png",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -22,7 +22,7 @@ export default function Page1() {
 
   const pageClickHander = (e) => {
     e.preventDefault();
-    router.push("/pages/page/02");
+    router.push("/pages/page/08");
   };
 
   return (
@@ -32,9 +32,9 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
@@ -46,18 +46,20 @@ export default function Page1() {
                     }}
                   >
                     <p>
-                      Ten year old Veer is a very intelligent and curious boy.
-                      He and his Dadaji are great friends. They sleep in the
-                      same room. At bedtime, before falling asleep.
-                    </p>
-                    <p className="py-4">
-                      Dadaji makes up interesting stories on any topic that he
-                      feels little Veer should be aware of.
-                    </p>
-                    <p className="py-2">
-                      Veer loves to hear these storie&apos;s. Veer&apos;s school
-                      was soon to hold a workshop on Space.
-                    </p>
+                    Dadaji - Veer, this is what everyone has been made to believe. 
+                    The fact is, that other nations have explored space just a few 
+                    decades back. But many of our ancient Indian texts, like the 
+                    Vedas, discussed about space and astronomy thousands of years 
+                    ago. Do you know that India was once the vishvaguru, or the 
+                    teacher of the world?
+                  </p>
+                  <p className="py-4">
+                    Veer’s eyes widened. He had not known this about his country. 
+                    He became even more alert and interested in what Dadaji was 
+                    saying. The clever grandpa knew that Veer was keen to learn of 
+                    the glory of India’s past. He continued on the same lines.
+                  </p>
+                    
                   </div>
                   <button
                     onClick={toggleExpand}
