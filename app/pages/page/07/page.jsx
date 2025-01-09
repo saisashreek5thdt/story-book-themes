@@ -58,14 +58,14 @@ export default function Page1() {
                     kidnapped Sita and flew in his Pushpak Vimaan. But then, why
                     did it take us so long to explore space?
                   </p>
-                  <div className="py-2">
+                 {/*  <div className="py-2">
                     <Image
                       src={gifImgUrl}
                       alt="Astronaut Gif"
                       width={120}
                       height={120}
                     />
-                  </div>
+                  </div> */}
                   </div>
                   <button
                     onClick={toggleExpand}
