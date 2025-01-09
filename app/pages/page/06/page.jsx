@@ -4,15 +4,18 @@ import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
-
-export default function Page6() {
+export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/y6xd9kgtgabbyyo7zupp.png",
   });
 
+  const gifImgUrl = getCldImageUrl({
+    src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
+  });
+
   const router = useRouter();
-  
+
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
   };
@@ -29,41 +32,42 @@ export default function Page6() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
-              <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
+                <div
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "335px",
+                      maxHeight: "320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                  <p>
-                    Dadaji - Veer, this is what everyone has been made to
-                    believe. The fact is, that other nations have explored space
-                    just a few decades back.
-                  </p>
-                  <p className="py-4">
-                    But many of our ancient Indian texts, like the Vedas,
-                    discussed about space and astronomy thousands of years ago.
-                  </p>
-                  <p className="py-4">
-                    Do you know that India was once the vishvaguru, or the
-                    teacher of the world?
-                  </p>
-                  <p className="py-4">
-                    Veer&apos;s eyes widened. He had not known this about his
-                    country. He became even more alert and interested in what
-                    Dadaji was saying.
-                  </p>
-                  <p className="py-4">
-                    The clever grandpa knew that Veer was keen to learn of the
-                    glory of India&apos;s past. He continued on the same lines.
-                  </p>
+                    <p>
+                      Veer was getting impatient. This was not the story he
+                      wanted to listen tonight.
+                    </p>
+                    <p className="py-4">
+                      Veer - What a silly princess. Who would belleve this
+                      story?
+                    </p>
+                    <p className="py-4">
+                      Dadaji - (Laughing) Veer, this is a story from the times
+                      when thost folks knew nothing about the moon. You laughed
+                      at the princess because you know that måny silly myths
+                      about the moon have been cleared. Now I will tell you all
+                      that you want to know about that headline..
+                    </p>
+                    <p className="py-4">
+                      Veer - Wow! I can't wait to know more. Tell me all,
+                      Dadaji. All the news channels too were very proudly
+                      broadcasting India's moonlanding, and everyone was so
+                      happy. Why was it such a big news? After all, hasn't India
+                      learnt about space from other countries who have
+                      already been to space?
+                    </p>
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -71,30 +75,32 @@ export default function Page6() {
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
-                {/* </div> */}
                 </div>
-                
+                {/* <div className="-mt-2">
+                  <Image
+                    src={gifImgUrl}
+                    alt="Astronaut Gif"
+                    width={120}
+                    height={120}
+                    unoptimized
+                  />
+                </div> */}
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
-              {/* <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" /> */}
-              {/* Use the AudioPlayer component */}
-              {/* <AudioPlayer /> */}
             </div>
           </div>
 
           {/* Image Section */}
-          <div
-            className="cursor-pointer flex justify-center items-center h-[600px] w-full md:w-[550px]"
-            onClick={pageClickHander}
-          >
-            <div className="rounded h-full w-full">
+          <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
+            <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover h-[530px] w-[550px]"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
+                unoptimized
               />
             </div>
           </div>
