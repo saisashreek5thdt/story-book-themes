@@ -4,9 +4,11 @@ import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 
 export default function Page1() {
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+  // });
+
+  const imgURL1 = "/images/page28_29/image.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",

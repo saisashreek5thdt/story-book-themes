@@ -6,9 +6,11 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const imgURL1 = getCldImageUrl({
-    src: "https://res.cloudinary.com/dydh2rfnk/image/upload/v1734601267/NBT-Chandrayaan3/assets/bgImages/page10/qylalkxzceli2q7jaloo.png",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "https://res.cloudinary.com/dydh2rfnk/image/upload/v1734601267/NBT-Chandrayaan3/assets/bgImages/page10/qylalkxzceli2q7jaloo.png",
+  // });
+
+  const imgURL1 = "/images/page10_11/image 2.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",

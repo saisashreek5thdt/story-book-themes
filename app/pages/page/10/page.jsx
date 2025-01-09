@@ -6,13 +6,15 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/jwvbo0kh5u7i7ykbliqo.png",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/jwvbo0kh5u7i7ykbliqo.png",
+  // });
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
+  const imgURL1 = "/images/page10_11/image 2.jpg";
 
   const router = useRouter();
 
@@ -24,6 +26,8 @@ export default function Page1() {
     e.preventDefault();
     router.push("/pages/page/11");
   };
+
+  
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">

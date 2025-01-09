@@ -1,64 +1,104 @@
-"use client"
+"use client";
+import { useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
-
+import { useRouter } from "next/navigation";
 export default function Page1() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page1/pkftpgetorjyryeasvxu",
+    src: "NBT-Chandrayaan3/assets/fgImages/page11/ibq1kx9fqjricropqfde",
   });
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
 
+  const router = useRouter();
+
+  const toggleExpand = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
+  const pageClickHander = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/18");
+  };
+
   return (
     <div className="w-full min-h-screen bg-cover select-none">
       <div className="flex justify-center items-center min-h-screen">
-        <div className="grid grid-cols-2 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 p-4">
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[600px] w-[550px] justify-center">
-                <div className="px-14 py-12 mt-6 text-xl text-justify font-medium">
-                  <p>
-                    Ten year old Veer is a very intelligent and curious boy. He
-                    and his Dadaji are great friends. They sleep in the same
-                    room. At bedtime, before falling asleep.
-                  </p>
-                  <p className="py-4">
-                    Dadaji makes up interesting stories on any topic that he
-                    feels little Veer should be aware of.
-                  </p>
-                  <p className="py-2">
-                    Veer loves to hear these storie&apos;s. Veer&apos;s school
-                    was soon to hold a workshop on Space.
-                  </p>
-                  <div className="py-2">
-                    <Image
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={120}
-                      height={120}
-                    />
+              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
+                <div
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
+                >
+                  <div
+                    className={`pr-2 ${
+                      isExpanded ? "overflow-auto" : "overflow-hidden"
+                    }`}
+                    style={{
+                      maxHeight: "220px",
+                      transition: "max-height 0.3s ease",
+                    }}
+                  >
+                        <p>
+                      Dadaji - No Veer. Our scientists did not sit and sulk at
+                      the setback. That same day they decided to correct the
+                      errors and planned Chandrayaan3.
+                    </p>
+                    <p className="py-4">
+                      They learnt from their mistakes and made a failure-proof
+                      model for the next mission and within four years succeeded
+                      in their mission.
+                    </p>
+                    <p className="py-2">
+                      We are proud of our scientists and of our leadership in
+                      showing faith in the scientific community. Over 100 women
+                      scientists were also involved in the mission and were in
+                      the control room at the time of the launch and during the
+                      landing on August 23.
+                    </p>
+                    <p className="py-2">
+                      Prime Minister Narendra Modi met and congratulated each
+                      one of them.
+                    </p>
                   </div>
+                  <button
+                    onClick={toggleExpand}
+                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                  >
+                    {isExpanded ? "Read Less" : "Read More"}
+                  </button>
                 </div>
-                <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
+                {/* <div className="-mt-2">
+                  <Image
+                    src={gifImgUrl}
+                    alt="Astronaut Gif"
+                    width={120}
+                    height={120}
+                    unoptimized
+                  />
+                </div> */}
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
             </div>
           </div>
-          
+
           {/* Image Section */}
-          <div className="cursor-pointer">
-            <div className="rounded">
+          <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
+            <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover h-[600px] w-[550px]"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
+                unoptimized
               />
             </div>
           </div>

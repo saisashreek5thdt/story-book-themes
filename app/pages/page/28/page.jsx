@@ -6,9 +6,10 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
+  // });
+  const imgURL1 = "/images/page28_29/image.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -46,19 +47,19 @@ export default function Page1() {
                     }}
                   >
                     <p>
-                  Veer was feeling sleepy now. His eyelids had begun to droop and he stifled a yawn.
-
-                  </p>
-                  <p className="py-4">
-                  Veer - Alright, Dadaji. Goodnight and sweet dreams.
-                  </p>
-                  <p className="py-4">
-                  Dadaji - Goodnight, my Chanda!
-                  </p>
-                  <p className="py-2">
-                  Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school, and had seen his excited preparations.
-                  </p>
-
+                      Veer was feeling sleepy now. His eyelids had begun to
+                      droop and he stifled a yawn.
+                    </p>
+                    <p className="py-4">
+                      Veer - Alright, Dadaji. Goodnight and sweet dreams.
+                    </p>
+                    <p className="py-4">Dadaji - Goodnight, my Chanda!</p>
+                    <p className="py-2">
+                      Dadaji's eyes twinkle. He had been expecting this question
+                      from Veer for quite some time now. He knew about the
+                      forthcoming workshop in the boy's school, and had seen his
+                      excited preparations.
+                    </p>
                   </div>
                   <button
                     onClick={toggleExpand}
