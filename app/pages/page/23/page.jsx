@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
@@ -25,7 +25,6 @@ export default function Page1() {
     router.push("/pages/page/24");
   };
 
-
   return (
     <div className="w-full min-h-screen bg-cover select-none">
       <div className="flex justify-center items-center min-h-screen">
@@ -33,28 +32,33 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[520px] w-[550px] justify-center">
-              <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
+                <div
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight:"310px",
+                      maxHeight: "320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                  <p>
-                  Veer - Modi ji is my role model. His speech after the success of the Chandrayaan 3 mission was very impressive. Some day, I too want to become like him.
-                  </p>
-                  <p className="py-2">
-                  Dadaji -  Yes, Veer. Modi ji has taken India to new heights and become a global leader. He is the Prime Minister of 1.45 billion people and carries their dreams and hopes.
-                  </p>
-                  <p className="py-2">
-                  He encourages the youth of today. The "Jai Anusandhan" slogan was first raised by PM Modi in January 2019 while imploring scientists to encourage research among students.
-                  </p>
+                    <p>
+                      Dadaji - I also loved his speech when he said-
+                      "Chandrayaan Maha Abhiyan is a success not only for India
+                      but for the entire humanity."  
+                    </p>
+                    <p className="py-2">
+                    It shows the world that
+                      India truly believes in Vasudhaiva Kutumbakam-meaning One
+                      Earth, One Family, One Future.
+                    </p>
+                    <p className="py-2">
+                    That was the theme of
+                    India's G20 Presidency held in New Delhi in September 23.
+                    </p>
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -63,29 +67,27 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                {/* <div className="-mt-6">
-                    <Image
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={120}
-                      height={120}
-                      unoptimized
-                    />
-                  </div> */}
+                {/* <div className="-mt-2">
+                  <Image
+                    src={gifImgUrl}
+                    alt="Astronaut Gif"
+                    width={120}
+                    height={120}
+                    unoptimized
+                  />
+                </div> */}
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
             </div>
           </div>
-          
+
           {/* Image Section */}
           <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
             <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-
-                className="bg-cover bg-white  h-full w-full object-cover"
-
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}

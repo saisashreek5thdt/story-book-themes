@@ -32,9 +32,9 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer  ">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
+              <div className="flex flex-col items-center  sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
@@ -93,7 +93,7 @@ export default function Page1() {
             <div onClick={pageClickHander} className="rounded h-full w-full">
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white h-full w-full object-cover"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px] object-cover"
                 alt="Cover Image"
                 width={800}
                 height={1400}

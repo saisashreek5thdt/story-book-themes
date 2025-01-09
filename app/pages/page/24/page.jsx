@@ -32,33 +32,28 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[520px] w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`px-14 py-12 mb-16 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "340px",
+                      maxHeight: "320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                    <p>
-                      Dadaji - I also loved his speech when he said-
-                      "Chandrayaan Maha Abhiyan is a success not only for India
-                      but for the entire humanity."  
-                    </p>
-                    <p className="py-2">
-                    It shows the world that
-                      India truly believes in Vasudhaiva Kutumbakam-meaning One
-                      Earth, One Family, One Future.
-                    </p>
-                    <p className="py-2">
-                    That was the theme of
-                    India's G20 Presidency held in New Delhi in September 23.
-                    </p>
+                   <p>
+                  Veer - Are we going to launch another mission?
+                  </p>
+                  <p className="py-2">
+                  Dadaji: Certainly, Veer. India is going to launch "Gaganyaan" in 2024-2025 which is an Indian crewed orbital spacecraft that will take our astronauts to space. 
+                  </p>
+                  <p className="py-2">
+                  It is going to be a huge step in the field of space exploration.
+                  </p>
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -67,7 +62,7 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                {/* <div className="-mt-6">
+                {/* <div className="-mt-2">
                   <Image
                     src={gifImgUrl}
                     alt="Astronaut Gif"
@@ -87,7 +82,7 @@ export default function Page1() {
             <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white  h-full w-full object-cover"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}

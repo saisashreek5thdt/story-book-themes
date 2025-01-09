@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
+    src: "NBT-Chandrayaan3/assets/fgImages/page11/ibq1kx9fqjricropqfde",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -32,9 +32,9 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[520px] w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
@@ -45,25 +45,26 @@ export default function Page1() {
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                    <p>Veer nodded as he gulped down the now cold milk.</p>
-                    <p className="py-2">
-                      He faintly remembered watching this news five years ago.
+                        <p>
+                      Dadaji - No Veer. Our scientists did not sit and sulk at
+                      the setback. That same day they decided to correct the
+                      errors and planned Chandrayaan3.
+                    </p>
+                    <p className="py-4">
+                      They learnt from their mistakes and made a failure-proof
+                      model for the next mission and within four years succeeded
+                      in their mission.
                     </p>
                     <p className="py-2">
-                      Dadaji was surprised. How could Veer remember the event?
-                      He was just five back then.
+                      We are proud of our scientists and of our leadership in
+                      showing faith in the scientific community. Over 100 women
+                      scientists were also involved in the mission and were in
+                      the control room at the time of the launch and during the
+                      landing on August 23.
                     </p>
                     <p className="py-2">
-                      Dadaji - Do you remember watching that landing of
-                      Chandrayaan 2? Our Prime Minister Shri Narendra Modi was
-                      also present in the operation control room to witness that
-                      historic moment. We were all so touched when Modi ji
-                      hugged and consoled the ISRO Chairman K Sivan and
-                      encouraged him to try again.
-                    </p>
-                    <p className="py-2">
-                      Veer - I can imagine how disappointing it must have been
-                      for the whole team.
+                      Prime Minister Narendra Modi met and congratulated each
+                      one of them.
                     </p>
                   </div>
                   <button
@@ -73,7 +74,7 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                {/* <div className="-mt-6">
+                {/* <div className="-mt-2">
                   <Image
                     src={gifImgUrl}
                     alt="Astronaut Gif"
@@ -93,7 +94,7 @@ export default function Page1() {
             <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white  h-full w-full object-cover"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
