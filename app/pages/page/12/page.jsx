@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+    src: "NBT-Chandrayaan3/assets/fgImages/page11/ibq1kx9fqjricropqfde",
   });
 
   const gifImgUrl = getCldImageUrl({

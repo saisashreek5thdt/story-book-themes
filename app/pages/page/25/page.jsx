@@ -6,13 +6,14 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const imgURL1 = getCldImageUrl({
+{/*  const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
-  });
+  });*/}
+  const imgURL1 ="/image/25.jpg"
 
   const router = useRouter();
 

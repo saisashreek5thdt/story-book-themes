@@ -6,13 +6,14 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const imgURL1 = getCldImageUrl({
+ {/* const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
   });
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
-  });
+  });*/}
+  const imgURL1 ="/image/27.jpg"
 
   const router = useRouter();
 
@@ -26,13 +27,13 @@ export default function Page1() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-cover select-none">
+    <div className="w-full min-h-screen bg-cover select-none ">
       <div className="flex justify-center items-center min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 p-4">
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center ">
                 <div
                   className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
@@ -87,7 +88,7 @@ export default function Page1() {
             <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
+                className="object-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
