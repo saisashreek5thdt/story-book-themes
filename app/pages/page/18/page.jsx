@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+    src: "NBT-Chandrayaan3/assets/pages/v643fvmrho3svwsu0ktj",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -32,9 +32,9 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[520px] w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
@@ -46,23 +46,22 @@ export default function Page1() {
                     }}
                   >
                     <p>
-                      Veer - What will this rover do on the moon? Nobody stays
-                      there. How will it help us?
+                      Dadaji understood that Veer had asked this question to
+                      impress him about his knowledge. So he played along.
                     </p>
                     <p className="py-4">
-                      Dadaji - Ha! Ha! Ha! You are wrong, little boy. Like
-                      Chandrayaan 1 gave valuable inputs about the possibility
-                      of water on the moon, this mission will explore the
-                      properties of the moon&apos;s surface, its soil, gases,
-                      metals and minerals.
+                      Dadaji - You tell me. I don&apos;t remember exactly.
                     </p>
                     <p className="py-2">
-                      Veer smiled sheepishly. He wanted to show Dadaji that he
-                      was not a little boy. He knew a lot!
+                      Veer - It is known as the 'Tiranga point' where
+                      Chandrayaan 2 crash landed, and 'Shiv Shakti Point' where
+                      Chandrayaan 3 successfully landed.
                     </p>
                     <p className="py-2">
-                      Veer - Dadaji, do you know the names of the places where
-                      Chandrayaan 2 and 3 landed on the moon?
+                      Dadaji - Brilliant! Veer. Everything which our country
+                      does has a scientific and spiritual dimension to it. Shri
+                      Modi has named these two points himself after the success
+                      of Chandrayaan 3.
                     </p>
                   </div>
                   <button
@@ -72,7 +71,7 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                {/* <div className="-mt-6">
+                {/* <div className="-mt-2">
                   <Image
                     src={gifImgUrl}
                     alt="Astronaut Gif"
@@ -92,7 +91,7 @@ export default function Page1() {
             <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white  h-full w-full object-cover"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}

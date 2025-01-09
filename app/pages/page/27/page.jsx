@@ -22,7 +22,7 @@ export default function Page1() {
 
   const pageClickHander = (e) => {
     e.preventDefault();
-    router.push("/pages/page/28");
+    router.push("/pages/page/01");
   };
 
   return (
@@ -46,25 +46,19 @@ export default function Page1() {
                     }}
                   >
                     <p>
-                      Suddenly, Veer jumped out of the bed and brought something
-                      from his study table.
-                    </p>
-                    <p className="py-4">
-                      Veer - Dadaji, I want to show you something. I have made a
-                      small poster for our school project on ISRO. I want to
-                      post it to our honourable Prime Minister.
-                    </p>
-                    <p className="py-4">
-                      Dadaji - This is so beautiful! You know, Veer, Modi ji
-                      loves to hear from little children. He will really
-                      appreciate this poster.
-                    </p>
-                    <p className="py-2">
-                      Dadaji's eyes twinkle. He had been expecting this question
-                      from Veer for quite some time now. He knew about the
-                      forthcoming workshop in the boy's school, and had seen his
-                      excited preparations.
-                    </p>
+                  Veer was feeling sleepy now. His eyelids had begun to droop and he stifled a yawn.
+
+                  </p>
+                  <p className="py-4">
+                  Veer - Alright, Dadaji. Goodnight and sweet dreams.
+                  </p>
+                  <p className="py-4">
+                  Dadaji - Goodnight, my Chanda!
+                  </p>
+                  <p className="py-2">
+                  Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school, and had seen his excited preparations.
+                  </p>
+
                   </div>
                   <button
                     onClick={toggleExpand}

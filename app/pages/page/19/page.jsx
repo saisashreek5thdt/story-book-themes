@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/v643fvmrho3svwsu0ktj",
+    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
   });
 
   const gifImgUrl = getCldImageUrl({
@@ -32,37 +32,28 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[520px] w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "315px",
+                      maxHeight: "320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
                     <p>
-                      Dadaji understood that Veer had asked this question to
-                      impress him about his knowledge. So he played along.
-                    </p>
-                    <p className="py-4">
-                      Dadaji - You tell me. I don&apos;t remember exactly.
-                    </p>
-                    <p className="py-2">
-                      Veer - It is known as the 'Tiranga point' where
-                      Chandrayaan 2 crash landed, and 'Shiv Shakti Point' where
-                      Chandrayaan 3 successfully landed.
-                    </p>
-                    <p className="py-2">
-                      Dadaji - Brilliant! Veer. Everything which our country
-                      does has a scientific and spiritual dimension to it. Shri
-                      Modi has named these two points himself after the success
-                      of Chandrayaan 3.
-                    </p>
+                    Dadaji - Veer, Shri Modi said, "THe spot, on the lunar surface where the Chandrayaan-2 left its footprints in 2019 will be Know as &apos;Tiranga Point&apos;. This will be an inspiration for every effort made in India.
+                  </p>
+                  <p className="py-4">
+                    It will remind us that any failure is not final.
+                  </p>
+                  <p className="py-2">
+                    Veer - He is great. Dadaji, I remember Modi ji proudly holding the Indian flag and waving it on TV when Chandrayaan 3 landed successfully
+                  </p>
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -71,7 +62,7 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                {/* <div className="-mt-6">
+                {/* <div className="-mt-2">
                   <Image
                     src={gifImgUrl}
                     alt="Astronaut Gif"
@@ -91,7 +82,7 @@ export default function Page1() {
             <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white  h-full w-full object-cover"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
