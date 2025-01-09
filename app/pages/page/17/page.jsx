@@ -41,7 +41,7 @@ export default function Page1() {
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "220px",
+                      maxHeight: "320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
@@ -74,7 +74,7 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                <div className="-mt-6">
+                {/* <div className="-mt-6">
                   <Image
                     src={gifImgUrl}
                     alt="Astronaut Gif"
@@ -82,7 +82,7 @@ export default function Page1() {
                     height={120}
                     unoptimized
                   />
-                </div>
+                </div> */}
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>

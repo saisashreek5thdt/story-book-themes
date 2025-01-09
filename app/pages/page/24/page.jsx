@@ -34,14 +34,14 @@ export default function Page1() {
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[520px] w-[550px] justify-center">
                 <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+                  className={`px-14 py-12 mb-16 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "220px",
+                      maxHeight: "340px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
@@ -67,7 +67,7 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                <div className="-mt-6">
+                {/* <div className="-mt-6">
                   <Image
                     src={gifImgUrl}
                     alt="Astronaut Gif"
@@ -75,7 +75,7 @@ export default function Page1() {
                     height={120}
                     unoptimized
                   />
-                </div>
+                </div> */}
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
