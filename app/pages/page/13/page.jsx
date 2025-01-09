@@ -10,7 +10,7 @@ export default function Page1() {
   //   src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
   // });
 
-  const imgURL1 = "/images/page12_13/image 2.jpg";
+  const imgURL1 = "/images/page13/13.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
