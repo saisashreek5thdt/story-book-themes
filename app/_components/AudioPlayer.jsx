@@ -80,7 +80,7 @@ export default function AudioPlayer() {
         {/* Play and Volume Control */}
         <div className="flex items-center justify-center gap-2">
           <div
-            className="w-8 h-8 bg-gray-400 flex justify-center items-center rounded-full cursor-pointer"
+            className="w-8 h-8 bg-gray-200 flex justify-center items-center rounded-full cursor-pointer"
             onClick={togglePlayPause}
           >
             {isPlaying ? <Pause /> : <Play />}
