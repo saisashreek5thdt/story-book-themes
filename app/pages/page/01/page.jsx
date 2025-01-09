@@ -10,6 +10,10 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
 
+  const imgURL2 = getCldImageUrl({
+    src: "NBT-Chandrayaan3/assets/pages/bf80rptamqi3qqw9szmp.png",
+  });
+
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
@@ -32,7 +36,7 @@ export default function Page1() {
         <div className="grid grid-cols-1 md:grid-cols-2 p-4">
           {/* Text Section */}
           <div className="cursor-pointer">
-            <div className="bg-white text-slate-700">
+            <div className="bgText text-white opacity-75 hover:opacity-100">
               <div className="flex flex-col items-center h-[520px] w-[550px] justify-center">
               <div
                   className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
@@ -42,7 +46,7 @@ export default function Page1() {
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight:"320px",
+                      maxHeight:"220px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
@@ -59,15 +63,6 @@ export default function Page1() {
                     Veer loves to hear these storie&apos;s. Veer&apos;s school
                     was soon to hold a workshop on Space.
                   </p>
-                  <div className="py-2">
-                    <Image
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={120}
-                      height={120}
-                      unoptimized
-                    />
-                  </div>
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -76,7 +71,15 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                
+                <div className="-mt-6">
+                    <Image
+                      src={gifImgUrl}
+                      alt="Astronaut Gif"
+                      width={120}
+                      height={120}
+                      unoptimized
+                    />
+                  </div>
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>

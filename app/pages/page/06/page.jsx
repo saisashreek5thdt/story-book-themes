@@ -77,9 +77,9 @@ export default function Page6() {
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
-              <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" />
+              {/* <hr className="w-full mt-[5px] h-[2px] opacity-70 bg-gray-300" /> */}
               {/* Use the AudioPlayer component */}
-              <AudioPlayer />
+              {/* <AudioPlayer /> */}
             </div>
           </div>
 

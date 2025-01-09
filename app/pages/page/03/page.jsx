@@ -33,37 +33,39 @@ export default function Page1() {
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[530px] w-[550px] justify-center ">
-                <div className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}>
                 <div
-                  className={`pr-2 ${
-                    isExpanded ? "overflow-auto" : "overflow-hidden"
-                  }`}
-                  style={{
-                    maxHeight:"330px",
-                    transition: "max-height 0.3s ease",
-                  }}
+                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
                 >
-                  <p>Dadaji - What is so special about the moon today?</p>
-                  <p className="py-4">
-                    Veer - Dadaji, this morning while cleaning my room, I saw
-                    the picture of a spacecraft on the moon on the front page of
-                    a newspaper.
-                  </p>
-                  <p className="py-4">
-                    There were also pictures of people celebrating. I want to
-                    know why this news was so important that day
-                  </p>
-                  <p className="py-4">
-                    Dadaji - Veer, it was a very great day in the history of
-                    Space research, as well as for India. Modiji has rightly
-                    named 23 August as National Space Day.
-                  </p>
-                  <p className="py-4">
-                    But first let me tell you a small story about the moon which
-                    I heard from my grandmother when I was young.
-                  </p>
+                  <div
+                    className={`pr-2 ${
+                      isExpanded ? "overflow-auto" : "overflow-hidden"
+                    }`}
+                    style={{
+                      maxHeight: "220px",
+                      transition: "max-height 0.3s ease",
+                    }}
+                  >
+                    <p>Dadaji - What is so special about the moon today?</p>
+                    <p className="py-4">
+                      Veer - Dadaji, this morning while cleaning my room, I saw
+                      the picture of a spacecraft on the moon on the front page
+                      of a newspaper.
+                    </p>
+                    <p className="py-4">
+                      There were also pictures of people celebrating. I want to
+                      know why this news was so important that day
+                    </p>
+                    <p className="py-4">
+                      Dadaji - Veer, it was a very great day in the history of
+                      Space research, as well as for India. Modiji has rightly
+                      named 23 August as National Space Day.
+                    </p>
+                    <p className="py-4">
+                      But first let me tell you a small story about the moon
+                      which I heard from my grandmother when I was young.
+                    </p>
 
-                  {/* <div className="py-2">
+                    {/* <div className="py-2">
                     <Image
                       src={gifImgUrl}
                       alt="Astronaut Gif"
@@ -78,6 +80,15 @@ export default function Page1() {
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
+                  <div className="-mt-2">
+                    <Image
+                      src={gifImgUrl}
+                      alt="Astronaut Gif"
+                      width={120}
+                      height={120}
+                      unoptimized
+                    />
+                  </div>
                 </div>
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
@@ -90,10 +101,7 @@ export default function Page1() {
             <div onClick={pageClickHander} className="rounded h-full w-full">
               <Image
                 src={imgURL1}
-
-
                 className="bg-white h-full w-full object-cover"
-
                 alt="Cover Image"
                 width={400}
                 height={1400}

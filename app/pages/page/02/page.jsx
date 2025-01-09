@@ -20,12 +20,10 @@ export default function Page1() {
     setIsExpanded((prev) => !prev);
   };
 
-
   const pageClickHander = (e) => {
     e.preventDefault();
     router.push("/pages/page/03");
   };
-
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -35,7 +33,6 @@ export default function Page1() {
           <div className="cursor-pointer  ">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
-
                 <div
                   className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
                 >
@@ -44,7 +41,7 @@ export default function Page1() {
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "330px",
+                      maxHeight: "220px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
@@ -68,16 +65,6 @@ export default function Page1() {
                       forthcoming workshop in the boy's school, and had seen his
                       excited preparations.
                     </p>
-                    {/* <div className="py-2">
->>>>>>> c646a6b0424d39e4981deef9a8dd3f387783fda6
-                    <Image
-                      className=""
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={50}
-                      height={50}
-                    />
-                  </div> */}
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -85,6 +72,15 @@ export default function Page1() {
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
+                  <div className="-mt-2">
+                    <Image
+                      src={gifImgUrl}
+                      alt="Astronaut Gif"
+                      width={120}
+                      height={120}
+                      unoptimized
+                    />
+                  </div>
                 </div>
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />

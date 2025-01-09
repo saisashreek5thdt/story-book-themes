@@ -33,7 +33,7 @@ export default function Page1() {
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
-              <div
+                <div
                   className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
                 >
                   <div
@@ -41,34 +41,38 @@ export default function Page1() {
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "320px",
+                      maxHeight: "220px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                  <p>
-                    When I lift it towards the moon, it completely covers it,
-                    and then I can't see the moon at all.
-                  </p>
-                  <p className="py-4">Saint - Do you know how high it is?</p>
+                    <p>
+                      When I lift it towards the moon, it completely covers it,
+                      and then I can't see the moon at all.
+                    </p>
+                    <p className="py-4">Saint - Do you know how high it is?</p>
 
-                  <p className="py-4">
-                    Princess - It's visible just above that tree in the palace
-                    garden.
-                  </p>
-                  <p className="py-4">
-                    I think it is just as high as that tree.
-                  </p>
+                    <p className="py-4">
+                      Princess - It's visible just above that tree in the palace
+                      garden.
+                    </p>
+                    <p className="py-4">
+                      I think it is just as high as that tree.
+                    </p>
 
-                  <p className="py-2">Saint - What does the moon look like?</p>
-                  <p className="py-2">Princess - It is white and bright like silver.</p>
-                  <div className="py-2">
-                    <Image
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={120}
-                      height={120}
-                    />
-                  </div>
+                    <p className="py-2">
+                      Saint - What does the moon look like?
+                    </p>
+                    <p className="py-2">
+                      Princess - It is white and bright like silver.
+                    </p>
+                    <div className="py-2">
+                      <Image
+                        src={gifImgUrl}
+                        alt="Astronaut Gif"
+                        width={120}
+                        height={120}
+                      />
+                    </div>
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -76,6 +80,15 @@ export default function Page1() {
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
+                  <div className="-mt-2">
+                    <Image
+                      src={gifImgUrl}
+                      alt="Astronaut Gif"
+                      width={120}
+                      height={120}
+                      unoptimized
+                    />
+                  </div>
                 </div>
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
