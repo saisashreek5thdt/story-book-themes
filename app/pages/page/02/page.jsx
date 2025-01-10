@@ -28,14 +28,12 @@ export default function Page1() {
   return (
     <div className="w-full min-h-screen bg-cover select-none">
       <div className="flex justify-center items-center min-h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 p-4 gap-0">
           {/* Text Section */}
           <div className="cursor-pointer">
-            <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
-                <div
-                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
-                >
+            <div className="bg-white text-slate-700 shadow-md">
+              <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[360px] md:w-[400px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px]  sm:p-0 md:p-6 xl:p-6 lg:p-6">
+                <div className="flex items-center justify-center flex-col gap-3 text-justify font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
                   <div
                     className={`pr-2 ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
@@ -46,25 +44,34 @@ export default function Page1() {
                     }}
                   >
                     <p>
-                      He was very interested in learning about India&apos;s Space Research Programme. The topic constantly played on his mind.
+                      He was very interested in learning about India&apos;s
+                      Space Research Programme. The topic constantly played on
+                      his mind.
                     </p>
                     <p className="py-4">
-                      One night, after completing his homework, packing his bag for school, and getting his uniform ready, Veer jumped into bed and snuggled against Dadaji.
+                      One night, after completing his homework, packing his bag
+                      for school, and getting his uniform ready, Veer jumped
+                      into bed and snuggled against Dadaji.
                     </p>
                     <p className="py-4">
-                      Veer - Dadaji, tell me a story about space, the moon, and astronauts.
+                      Veer - Dadaji, tell me a story about space, the moon, and
+                      astronauts.
                     </p>
                     <p className="py-2">
-                      Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school and had seen his excited preparations.
-                    </p>
+                      Dadaji's eyes twinkle. He had been expecting this question
+                      from Veer for quite some time now. He knew about the
+                      forthcoming workshop in the boy's school and had seen his
+                      excited preparations.             
+                    </p>
                   </div>
                   <button
                     onClick={toggleExpand}
-                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                    className="text-blue-500 hover:text-blue-700 focus:outline-none"
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
+                {/* Uncomment if needed */}
                 {/* <div className="-mt-2">
                   <Image
                     src={gifImgUrl}
@@ -81,11 +88,14 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
-            <div className="rounded h-full w-full" onClick={pageClickHander}>
+          <div className="cursor-pointer flex justify-center items-center">
+            <div
+              className="rounded h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full max-w-[550px] xl:bg-white "
+              onClick={pageClickHander}
+            >
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
+                className=" bg-white h-full w-full pt-0 xs:h-[100px] xs:w-[100px] sm:h-[380px] md:h-[360px] lg:h-[450px] xl:h-[500px] xl:w-[600px] object-cover"
                 alt="Cover Image"
                 width={800}
                 height={1400}
