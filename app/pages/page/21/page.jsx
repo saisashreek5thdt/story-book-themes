@@ -6,9 +6,11 @@ import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
+  // });
+
+  const imgURL1 = "/images/21.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -34,7 +36,7 @@ export default function Page1() {
             <div className="bg-white text-slate-700">
               <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
+                  className={`mb-16 xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
