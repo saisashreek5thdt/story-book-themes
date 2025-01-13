@@ -32,7 +32,7 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer  ">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center  sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
+              <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[360px] md:w-[400px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:ml-5  sm:p-0 md:p-6 xl:p-6 lg:p-6 ">
                 <div
                   className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:max-h-[270px]  xl:max-h-[460px] sm:pt-6  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                 >
@@ -41,7 +41,7 @@ export default function Page1() {
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "330px",
+                      // maxHeight: "330px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
@@ -89,11 +89,11 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer flex justify-center items-center h-[530px] w-full md:w-[550px]">
-            <div onClick={pageClickHander} className="rounded h-full w-full">
+          <div className="cursor-pointer flex justify-center items-center">
+            <div onClick={pageClickHander} className="rounded h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full max-w-[550px] xl:bg-white shadow-lg">
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px] object-cover"
+                className="bg-white h-full w-full pt-0 xs:h-[100px] xs:w-[100px] sm:h-[380px] md:h-[360px] lg:h-[450px] xl:h-[500px] xl:w-[600px] object-cover"
                 alt="Cover Image"
                 width={800}
                 height={1400}
