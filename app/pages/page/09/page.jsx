@@ -31,7 +31,7 @@ export default function Page1() {
         <div className="grid grid-cols-2 p-4">
           {/* Text Section */}
           <div className="cursor-pointer">
-            <div className="bg-white text-slate-700">
+            <div className="bg-white text-slate-700 rounded-l-lg shadow-md">
               <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                 <div
                   className={`xl:py-12 sm:pr-10 sm:max-h-[310px] md:max-h-[250px] lg:max-h-[280px] xl:max-h-[430px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -90,11 +90,11 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer flex justify-center items-center">
-            <div className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" onClick={pageClickHander}>
+          <div className="cursor-pointer flex justify-center items-center ">
+            <div className=" h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white h-full w-full object-cover"
+                className="bg-cover rounded-r-sm shadow-md bg-white h-full w-full object-cover"
                 alt="Cover Image"
                 width={800}
                 height={1400}
