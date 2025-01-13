@@ -58,7 +58,7 @@ export default function Page1() {
                 </div>
                 <button
                   onClick={toggleExpand}
-                  className="text-blue-500 hover:text-blue-700 focus:outline-none mb-10"
+                  className="text-blue-500 hover:text-blue-700 focus:outline-none  mb-10"
                 >
                   {isExpanded ? "Read Less" : "Read More"}
                 </button>
@@ -73,7 +73,7 @@ export default function Page1() {
           {/* Image Section */}
           <div className="cursor-pointer flex justify-center items-center">
             <div
-              className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white shadow-lg"
+              className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white"
               onClick={pageClickHander}
             >
               <Image
