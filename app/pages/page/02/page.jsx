@@ -26,7 +26,7 @@ export default function Page1() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center">
+    <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center force-landscape">
       <div className="flex justify-center items-center min-h-[80vh]">
         <div className="grid grid-cols-2 p-4">
           {/* Text Section */}

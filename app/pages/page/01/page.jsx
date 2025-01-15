@@ -1,15 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
+import PortraitLayout from "../../../_components/PortraitLayout"
 
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
+
+  const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsPortrait(window.innerHeight > window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const router = useRouter();
 
@@ -25,7 +37,11 @@ export default function Page1() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center">
+    <div>
+    {isPortrait ? (
+      <PortraitLayout />
+    ) : (
+    <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center force-landscape">
       {/* Main Content Container */}
       <div className="flex justify-center items-center min-h-[80vh]">
         <div className="grid grid-cols-2 p-4">
@@ -91,6 +107,8 @@ export default function Page1() {
           </div>
         </div>
       </div>
+    </div>
+      )};
     </div>
   );
 }

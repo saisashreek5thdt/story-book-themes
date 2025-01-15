@@ -46,3 +46,16 @@
 }
 
 
+/* Force landscape orientation */
+@media screen and (orientation: portrait) {
+  .force-landscape {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+
