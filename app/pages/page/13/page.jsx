@@ -1,30 +1,46 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
-import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
+import AudioPlayer from "../../../_components/AudioPlayer";
+import graphQLClient from "@/lib/graphql-client";
+import { GET_PAGE_BY_SLUG } from "@/lib/queries";
+
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
- {/* const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
-  });
-
-  const gifImgUrl = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
-  }); */}
-  const imgURL1="/image/13.jpg";
-
+  const [pageContent, setPageContent] = useState(null); // Store fetched content
+  const imgURL1 = "/image/13.jpg";
   const router = useRouter();
+
+  // Fetch content from Hygraph
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const { Page } = await graphQLClient.request(GET_PAGE_BY_SLUG, {
+          slug: "13", // Replace with dynamic slug if needed
+        });
+        setPageContent(Page);
+      } catch (error) {
+        console.error("Error fetching page content:", error);
+      }
+    };
+
+    fetchContent();
+  }, []);
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
   };
 
-  const pageClickHander = (e) => {
+  const pageClickHandler = (e) => {
     e.preventDefault();
     router.push("/pages/page/14");
   };
+
+  if (!pageContent) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -33,9 +49,9 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2 md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                 >
                   <div
                     className={`pr-2 ${
@@ -46,50 +62,23 @@ export default function Page1() {
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                    <p>
-                    Dadaji - Ok, tell me the name of the engine of the launch
-                    vehicle that made this mission successful.
-                  </p>
-                  <p className="py-4">
-                    Veer knew the answer. He had read it somewhere just
-                    recently. He answered promptly.
-                  </p>
-                  <p className="py-4">
-                    Dadaji - Shabash! It is a short form of Vikram Sarabhai, who
-                    played an important role in shaping India&apos;s space
-                    research and exploration endeavours. His significant
-                    contributions have left a profound mark on India&apos;s
-                    scientific programmes.
-                  </p>
-                  <p className="py-2">
-                    Veer - I am so proud of our scientists. What a great
-                    achievement!
-                  </p>
+                    {/* Render fetched content */}
+                    <div dangerouslySetInnerHTML={{ __html: pageContent.content }} />
                   </div>
                   <button
                     onClick={toggleExpand}
-                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                    className="text-blue-500 hover:text-blue-700 focus:outline-none"
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                {/* <div className="-mt-2">
-                  <Image
-                    src={gifImgUrl}
-                    alt="Astronaut Gif"
-                    width={120}
-                    height={120}
-                    unoptimized
-                  />
-                </div> */}
-                {/* Use the AudioPlayer component */}
+                {/* Audio Player */}
                 <AudioPlayer />
               </div>
             </div>
           </div>
-
-          {/* Image Section */}
-          <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
+ {/* Image Section */}
+ <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
             <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
