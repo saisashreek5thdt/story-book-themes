@@ -1,9 +1,5 @@
 "use client";
 import {
-  Repeat,
-  Play,
-  Pause,
-  Volume2,
   ArrowRight,
   ArrowLeft,
 } from "lucide-react";
