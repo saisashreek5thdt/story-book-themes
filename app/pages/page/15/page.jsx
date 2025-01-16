@@ -1,11 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
+import graphQLClient from "@/lib/graphql-client";
+import { GET_PAGE_BY_SLUG } from "@/lib/queries";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [pageContent, setPageContent] = useState(null);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
   });
@@ -14,30 +17,47 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
 
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const response = await graphQLClient.request(GET_PAGE_BY_SLUG, { slug: "15" });
+        console.log("Fetched data:", response); // Debugging
+        setPageContent(response.page);
+      } catch (error) {
+        console.error("Error fetching page content:", error); // Debugging
+      }
+    };
+    fetchContent();
+  }, []);
+
   const router = useRouter();
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
   };
 
-  const pageClickHander = (e) => {
+  const pageClickHandler = (e) => {
     e.preventDefault();
     router.push("/pages/page/16");
   };
 
+  if (!pageContent) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="w-full min-h-screen bg-cover select-none">
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 p-4">
+    <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center">
+      <div className="flex justify-center items-center min-h-[80vh]">
+        <div className="grid grid-cols-2 p-4">
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center sm:h-[400px] sm:w-[400px] md:h-[400px] md:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
+              <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                 <div
-                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-6 sm:max-h-[270px]  xl:max-h-[460px] md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
+                  className={`xl:py-12 sm:pr-10 sm:max-h-[310px] md:max-h-[250px] lg:max-h-[280px] xl:max-h-[430px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
-                    className={`pr-2 ${
+                    className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
@@ -65,10 +85,11 @@ export default function Page1() {
                       Veer - I can imagine how disappointing it must have been
                       for the whole team.
                     </p>
+                    <div dangerouslySetInnerHTML={{ __html: pageContent.content?.text }} />
                   </div>
                   <button
                     onClick={toggleExpand}
-                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                    className=" text-blue-500 hover:text-blue-700 focus:outline-none mb-20"
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
@@ -89,11 +110,11 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
-            <div className="rounded h-full w-full" onClick={pageClickHander}>
+          <div className="cursor-pointer flex justify-center items-center ">
+            <div className="h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" onClick={pageClickHandler}>
               <Image
                 src={imgURL1}
-                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
+                className="bg-cover rounded-r-sm shadow-md bg-white h-full w-full object-cover"
                 alt="Cover Image"
                 width={800}
                 height={1400}
