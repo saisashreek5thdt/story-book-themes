@@ -1,33 +1,36 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
-import {
-  ArrowRight,
-  ArrowLeft,
-} from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
-import PortraitLayout from "../../../_components/PortraitLayout"
+import PortraitLayout from "../../../_components/PortraitLayout";
 
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(false); // Initialize with default false
+
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
 
-  const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
+  const router = useRouter();
 
   useEffect(() => {
-    const handleResize = () => {
+    // Check for window object availability and set initial orientation
+    if (typeof window !== "undefined") {
       setIsPortrait(window.innerHeight > window.innerWidth);
-    };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+      const handleResize = () => {
+        setIsPortrait(window.innerHeight > window.innerWidth);
+      };
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
-
-  const router = useRouter();
 
   // Function to handle text expansion
   const toggleExpand = () => {
@@ -52,8 +55,6 @@ export default function Page1() {
               <ArrowLeft />
             </button>
 
-
-
             <div className="grid grid-cols-2 p-4">
               {/* Text Section */}
               <div className="cursor-pointer">
@@ -63,8 +64,9 @@ export default function Page1() {
                       className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                     >
                       <div
-                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
-                          }`}
+                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
+                          isExpanded ? "overflow-auto" : "overflow-hidden"
+                        }`}
                         style={{
                           maxHeight: "320px",
                           transition: "max-height 0.3s ease",
@@ -94,8 +96,6 @@ export default function Page1() {
 
                     {/* Audio Player Section */}
                     <AudioPlayer />
-
-
                   </div>
                 </div>
               </div>
@@ -117,12 +117,15 @@ export default function Page1() {
                 </div>
               </div>
             </div>
-            <button className="bg-white rounded-full p-2 text-black" onClick={pageClickHandler}>
+            <button
+              className="bg-white rounded-full p-2 text-black"
+              onClick={pageClickHandler}
+            >
               <ArrowRight />
             </button>
           </div>
         </div>
-      )};
+      )}
     </div>
   );
 }
