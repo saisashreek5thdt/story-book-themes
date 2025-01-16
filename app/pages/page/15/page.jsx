@@ -1,11 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
+import graphQLClient from "@/lib/graphql-client";
+import { GET_PAGE_BY_SLUG } from "@/lib/queries";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [pageContent, setPageContent] = useState(null);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
   });
@@ -14,16 +17,33 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
 
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const response = await graphQLClient.request(GET_PAGE_BY_SLUG, { slug: "15" });
+        console.log("Fetched data:", response); // Debugging
+        setPageContent(response.page);
+      } catch (error) {
+        console.error("Error fetching page content:", error); // Debugging
+      }
+    };
+    fetchContent();
+  }, []);
+
   const router = useRouter();
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
   };
 
-  const pageClickHander = (e) => {
+  const pageClickHandler = (e) => {
     e.preventDefault();
     router.push("/pages/page/16");
   };
+
+  if (!pageContent) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center">
@@ -65,6 +85,7 @@ export default function Page1() {
                       Veer - I can imagine how disappointing it must have been
                       for the whole team.
                     </p>
+                    <div dangerouslySetInnerHTML={{ __html: pageContent.content?.text }} />
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -90,7 +111,7 @@ export default function Page1() {
 
           {/* Image Section */}
           <div className="cursor-pointer flex justify-center items-center ">
-            <div className="h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" onClick={pageClickHander}>
+            <div className="h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" onClick={pageClickHandler}>
               <Image
                 src={imgURL1}
                 className="bg-cover rounded-r-sm shadow-md bg-white h-full w-full object-cover"
