@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import { ArrowRight, ArrowLeft } from "lucide-react";
@@ -9,24 +10,27 @@ import PortraitLayout from "../../../_components/PortraitLayout";
 
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(false); // Initialize with default false
+
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
 
-  const [isPortrait, setIsPortrait] = useState(
-    this.innerHeight > this.innerWidth
-  );
+  const router = useRouter();
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsPortrait(this.innerHeight > this.innerWidth);
-    };
+    // Check for window object availability and set initial orientation
+    if (typeof window !== "undefined") {
+      setIsPortrait(window.innerHeight > window.innerWidth);
 
-    this.addEventListener("resize", handleResize);
-    return () => this.removeEventListener("resize", handleResize);
+      const handleResize = () => {
+        setIsPortrait(window.innerHeight > window.innerWidth);
+      };
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
-
-  const router = useRouter();
 
   // Function to handle text expansion
   const toggleExpand = () => {
@@ -122,7 +126,6 @@ export default function Page1() {
           </div>
         </div>
       )}
-      ;
     </div>
   );
 }
