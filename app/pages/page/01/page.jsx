@@ -14,16 +14,16 @@ export default function Page1() {
   });
 
   const [isPortrait, setIsPortrait] = useState(
-    Window.innerHeight > Window.innerWidth
+    window.innerHeight > window.innerWidth
   );
 
   useEffect(() => {
     const handleResize = () => {
-      setIsPortrait(Window.innerHeight > Window.innerWidth);
+      setIsPortrait(window.innerHeight > window.innerWidth);
     };
 
-    Window.addEventListener("resize", handleResize);
-    return () => Window.removeEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const router = useRouter();
