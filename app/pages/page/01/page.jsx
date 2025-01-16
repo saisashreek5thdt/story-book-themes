@@ -1,14 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { getCldImageUrl } from "next-cloudinary";
-import {
-  ArrowRight,
-  ArrowLeft,
-} from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
-import PortraitLayout from "../../../_components/PortraitLayout"
+import PortraitLayout from "../../../_components/PortraitLayout";
 
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -16,15 +13,17 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
 
-  const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
+  const [isPortrait, setIsPortrait] = useState(
+    Window.innerHeight > Window.innerWidth
+  );
 
   useEffect(() => {
     const handleResize = () => {
-      setIsPortrait(window.innerHeight > window.innerWidth);
+      setIsPortrait(Window.innerHeight > Window.innerWidth);
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    Window.addEventListener("resize", handleResize);
+    return () => Window.removeEventListener("resize", handleResize);
   }, []);
 
   const router = useRouter();
@@ -52,8 +51,6 @@ export default function Page1() {
               <ArrowLeft />
             </button>
 
-
-
             <div className="grid grid-cols-2 p-4">
               {/* Text Section */}
               <div className="cursor-pointer">
@@ -63,25 +60,26 @@ export default function Page1() {
                       className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                     >
                       <div
-                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
-                          }`}
+                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
+                          isExpanded ? "overflow-auto" : "overflow-hidden"
+                        }`}
                         style={{
                           maxHeight: "320px",
                           transition: "max-height 0.3s ease",
                         }}
                       >
                         <p>
-                          Ten-year-old Veer is a very intelligent and curious boy.
-                          He and his Dadaji are great friends. They sleep in the
-                          same room. At bedtime, before falling asleep.
+                          Ten-year-old Veer is a very intelligent and curious
+                          boy. He and his Dadaji are great friends. They sleep
+                          in the same room. At bedtime, before falling asleep.
                         </p>
                         <p className="py-4">
-                          Dadaji makes up interesting stories on any topic that he
-                          feels little Veer should be aware of.
+                          Dadaji makes up interesting stories on any topic that
+                          he feels little Veer should be aware of.
                         </p>
                         <p className="py-2">
-                          Veer loves to hear these stories. Veer&apos;s school was
-                          soon to hold a workshop on Space.
+                          Veer loves to hear these stories. Veer&apos;s school
+                          was soon to hold a workshop on Space.
                         </p>
                       </div>
                       <button
@@ -94,8 +92,6 @@ export default function Page1() {
 
                     {/* Audio Player Section */}
                     <AudioPlayer />
-
-
                   </div>
                 </div>
               </div>
@@ -117,12 +113,16 @@ export default function Page1() {
                 </div>
               </div>
             </div>
-            <button className="bg-white rounded-full p-2 text-black" onClick={pageClickHandler}>
+            <button
+              className="bg-white rounded-full p-2 text-black"
+              onClick={pageClickHandler}
+            >
               <ArrowRight />
             </button>
           </div>
         </div>
-      )};
+      )}
+      ;
     </div>
   );
 }
