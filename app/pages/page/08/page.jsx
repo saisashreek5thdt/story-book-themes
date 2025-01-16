@@ -4,7 +4,6 @@ import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
-
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
@@ -14,13 +13,12 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
-  
+
+  const router = useRouter();
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
   };
-
-  const router = useRouter();
 
   const pageClickHander = (e) => {
     e.preventDefault();
@@ -34,52 +32,50 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
-              <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
+                <div
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2 sm:max-h-[270px]  xl:max-h-[460px] md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "335px",
+                      // maxHeight: "320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                  <p>
-                    Dadaji - Dadaji was expecting this question. He knew that
-                    Veer wanted to get into the root of the matter. He was
-                    prepared to answer.
+                    <p>
+                    Dadaji - Thousands of years before people could not even
+                    dream of space and aircrafts, ancient Indian wise men had
+                    compiled the Vimaanshastra, or the science of flying. Gods
+                    and kings often covered long distances on their flying
+                    chariots.
                   </p>
-                  <p className="py-1">
-                    Dadaji - For over fourteen hundred years, cruel invaders
-                    attacked our land, ruled it, and caused great harm.
+                  <p className="py-4">
+                    Veer - Yes, Dadaji. I remember! In the Ramayana too, Ravana
+                    kidnapped Sita and flew in his Pushpak Vimaan. But then, why
+                    did it take us so long to explore space?
                   </p>
-                  <p className="py-2">
-                    They destroyed the famous universities of Nalanda,
-                    Takshashila, and Vikramshila, where many of our precious
-                    texts were kept. That is how we lost our ancient knowledge.
-                  </p>
-                  <p className="py-0">
-                    Just imagine! Veer, the great mathematician Aryabhatt who
-                    discovered 'zero' was an esteemed teacher at Nalanda
-                    University.
-                  </p>
-                  <p className="py-2">
-                    The Chinese scholar Hiuen Tsang studied at Nalanda
-                    University and even became a teacher there, so great was its
-                    name and fame.
-                  </p>
-                
-                </div>
+
+                    
+                  </div>
                   <button
                     onClick={toggleExpand}
                     className=" text-blue-500 hover:text-blue-700 focus:outline-none"
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
-                  </div>
+                </div>
+                {/* <div className="-mt-2">
+                  <Image
+                    src={gifImgUrl}
+                    alt="Astronaut Gif"
+                    width={120}
+                    height={120}
+                    unoptimized
+                  />
+                </div> */}
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
@@ -87,15 +83,15 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer flex justify-center items-center h-[600px] w-full md:w-[550px]"
-           onClick={pageClickHander}>
-            <div className="rounded h-full w-full">
+          <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
+            <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="bg-cover h-[530px] w-[550px]"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
+                unoptimized
               />
             </div>
           </div>

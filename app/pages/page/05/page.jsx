@@ -14,11 +14,11 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
 
+  const router = useRouter();
+
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
   };
-
-  const router = useRouter();
 
   const pageClickHander = (e) => {
     e.preventDefault();
@@ -32,20 +32,20 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center h-[530px] w-[550px] justify-center">
-              <div
-                  className={`px-14 py-12 flex items-center justify-center flex-col gap-3 text-xl text-justify font-medium `}
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
+                <div
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2 sm:max-h-[270px]  xl:max-h-[460px]  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                 >
                   <div
                     className={`pr-2 ${
                       isExpanded ? "overflow-auto" : "overflow-hidden"
                     }`}
                     style={{
-                      maxHeight: "320px",
+                      // maxHeight: "320px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                  <p>
+                    <p>
                     When I lift it towards the moon, it completely covers it,
                     and then I can't see the moon at all.
                   </p>
@@ -59,16 +59,10 @@ export default function Page1() {
                     I think it is just as high as that tree.
                   </p>
 
-                  <p className="py-2">Saint - What does the moon look like?</p>
-                  <p className="py-2">Princess - It is white and bright like silver.</p>
-                  <div className="py-2">
-                    <Image
-                      src={gifImgUrl}
-                      alt="Astronaut Gif"
-                      width={120}
-                      height={120}
-                    />
-                  </div>
+                  <p className="py-2">
+                    Saint - What does the moon look like? Princess - It is white
+                    and bright like silver.
+                  </p>
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -77,6 +71,15 @@ export default function Page1() {
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
+                {/* <div className="-mt-2">
+                  <Image
+                    src={gifImgUrl}
+                    alt="Astronaut Gif"
+                    width={120}
+                    height={120}
+                    unoptimized
+                  />
+                </div> */}
                 {/* Use the AudioPlayer component */}
                 <AudioPlayer />
               </div>
@@ -84,11 +87,11 @@ export default function Page1() {
           </div>
 
           {/* Image Section */}
-          <div className="cursor-pointer flex justify-center items-center h-[530px] w-full">
-            <div onClick={pageClickHander} className="rounded h-full w-full">
+          <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
+            <div className="rounded h-full w-full" onClick={pageClickHander}>
               <Image
                 src={imgURL1}
-                className="h-full w-full object-cover"
+                className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
                 alt="Cover Image"
                 width={800}
                 height={1400}
