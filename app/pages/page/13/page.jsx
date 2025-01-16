@@ -1,28 +1,24 @@
 "use client";
 import { useState, useEffect } from "react";
-import { getCldImageUrl } from "next-cloudinary";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import AudioPlayer from "../../../_components/AudioPlayer";
+import Image from "next/image";
 import graphQLClient from "@/lib/graphql-client";
 import { GET_PAGE_BY_SLUG } from "@/lib/queries";
+import AudioPlayer from "../../../_components/AudioPlayer";
 
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [pageContent, setPageContent] = useState(null); // Store fetched content
-  const imgURL1 = "/image/13.jpg";
   const router = useRouter();
 
-  // Fetch content from Hygraph
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const { Page } = await graphQLClient.request(GET_PAGE_BY_SLUG, {
-          slug: "13", // Replace with dynamic slug if needed
-        });
-        setPageContent(Page);
+        const response = await graphQLClient.request(GET_PAGE_BY_SLUG, { slug: "13" });
+        console.log("Fetched data:", response); // Debugging
+        setPageContent(response.page);
       } catch (error) {
-        console.error("Error fetching page content:", error);
+        console.error("Error fetching page content:", error); // Debugging
       }
     };
 
@@ -41,6 +37,8 @@ export default function Page1() {
   if (!pageContent) {
     return <div>Loading...</div>;
   }
+
+  const imgURL1 = "/image/13.jpg" ; // Fallback image
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -63,7 +61,7 @@ export default function Page1() {
                     }}
                   >
                     {/* Render fetched content */}
-                    <div dangerouslySetInnerHTML={{ __html: pageContent.content }} />
+                    <div dangerouslySetInnerHTML={{ __html: pageContent.content?.text }} />
                   </div>
                   <button
                     onClick={toggleExpand}
@@ -77,9 +75,9 @@ export default function Page1() {
               </div>
             </div>
           </div>
- {/* Image Section */}
- <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
-            <div className="rounded h-full w-full" onClick={pageClickHander}>
+          {/* Image Section */}
+          <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
+            <div className="rounded h-full w-full" onClick={pageClickHandler}>
               <Image
                 src={imgURL1}
                 className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"

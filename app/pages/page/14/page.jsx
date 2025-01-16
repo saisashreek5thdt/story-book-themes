@@ -1,30 +1,44 @@
 "use client";
-import { useState } from "react";
-import { getCldImageUrl } from "next-cloudinary";
-import Image from "next/image";
-import AudioPlayer from "../../../_components/AudioPlayer";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import graphQLClient from "@/lib/graphql-client";
+import { GET_PAGE_BY_SLUG } from "@/lib/queries";
+import AudioPlayer from "../../../_components/AudioPlayer";
+
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
-  { /*const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
-  });
-
-  const gifImgUrl = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
-  }); */}
-  const imgURL1 = "/image/14.jpg";
-
+  const [pageContent, setPageContent] = useState(null); // Store fetched content
   const router = useRouter();
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      try {
+        const response = await graphQLClient.request(GET_PAGE_BY_SLUG, { slug: "13" });
+        console.log("Fetched data:", response); // Debugging
+        setPageContent(response.page);
+      } catch (error) {
+        console.error("Error fetching page content:", error); // Debugging
+      }
+    };
+
+    fetchContent();
+  }, []);
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
   };
 
-  const pageClickHander = (e) => {
+  const pageClickHandler = (e) => {
     e.preventDefault();
-    router.push("/pages/page/15");
+    router.push("/pages/page/15"); // Updated to match the desired behavior
   };
+
+  if (!pageContent) {
+    return <div>Loading...</div>;
+  }
+
+  const imgURL1 = "/image/14.jpg"; // Fallback image
 
   return (
     <div className="w-full min-h-screen bg-cover select-none">
@@ -33,9 +47,9 @@ export default function Page1() {
           {/* Text Section */}
           <div className="cursor-pointer">
             <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px]  xl:h-[530px] xl:w-[550px] justify-center">
+              <div className="flex flex-col items-center sm:h-[400px] xs:w-[200px] sm:w-[400px] xl:h-[530px] xl:w-[550px] justify-center">
                 <div
-                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2  md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
+                  className={`xl:px-14 xl:py-12 sm:pr-0 sm:pl-6 sm:pt-2 md:pl-6 md:pt-2 md:pr-0 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                 >
                   <div
                     className={`pr-2 ${
@@ -46,40 +60,17 @@ export default function Page1() {
                       transition: "max-height 0.3s ease",
                     }}
                   >
-                   <p>
-                  Dadaji - Veer, first of all you should know that Chandrayaan is
-                  the name of the Indian Lunar Exploration Program.
-                  </p>
-                  <p className="py-4">
-                  India launched Chandrayaan 2 in 2019. The lander was on the right
-              path, but unfortunately due to a small error, communication was
-              lost in the final 300 meters, and it could not make a smooth
-              landing on the surface of the moon. It crashed.
-                  </p>
-                  <p className="py-4">
-                  Veer - Dadaji, tell me a story about space, the moon, and astronauts.
-                  </p>
-                  <p className="py-2">
-                  Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school, and had seen his excited preparations.
-                  </p>
+                    {/* Render fetched content */}
+                    <div dangerouslySetInnerHTML={{ __html: pageContent.content?.text }} />
                   </div>
                   <button
                     onClick={toggleExpand}
-                    className=" text-blue-500 hover:text-blue-700 focus:outline-none"
+                    className="text-blue-500 hover:text-blue-700 focus:outline-none"
                   >
                     {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
-                {/* <div className="-mt-2">
-                  <Image
-                    src={gifImgUrl}
-                    alt="Astronaut Gif"
-                    width={120}
-                    height={120}
-                    unoptimized
-                  />
-                </div> */}
-                {/* Use the AudioPlayer component */}
+                {/* Audio Player */}
                 <AudioPlayer />
               </div>
             </div>
@@ -87,7 +78,7 @@ export default function Page1() {
 
           {/* Image Section */}
           <div className="cursor-pointer flex justify-center items-center h-[520px] w-full md:w-[550px]">
-            <div className="rounded h-full w-full" onClick={pageClickHander}>
+            <div className="rounded h-full w-full" onClick={pageClickHandler}>
               <Image
                 src={imgURL1}
                 className="bg-cover bg-white sm:h-[400px] sm:w-[450px] xl:h-[530px] xl:w-[550px]"
