@@ -15,7 +15,7 @@ export default function TranslateText(props){
                      "Content-Type": "application/json",
                    },
                    body: JSON.stringify({
-                     q: [object[0].translatedtext],
+                     q: [object[0,1].translatedtext],
                      target: targetLanguage,
                    }),
                  }
