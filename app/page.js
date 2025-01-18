@@ -56,7 +56,7 @@ export default function Home() {
         <div className="flex justify-center items-center min-h-screen">
           <div className="grid grid-cols-2 p-4 ">
             {/* Left Image with Text */}
-            <div className="rounded-lg">
+            <div className="rounded-lg ">
               <Image
                 src={coverImg2}
                 alt="Cover Image"
