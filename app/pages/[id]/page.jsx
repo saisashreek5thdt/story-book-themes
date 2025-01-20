@@ -66,7 +66,7 @@ export default function Page({ pageData }) {
         const newId = direction === "next" ? currentId + 1 : currentId - 1;
 
         if (newId >= 1 && newId <= 27) {
-            router.push(`/pages/${newId.toString().padStart(2, "0")}`);
+            router.push(`/pages/page${newId.toString().padStart(2, "0")}`);
         }
     };
 
@@ -112,7 +112,7 @@ export default function Page({ pageData }) {
                                                     transition: "max-height 0.3s ease",
                                                 }}
                                             >
-                                               <p
+                                                <p
                                                     dangerouslySetInnerHTML={{
                                                         __html: pageData.content.text,
                                                     }}
@@ -162,35 +162,44 @@ export default function Page({ pageData }) {
                         <div className="grid grid-cols-2 p-4">
                             {/* Text Section */}
                             <div className="cursor-pointer">
-                                <div className="bgText text-black">
-                                    <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
-                                        <div
-                                            className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
-                                        >
+                                {/* <div className="bgText text-black"> */}
+                                <div className="relative w-full h-full">
+                                    <Image
+                                        src={pageData.backgroundUrl || "https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/bgImages/yyyvwswl6q8qxvysdvek"}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        alt="Background Image"
+                                    />
+                                    <div className="absolute inset-0 text-black">
+                                        <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                                             <div
-                                                className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
-                                                    }`}
-                                                style={{
-                                                    maxHeight: "320px",
-                                                    transition: "max-height 0.3s ease",
-                                                }}
+                                                className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                                             >
-                                                <p
-                                                    dangerouslySetInnerHTML={{
-                                                        __html: pageData.content.text,
+                                                <div
+                                                    className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
+                                                        }`}
+                                                    style={{
+                                                        maxHeight: "320px",
+                                                        transition: "max-height 0.3s ease",
                                                     }}
-                                                />
+                                                >
+                                                    <p
+                                                        dangerouslySetInnerHTML={{
+                                                            __html: pageData.content.text,
+                                                        }}
+                                                    />
+                                                </div>
+                                                <button
+                                                    onClick={toggleExpand}
+                                                    className="text-black hover:text-cyan-700 focus:outline-none mb-10"
+                                                >
+                                                    {isExpanded ? "Read Less" : "Read More"}
+                                                </button>
                                             </div>
-                                            <button
-                                                onClick={toggleExpand}
-                                                className="text-black hover:text-cyan-700 focus:outline-none mb-10"
-                                            >
-                                                {isExpanded ? "Read Less" : "Read More"}
-                                            </button>
-                                        </div>
 
-                                        {/* Audio Player Section */}
-                                        <AudioPlayer />
+                                            {/* Audio Player Section */}
+                                            <AudioPlayer />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
