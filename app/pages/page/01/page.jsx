@@ -94,7 +94,7 @@ export default function Page1() {
           <div className="grid grid-cols-1 md:grid-cols-2 p-4 gap-0">
             {/* Text Section */}
             <div className="cursor-pointer">
-              <div className="bg-white text-slate-700 shadow-md">
+              <div className=" text-slate-700 shadow-md">
                 <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[360px] md:w-[400px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] sm:p-0 md:p-6 xl:p-6 lg:p-6">
                   <div className="flex items-center justify-center flex-col gap-3 text-justify font-medium text-sm sm:text-base lg:text-lg xl:text-xl">
                   {/* {isEnglish ? (
