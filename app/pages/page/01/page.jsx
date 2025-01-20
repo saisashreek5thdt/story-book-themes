@@ -78,17 +78,17 @@ export default function Page1() {
                         }}
                       >
                         <p>
-                          Ten-year-old Veer is a very intelligent and curious boy.
-                          He and his Dadaji are great friends. They sleep in the
-                          same room. At bedtime, before falling asleep.
+                          Ten-year-old Veer is a very intelligent and curious
+                          boy. He and his Dadaji are great friends. They sleep
+                          in the same room. At bedtime, before falling asleep.
                         </p>
                         <p className="py-4">
-                          Dadaji makes up interesting stories on any topic that he
-                          feels little Veer should be aware of.
+                          Dadaji makes up interesting stories on any topic that
+                          he feels little Veer should be aware of.
                         </p>
                         <p className="py-2">
-                          Veer loves to hear these stories. Veer&apos;s school was
-                          soon to hold a workshop on Space.
+                          Veer loves to hear these stories. Veer&apos;s school
+                          was soon to hold a workshop on Space.
                         </p>
                       </div>
                       <button
