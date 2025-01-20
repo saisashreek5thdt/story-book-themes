@@ -70,12 +70,6 @@ export default function Page1() {
               lost in the final 300 meters, and it could not make a smooth
               landing on the surface of the moon. It crashed.
                   </p>
-                  <p className="py-4">
-                  Veer - Dadaji, tell me a story about space, the moon, and astronauts.
-                  </p>
-                  <p className="py-2">
-                  Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school, and had seen his excited preparations.
-                  </p>
                       </div>
                     ) : (
                       <TranslateText
