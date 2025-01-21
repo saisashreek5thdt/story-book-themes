@@ -5,13 +5,14 @@
 @tailwind utilities;
 
 @layer base {
+  
   body {
     font-family: "Exo 2";
     overflow: hidden;
   }
 
   .bgText{
-    background-image: url("https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/pages/bf80rptamqi3qqw9szmp.png");
+    background-image: url("https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/bgImages/yyyvwswl6q8qxvysdvek");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -43,3 +44,18 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; /* Darker color on hover */
 }
+
+
+/* Force landscape orientation */
+@media screen and (orientation: portrait) {
+  .force-landscape {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+
