@@ -15,13 +15,15 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
-  });
-
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
+  // });
+  const imgURL1 = "/images/21.jpg";
+  
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
   const router = useRouter();
 
   const toggleExpand = () => {
@@ -61,17 +63,18 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                         <p className="py-2">
-                      Veer listened in wonder as Dadaji continued.
+                        <p>
+                      Veer - Last Diwali I saw him on TV standing and talking
+                      with our soldiers at some snowy place.
+                    </p>
+                    <p className="py-4">
+                      Dadaji- Yes, That's his greatness.He never misses a chance
+                      to be with the Armed Forces and celebrate Diwali with
+                      them.
                     </p>
                     <p className="py-2">
-                      Dadaji-After his return, he himself went to the space
-                      centre in Bangalore and congratulated all the scientists
-                      personally.
-                    </p>
-                    <p className="py-2">
-                      This kind of motivation boosts the morale of our young
-                      scientists and inspires them to achieve new heights.
+                      He always shows utmost faith in their morale with his
+                      presence.
                     </p>
                       </div>
                     ) : (

@@ -15,10 +15,10 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
-  });
-
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
+  // });
+  const imgURL1 = "/images/24.jpg";
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
@@ -62,19 +62,15 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                         <p>
-                      Dadaji - I also loved his speech when he said-
-                      "Chandrayaan Maha Abhiyan is a success not only for India
-                      but for the entire humanity."  
+                        <p>Veer - Are we going to launch another mission?</p>
+                    <p className="py-2">
+                      Dadaji: Certainly, Veer. India is going to launch
+                      "Gaganyaan" in 2024-2025 which is an Indian crewed orbital
+                      spacecraft that will take our astronauts to space.
                     </p>
                     <p className="py-2">
-                    It shows the world that
-                      India truly believes in Vasudhaiva Kutumbakam-meaning One
-                      Earth, One Family, One Future.
-                    </p>
-                    <p className="py-2">
-                    That was the theme of
-                    India's G20 Presidency held in New Delhi in September 23.
+                      It is going to be a huge step in the field of space
+                      exploration.
                     </p>
                       </div>
                     ) : (

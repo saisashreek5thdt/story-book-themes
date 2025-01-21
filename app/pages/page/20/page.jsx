@@ -15,9 +15,10 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
+  // });
+  const imgURL1 = "/images/20.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -61,19 +62,17 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                       <p>
-                      Dadaji - Veer, Shri Modi said, "THe spot, on the lunar
-                      surface where the Chandrayaan-2 left its footprints in
-                      2019 will be Know as &apos;Tiranga Point&apos;. This will
-                      be an inspiration for every effort made in India.
-                    </p>
-                    <p className="py-4">
-                      It will remind us that any failure is not final.
+                         <p className="py-2">
+                      Veer listened in wonder as Dadaji continued.
                     </p>
                     <p className="py-2">
-                      Veer - He is great. Dadaji, I remember Modi ji proudly
-                      holding the Indian flag and waving it on TV when
-                      Chandrayaan 3 landed successfully
+                      Dadaji-After his return, he himself went to the space
+                      centre in Bangalore and congratulated all the scientists
+                      personally.
+                    </p>
+                    <p className="py-2">
+                      This kind of motivation boosts the morale of our young
+                      scientists and inspires them to achieve new heights.
                     </p>
                       </div>
                     ) : (

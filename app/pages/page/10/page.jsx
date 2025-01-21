@@ -16,7 +16,10 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const imgURL1 = "/images/page10_11/image 2.jpg";
+  // const imgURL1 = "/images/page10_11/image 2.jpg";
+  const imgURL1 = getCldImageUrl({
+    src: "NBT-Chandrayaan3/assets/pages/jwvbo0kh5u7i7ykbliqo.png",
+  });
 
   const router = useRouter();
 

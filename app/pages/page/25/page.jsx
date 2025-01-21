@@ -15,13 +15,12 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
-  });
+  
+ const imgURL1 = "/images/page26/26.jpg";
 
-  const gifImgUrl = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
-  });
+ const gifImgUrl = getCldImageUrl({
+   src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
+ });
 
   const router = useRouter();
 
@@ -62,15 +61,31 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                        <p>Veer - Are we going to launch another mission?</p>
-                    <p className="py-2">
-                      Dadaji: Certainly, Veer. India is going to launch
-                      "Gaganyaan" in 2024-2025 which is an Indian crewed orbital
-                      spacecraft that will take our astronauts to space.
+                         <p>
+                      Veer - Dadaji, I also want to go to a space centre to see
+                      the spacecraft and learn about India's space programme.
+                      Dadaji - Good idea. In your next holidays, we will go to
+                      the space centre at Sriharikota and the ISRO Headquarters
+                      at Bengaluru. We can also go to Hyderabad to see the Space
+                      Science Museum. Veer Dadaji, what is the full form of
+                      ISRO? Dadaji ISRO stands for Indian Space Research
+                      Organistion. It works to reap the benefits of outer space
+                      for India and mankind.
+                    </p>
+                    <p className="py-4">
+                      One night, after completing his homework, packing his bag
+                      for school, and getting his uniform ready, Veer jumped
+                      into bed and snuggled against Dadaji.
+                    </p>
+                    <p className="py-4">
+                      Veer - Dadaji, tell me a story about space, the moon, and
+                      astronauts.
                     </p>
                     <p className="py-2">
-                      It is going to be a huge step in the field of space
-                      exploration.
+                      Dadaji's eyes twinkle. He had been expecting this question
+                      from Veer for quite some time now. He knew about the
+                      forthcoming workshop in the boy's school, and had seen his
+                      excited preparations.
                     </p>
                       </div>
                     ) : (

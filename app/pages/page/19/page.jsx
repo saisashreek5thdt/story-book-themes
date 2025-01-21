@@ -16,13 +16,13 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/v643fvmrho3svwsu0ktj",
+    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
   });
+  // const imgURL1 = "/images/20.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
-
   const router = useRouter();
 
   const toggleExpand = () => {
@@ -63,22 +63,18 @@ export default function Page1() {
                         }}
                       >
                        <p>
-                      Dadaji understood that Veer had asked this question to
-                      impress him about his knowledge. So he played along.
+                      Dadaji - Veer, Shri Modi said, "THe spot, on the lunar
+                      surface where the Chandrayaan-2 left its footprints in
+                      2019 will be Know as &apos;Tiranga Point&apos;. This will
+                      be an inspiration for every effort made in India.
                     </p>
                     <p className="py-4">
-                      Dadaji - You tell me. I don&apos;t remember exactly.
+                      It will remind us that any failure is not final.
                     </p>
                     <p className="py-2">
-                      Veer - It is known as the 'Tiranga point' where
-                      Chandrayaan 2 crash landed, and 'Shiv Shakti Point' where
-                      Chandrayaan 3 successfully landed.
-                    </p>
-                    <p className="py-2">
-                      Dadaji - Brilliant! Veer. Everything which our country
-                      does has a scientific and spiritual dimension to it. Shri
-                      Modi has named these two points himself after the success
-                      of Chandrayaan 3.
+                      Veer - He is great. Dadaji, I remember Modi ji proudly
+                      holding the Indian flag and waving it on TV when
+                      Chandrayaan 3 landed successfully
                     </p>
                       </div>
                     ) : (

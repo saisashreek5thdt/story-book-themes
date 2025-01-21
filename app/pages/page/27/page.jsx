@@ -15,12 +15,11 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const imgURL1 = "/images/page27/27.jpg";
+  const imgURL1 = "/images/page28/28.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
-
   const router = useRouter();
 
   const toggleExpand = () => {
@@ -60,20 +59,14 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                       <p>
-                      Suddenly, Veer jumped out of the bed and brought something
-                      from his study table.
+                        <p>
+                      Veer was feeling sleepy now. His eyelids had begun to
+                      droop and he stifled a yawn.
                     </p>
                     <p className="py-4">
-                      Veer - Dadaji, I want to show you something. I have made a
-                      small poster for our school project on ISRO. I want to
-                      post it to our honourable Prime Minister.
+                      Veer - Alright, Dadaji. Goodnight and sweet dreams.
                     </p>
-                    <p className="py-4">
-                      Dadaji - This is so beautiful! You know, Veer, Modi ji
-                      loves to hear from little children. He will really
-                      appreciate this poster.
-                    </p>
+                    <p className="py-4">Dadaji - Goodnight, my Chanda!</p>
                     <p className="py-2">
                       Dadaji's eyes twinkle. He had been expecting this question
                       from Veer for quite some time now. He knew about the

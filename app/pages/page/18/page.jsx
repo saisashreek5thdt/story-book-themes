@@ -16,8 +16,11 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+    src: "NBT-Chandrayaan3/assets/pages/v643fvmrho3svwsu0ktj",
   });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
+  // });
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -62,25 +65,23 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                         
-<p>
-                      Veer - What will this rover do on the moon? Nobody stays
-                      there. How will it help us?
+                       <p>
+                      Dadaji understood that Veer had asked this question to
+                      impress him about his knowledge. So he played along.
                     </p>
                     <p className="py-4">
-                      Dadaji - Ha! Ha! Ha! You are wrong, little boy. Like
-                      Chandrayaan 1 gave valuable inputs about the possibility
-                      of water on the moon, this mission will explore the
-                      properties of the moon&apos;s surface, its soil, gases,
-                      metals and minerals.
+                      Dadaji - You tell me. I don&apos;t remember exactly.
                     </p>
                     <p className="py-2">
-                      Veer smiled sheepishly. He wanted to show Dadaji that he
-                      was not a little boy. He knew a lot!
+                      Veer - It is known as the 'Tiranga point' where
+                      Chandrayaan 2 crash landed, and 'Shiv Shakti Point' where
+                      Chandrayaan 3 successfully landed.
                     </p>
                     <p className="py-2">
-                      Veer - Dadaji, do you know the names of the places where
-                      Chandrayaan 2 and 3 landed on the moon?
+                      Dadaji - Brilliant! Veer. Everything which our country
+                      does has a scientific and spiritual dimension to it. Shri
+                      Modi has named these two points himself after the success
+                      of Chandrayaan 3.
                     </p>
                       </div>
                     ) : (

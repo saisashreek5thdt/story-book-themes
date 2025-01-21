@@ -15,12 +15,11 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  
- const imgURL1 = "/images/page26/26.jpg";
+  const imgURL1 = "/images/page27/27.jpg";
 
- const gifImgUrl = getCldImageUrl({
-   src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
- });
+  const gifImgUrl = getCldImageUrl({
+    src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
+  });
 
   const router = useRouter();
 
@@ -61,25 +60,19 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                         <p>
-                      Veer - Dadaji, I also want to go to a space centre to see
-                      the spacecraft and learn about India's space programme.
-                      Dadaji - Good idea. In your next holidays, we will go to
-                      the space centre at Sriharikota and the ISRO Headquarters
-                      at Bengaluru. We can also go to Hyderabad to see the Space
-                      Science Museum. Veer Dadaji, what is the full form of
-                      ISRO? Dadaji ISRO stands for Indian Space Research
-                      Organistion. It works to reap the benefits of outer space
-                      for India and mankind.
+                       <p>
+                      Suddenly, Veer jumped out of the bed and brought something
+                      from his study table.
                     </p>
                     <p className="py-4">
-                      One night, after completing his homework, packing his bag
-                      for school, and getting his uniform ready, Veer jumped
-                      into bed and snuggled against Dadaji.
+                      Veer - Dadaji, I want to show you something. I have made a
+                      small poster for our school project on ISRO. I want to
+                      post it to our honourable Prime Minister.
                     </p>
                     <p className="py-4">
-                      Veer - Dadaji, tell me a story about space, the moon, and
-                      astronauts.
+                      Dadaji - This is so beautiful! You know, Veer, Modi ji
+                      loves to hear from little children. He will really
+                      appreciate this poster.
                     </p>
                     <p className="py-2">
                       Dadaji's eyes twinkle. He had been expecting this question

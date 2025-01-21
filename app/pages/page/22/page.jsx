@@ -15,14 +15,15 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
+  // });
 
+  const imgURL1 = "/images/22.jpg";
+  
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
-
   const router = useRouter();
 
   const toggleExpand = () => {
@@ -63,17 +64,19 @@ export default function Page1() {
                         }}
                       >
                         <p>
-                      Veer - Last Diwali I saw him on TV standing and talking
-                      with our soldiers at some snowy place.
-                    </p>
-                    <p className="py-4">
-                      Dadaji- Yes, That's his greatness.He never misses a chance
-                      to be with the Armed Forces and celebrate Diwali with
-                      them.
+                      Veer - Modi ji is my role model. His speech after the
+                      success of the Chandrayaan 3 mission was very impressive.
+                      Some day, I too want to become like him.
                     </p>
                     <p className="py-2">
-                      He always shows utmost faith in their morale with his
-                      presence.
+                      Dadaji - Yes, Veer. Modi ji has taken India to new heights
+                      and become a global leader. He is the Prime Minister of
+                      1.45 billion people and carries their dreams and hopes.
+                    </p>
+                    <p className="py-2">
+                      He encourages the youth of today. The "Jai Anusandhan"
+                      slogan was first raised by PM Modi in January 2019 while
+                      imploring scientists to encourage research among students.
                     </p>
                       </div>
                     ) : (

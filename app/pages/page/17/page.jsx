@@ -16,12 +16,17 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/fgImages/page11/ibq1kx9fqjricropqfde",
+    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
+
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/v643fvmrho3svwsu0ktj",
+  // });
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
   const router = useRouter();
 
   const toggleExpand = () => {
@@ -61,26 +66,25 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                        <p>
-                      Dadaji - No Veer. Our scientists did not sit and sulk at
-                      the setback. That same day they decided to correct the
-                      errors and planned Chandrayaan3.
+                         
+<p>
+                      Veer - What will this rover do on the moon? Nobody stays
+                      there. How will it help us?
                     </p>
                     <p className="py-4">
-                      They learnt from their mistakes and made a failure-proof
-                      model for the next mission and within four years succeeded
-                      in their mission.
+                      Dadaji - Ha! Ha! Ha! You are wrong, little boy. Like
+                      Chandrayaan 1 gave valuable inputs about the possibility
+                      of water on the moon, this mission will explore the
+                      properties of the moon&apos;s surface, its soil, gases,
+                      metals and minerals.
                     </p>
                     <p className="py-2">
-                      We are proud of our scientists and of our leadership in
-                      showing faith in the scientific community. Over 100 women
-                      scientists were also involved in the mission and were in
-                      the control room at the time of the launch and during the
-                      landing on August 23.
+                      Veer smiled sheepishly. He wanted to show Dadaji that he
+                      was not a little boy. He knew a lot!
                     </p>
                     <p className="py-2">
-                      Prime Minister Narendra Modi met and congratulated each
-                      one of them.
+                      Veer - Dadaji, do you know the names of the places where
+                      Chandrayaan 2 and 3 landed on the moon?
                     </p>
                       </div>
                     ) : (

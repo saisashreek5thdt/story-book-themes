@@ -15,13 +15,15 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/philu0rdlaeruw76llkg",
+  // });
+  const imgURL1 = "/images/23.jpg";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
   const router = useRouter();
 
   const toggleExpand = () => {
@@ -61,20 +63,19 @@ export default function Page1() {
                           transition: "max-height 0.3s ease",
                         }}
                       >
-                        <p>
-                      Veer - Modi ji is my role model. His speech after the
-                      success of the Chandrayaan 3 mission was very impressive.
-                      Some day, I too want to become like him.
+                         <p>
+                      Dadaji - I also loved his speech when he said-
+                      "Chandrayaan Maha Abhiyan is a success not only for India
+                      but for the entire humanity."  
                     </p>
                     <p className="py-2">
-                      Dadaji - Yes, Veer. Modi ji has taken India to new heights
-                      and become a global leader. He is the Prime Minister of
-                      1.45 billion people and carries their dreams and hopes.
+                    It shows the world that
+                      India truly believes in Vasudhaiva Kutumbakam-meaning One
+                      Earth, One Family, One Future.
                     </p>
                     <p className="py-2">
-                      He encourages the youth of today. The "Jai Anusandhan"
-                      slogan was first raised by PM Modi in January 2019 while
-                      imploring scientists to encourage research among students.
+                    That was the theme of
+                    India's G20 Presidency held in New Delhi in September 23.
                     </p>
                       </div>
                     ) : (

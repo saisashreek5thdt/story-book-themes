@@ -15,8 +15,11 @@ export default function Page1() {
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/fgImages/page11/ibq1kx9fqjricropqfde",
+  // });
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/fgImages/page11/ibq1kx9fqjricropqfde",
+    src: "https://res.cloudinary.com/dydh2rfnk/image/upload/v1734601267/NBT-Chandrayaan3/assets/bgImages/page10/qylalkxzceli2q7jaloo.png",
   });
 
   const gifImgUrl = getCldImageUrl({
