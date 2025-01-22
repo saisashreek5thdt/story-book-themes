@@ -48,57 +48,53 @@ export default function AudioPlayer() {
   };
 
   return (
-    <>
-      <hr 
-        className="sm:w-[320px] md:w-[350px] lg:w-[450px] xl:w-[520px] xs:w-[100px]  sm:mt-4 md:-mt-5 lg:mt-28  xl:-mt-4 h-[2px] opacity-70 bg-gray-300" 
+    
+    <div className="xl:h-20 xl:w-[550px] flex flex-col items-center justify-center sm:gap-0 sm:h-40 xl:gap-4 sm:w-[100px] md:w-[100%]">
+      {/* Audio Element */}
+      <audio
+        ref={audioRef}
+        src="https://res.cloudinary.com/dydh2rfnk/video/upload/v1735797748/NBT-Chandrayaan3/audios/obaczxdevotey9zxrrxt.mp3"
+        onLoadedMetadata={handleLoadedMetadata}
+        onTimeUpdate={handleTimeUpdate}
       />
-      
-      <div 
-        className="sticky xl:h-16 xl:w-[450px] flex flex-col items-center justify-center sm:mt-5 xl:mt-3 md:mt-3 md:ml-5 xl:ml-6 sm:h-40  sm:w-[100px] md:w-[100%]" 
-      >
-        <audio
-          ref={audioRef}
-          src="https://res.cloudinary.com/dydh2rfnk/video/upload/v1735797748/NBT-Chandrayaan3/audios/obaczxdevotey9zxrrxt.mp3"
-          onLoadedMetadata={handleLoadedMetadata}
-          onTimeUpdate={handleTimeUpdate}
-        />
 
-        <div className="flex sm:gap-5 lg:gap:7 xs:gap-10">
-          <div className="flex items-center justify-center gap-2 sm:-ml-10  sm:text-sm lg:text-lg  xl:text-xl">
-            <p>{formatTime(currentTime)}</p>
-            <input
-              type="range"
-              className="xl:w-48 lg:w-28 sm:w-[80px] h-2 bg-gray-300 rounded-lg cursor-pointer accent-blue-500  xs:w-[7vw]"
-              min={0}
-              max={100}
-              value={duration > 0 ? (currentTime / duration) * 100 : 0}
-              onChange={handleAudioProgressChange}
-            />
-            <p>{formatTime(duration)}</p>
-            <div>
-              <Repeat />
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center gap-2 sm:text-sm lg:text-lg xl:text-xl">
-            <div 
-              className="sm:w-6 sm:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8  bg-gray-300 flex justify-center items-center rounded-full cursor-pointer" 
-              onClick={togglePlayPause}
-            >
-              {isPlaying ? <Pause /> : <Play />}
-            </div>
-            <Volume2 />
-            <input
-              type="range"
-              className="sm:w-12 lg:w-14 xl:w-16 h-2 bg-gray-300 rounded-lg cursor-pointer accent-green-500"
-              min={0}
-              max={100}
-              value={volume}
-              onChange={handleVolumeChange}
-            />
+      <div className="flex gap-20 sm:gap-10 xs:gap-10">
+        {/* Audio Progress Slider */}
+        <div className="flex items-center justify-center gap-2">
+          <p>{formatTime(currentTime)}</p>
+          <input
+            type="range"
+            className="w-40 h-2 bg-gray-300 rounded-lg cursor-pointer accent-blue-500 sm:w-[7vw] xs:w-[7vw]"
+            min={0}
+            max={100}
+            value={duration > 0 ? (currentTime / duration) * 100 : 0} // Ensure value is valid
+            onChange={handleAudioProgressChange}
+          />
+          <p>{formatTime(duration)}</p>
+          <div>
+            <Repeat />
           </div>
         </div>
+
+        {/* Play and Volume Control */}
+        <div className="flex items-center justify-center gap-2">
+          <div
+            className="w-8 h-8 bg-gray-400 flex justify-center items-center rounded-full cursor-pointer"
+            onClick={togglePlayPause}
+          >
+            {isPlaying ? <Pause /> : <Play />}
+          </div>
+          <Volume2 />
+          <input
+            type="range"
+            className="w-16 h-2 bg-gray-300 rounded-lg cursor-pointer accent-green-500 ]"
+            min={0}
+            max={100}
+            value={volume}
+            onChange={handleVolumeChange}
+          />
+        </div>
       </div>
-    </>
+    </div>
   );
 }

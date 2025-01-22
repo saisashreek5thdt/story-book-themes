@@ -12,7 +12,7 @@
   }
 
   .bgText{
-    background-image: url("https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/pages/bf80rptamqi3qqw9szmp.png");
+    background-image: url("https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/bgImages/yyyvwswl6q8qxvysdvek");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -24,6 +24,10 @@
   }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2f0de0e5d9d0807323b830440863270982cc86cb
 /* Reduce scrollbar width */
 ::-webkit-scrollbar {
   width: 1px; /* Set the width of the scrollbar */
@@ -43,6 +47,7 @@
 /* Hover effect */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; /* Darker color on hover */
+<<<<<<< HEAD
 }
 
 
@@ -59,3 +64,6 @@
   }
 }
 
+=======
+}
+>>>>>>> 2f0de0e5d9d0807323b830440863270982cc86cb
