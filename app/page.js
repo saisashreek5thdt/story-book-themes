@@ -3,16 +3,6 @@
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-<<<<<<< HEAD
-import {useEffect, useState } from "react";
-// import CoverPage from "./_components/page/CoverPageText.js";
-import PortraitCover from "../app/_components/PortraitCover.js";
-export default function Home() {
-  const [isPortrait, setIsPortrait] = useState(false); 
-  // const [showDropdown, setShowDropdown] = useState(false);
-  // const [handleLanguageChange, sethandlelanguagechange] = useState("en");
-  // const [isEnglish, setIsEnglish] = useState(true);
-=======
 import { useState } from "react";
 // import CoverPage from "./_components/page/CoverPageText.js";
 // import TranslateText from "../app/_components/page/api/translate3.js";
@@ -20,7 +10,6 @@ export default function Home() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [handleLanguageChange, sethandlelanguagechange] = useState("en");
   const [isEnglish, setIsEnglish] = useState(true);
->>>>>>> 2f0de0e5d9d0807323b830440863270982cc86cb
 
   const coverImg1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/coverImages/home/znrri581t1m0yfeg2emd",
@@ -51,19 +40,6 @@ export default function Home() {
     router.push("/pages/page/01");
   };
 
-<<<<<<< HEAD
-  // const handleLanguageSelection = (language, isEnglishFlag) => {
-  //   sethandlelanguagechange(language);
-  //   setIsEnglish(isEnglishFlag);
-  // };
-
-  return (
-    <>
-      <div>
-            {isPortrait ? (
-              <PortraitCover/>
-            ) : (
-=======
   const handleLanguageSelection = (language, isEnglishFlag) => {
     sethandlelanguagechange(language);
     setIsEnglish(isEnglishFlag);
@@ -71,8 +47,8 @@ export default function Home() {
 
   return (
     <>
-    {/* Language Switcher */}
-    <div className="absolute top-5 right-5">
+      {/* Language Switcher */}
+      <div className="absolute top-5 right-5">
         <div>
           {/* Button to toggle the dropdown visibility */}
           {/* <button
@@ -118,7 +94,6 @@ export default function Home() {
           )} */}
         </div>
       </div>
->>>>>>> 2f0de0e5d9d0807323b830440863270982cc86cb
       <div className="w-full min-h-screen bg-cover select-none">
         <div className="flex justify-center items-center min-h-screen">
           <div className="grid grid-cols-2 p-4 ">
@@ -131,7 +106,7 @@ export default function Home() {
                 height={1200}
                 className="bg-cover absolute"
               />
-               <div className="relative p-6 flex flex-col gap-4">
+              <div className="relative p-6 flex flex-col gap-4">
                 <div className="text-white text-lg text-justify font-medium py-20">
                   <p>
                     Little Veer is eager to know what is so great about the{" "}
@@ -161,10 +136,6 @@ export default function Home() {
               ) : (
                 <TranslateText targetlanguage={handleLanguageChange} />
               )} */}
-<<<<<<< HEAD
-=======
-
->>>>>>> 2f0de0e5d9d0807323b830440863270982cc86cb
             </div>
 
             {/* Right Image with Click Handler */}
@@ -183,32 +154,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-    )}
-    </div>
     </>
   );
-<<<<<<< HEAD
 }
-=======
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // "use client";
 
@@ -333,4 +281,3 @@ export default function Home() {
 //     </>
 //   );
 // }
->>>>>>> 2f0de0e5d9d0807323b830440863270982cc86cb
