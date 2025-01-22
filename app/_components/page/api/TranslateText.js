@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from "react"
 // import { useState,useEffect } from "react";
 // import object from "../textconent";
@@ -111,6 +112,8 @@
 
 
 // TranslateText.js
+=======
+>>>>>>> e9379acb6e1e2fa8e9c355085baab69ee80eaf47
 import { useState, useEffect } from "react";
 
 const TranslateText = ({ text, targetLanguage }) => {
@@ -152,5 +155,9 @@ const TranslateText = ({ text, targetLanguage }) => {
   return <div dangerouslySetInnerHTML={{ __html: translatedText }} />; // Render the translated text
 };
 
+<<<<<<< HEAD
 export default TranslateText;
 
+=======
+export default TranslateText;
+>>>>>>> e9379acb6e1e2fa8e9c355085baab69ee80eaf47

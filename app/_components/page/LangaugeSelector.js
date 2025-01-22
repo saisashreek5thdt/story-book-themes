@@ -78,6 +78,7 @@
 //   const restoreOriginalContent = () => {
 //     window.location.reload();  // Reload the page to restore original content
 //   };
+<<<<<<< HEAD
 
 //   return (
 //     <div>
@@ -134,3 +135,57 @@
 
 
 
+=======
+
+//   return (
+//     <div>
+//       {/* Button to toggle the dropdown visibility */}
+//       <button
+//         onClick={() => setShowDropdown(!showDropdown)}
+//         className="border p-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition"
+//       >
+//         Change Language
+//       </button>
+
+//       {/* Language selection dropdown */}
+//       {showDropdown && (
+//         <div className="mt-2 p-2 border rounded-md bg-white shadow-lg">
+//           <button
+//             onClick={() => handleLanguageChange("en")}
+//             className="block p-2 w-full text-left text-black hover:bg-gray-100"
+//           >
+//             English
+//           </button>
+//           <button
+//             onClick={() => handleLanguageChange("te")}
+//             className="block p-2 w-full text-left text-black hover:bg-gray-100"
+//           >
+//             Telugu
+//           </button>
+//           <button
+//             onClick={() => handleLanguageChange("ta")}
+//             className="block p-2 w-full text-left text-black hover:bg-gray-100"
+//           >
+//             Tamil
+//           </button>
+//           <button
+//             onClick={() => handleLanguageChange("hi")}
+//             className="block p-2 w-full text-left text-black hover:bg-gray-100"
+//           >
+//             Hindi
+//           </button>
+//           <button
+//             onClick={() => handleLanguageChange("mr")}
+//             className="block p-2 w-full text-left text-black hover:bg-gray-100"
+//           >
+//             Marathi
+//           </button>
+
+
+//           {/* Add more languages as needed */}
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+>>>>>>> e9379acb6e1e2fa8e9c355085baab69ee80eaf47
