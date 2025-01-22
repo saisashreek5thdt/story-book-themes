@@ -63,7 +63,7 @@ export default function Page1() {
                         }}
                       >
                          <p>
-                      Dadaji - I also loved his speech when he said-
+                      Dadaji - I also loved his speech when he said -
                       "Chandrayaan Maha Abhiyan is a success not only for India
                       but for the entire humanity."  
                     </p>
@@ -92,7 +92,7 @@ export default function Page1() {
                     </button>
                   </div>
                   {/* AudioPlayer Component */}
-                  <AudioPlayer />
+                  <AudioPlayer audioSrc={`https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page23_deyhc6.mp3`} />
                 </div>
               </div>
             </div>

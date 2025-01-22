@@ -67,7 +67,7 @@ export default function Page1() {
                       with our soldiers at some snowy place.
                     </p>
                     <p className="py-4">
-                      Dadaji- Yes, That's his greatness.He never misses a chance
+                      Dadaji - Yes, That's his greatness.He never misses a chance
                       to be with the Armed Forces and celebrate Diwali with
                       them.
                     </p>
@@ -91,7 +91,7 @@ export default function Page1() {
                     </button>
                   </div>
                   {/* AudioPlayer Component */}
-                  <AudioPlayer />
+                  <AudioPlayer audioSrc={`https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550479/Page21_dzzp2x.mp3`} />
                 </div>
               </div>
             </div>

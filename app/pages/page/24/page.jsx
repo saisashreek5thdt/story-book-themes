@@ -63,7 +63,7 @@ export default function Page1() {
                       >
                         <p>Veer - Are we going to launch another mission?</p>
                     <p className="py-2">
-                      Dadaji: Certainly, Veer. India is going to launch
+                      Dadaji - Certainly, Veer. India is going to launch
                       "Gaganyaan" in 2024-2025 which is an Indian crewed orbital
                       spacecraft that will take our astronauts to space.
                     </p>
@@ -87,7 +87,7 @@ export default function Page1() {
                     </button>
                   </div>
                   {/* AudioPlayer Component */}
-                  <AudioPlayer />
+                  <AudioPlayer audioSrc={`https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550481/Page24_xjrh9t.mp3`} />
                 </div>
               </div>
             </div>

@@ -208,7 +208,7 @@ const handleLanguageChange = (language, isEnglishFlag) => {
                   </button>
                 </div>
                 {/* Audio Player */}
-                <AudioPlayer />
+                <AudioPlayer audioSrc={`https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page14_cyeggc.mp3`} />
               </div>
             </div>
           </div>
