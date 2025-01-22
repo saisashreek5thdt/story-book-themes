@@ -345,9 +345,9 @@ import graphQLClient from "@/lib/graphql-client";
 import { GET_PAGE_BY_SLUG } from "@/lib/queries";
 import { getCldImageUrl } from "next-cloudinary";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-import AudioPlayer from "../../../_components/AudioPlayer";
-import PortraitLayout from "../../../_components/PortraitLayout";
 import TranslateText from "@/app/_components/page/api/TranslateText";
+import PortraitLayout from "@/app/_components/PortraitLayout";
+import AudioPlayer from "@/app/_components/AudioPlayer";
 
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
