@@ -114,178 +114,178 @@
 //   );
 // }
 
-// Page1.js
-"use client";
+// // Page1.js
+// "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import graphQLClient from "@/lib/graphql-client";
-import { GET_PAGE_BY_SLUG } from "@/lib/queries";
-import { getCldImageUrl } from "next-cloudinary";
-import { ArrowRight, ArrowLeft } from "lucide-react";
-import AudioPlayer from "../../../_components/AudioPlayer";
-import PortraitLayout from "../../../_components/PortraitLayout";
-import LanguageSwitcher from "../../../_components/page/LangaugeBox";
-import TranslateText from "../../../_components/page/api/TranslateText"; // Import TranslateText Component
+// import { useState, useEffect } from "react";
+// import { useRouter } from "next/navigation";
+// import Image from "next/image";
+// import graphQLClient from "@/lib/graphql-client";
+// import { GET_PAGE_BY_SLUG } from "@/lib/queries";
+// import { getCldImageUrl } from "next-cloudinary";
+// import { ArrowRight, ArrowLeft } from "lucide-react";
+// import AudioPlayer from "../../../_components/AudioPlayer";
+// import PortraitLayout from "../../../_components/PortraitLayout";
+// import LanguageSwitcher from "../../../_components/page/LangaugeBox";
+// import TranslateText from "../../../_components/page/api/TranslateText"; // Import TranslateText Component
 
-export default function Page1() {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [pageContent, setPageContent] = useState(null);
-  const [slug, setSlug] = useState(1);
-  const [isPortrait, setIsPortrait] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("en"); // Default language set to English
-  const router = useRouter();
+// export default function Page1() {
+//   const [isExpanded, setIsExpanded] = useState(false);
+//   const [pageContent, setPageContent] = useState(null);
+//   const [slug, setSlug] = useState(1);
+//   const [isPortrait, setIsPortrait] = useState(false);
+//   const [selectedLanguage, setSelectedLanguage] = useState("en"); // Default language set to English
+//   const router = useRouter();
 
-  useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        const response = await graphQLClient.request(GET_PAGE_BY_SLUG, { slug: slug.toString() });
-        setPageContent(response.page);
-      } catch (error) {
-        console.error("Error fetching page content:", error);
-      }
-    };
+//   useEffect(() => {
+//     const fetchContent = async () => {
+//       try {
+//         const response = await graphQLClient.request(GET_PAGE_BY_SLUG, { slug: slug.toString() });
+//         setPageContent(response.page);
+//       } catch (error) {
+//         console.error("Error fetching page content:", error);
+//       }
+//     };
 
-    fetchContent();
-  }, [slug]);
+//     fetchContent();
+//   }, [slug]);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsPortrait(window.innerHeight > window.innerWidth);
+//   useEffect(() => {
+//     if (typeof window !== "undefined") {
+//       setIsPortrait(window.innerHeight > window.innerWidth);
 
-      const handleResize = () => {
-        setIsPortrait(window.innerHeight > window.innerWidth);
-      };
+//       const handleResize = () => {
+//         setIsPortrait(window.innerHeight > window.innerWidth);
+//       };
 
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
+//       window.addEventListener("resize", handleResize);
+//       return () => window.removeEventListener("resize", handleResize);
+//     }
+//   }, []);
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("selectedLanguage");
-    if (savedLanguage) {
-      setSelectedLanguage(savedLanguage); // Load saved language from localStorage
-    }
-  }, []);
+//   useEffect(() => {
+//     const savedLanguage = localStorage.getItem("selectedLanguage");
+//     if (savedLanguage) {
+//       setSelectedLanguage(savedLanguage); // Load saved language from localStorage
+//     }
+//   }, []);
 
-  // Store selected language in localStorage
-  const handleLanguageChange = (language) => {
-    setSelectedLanguage(language);
-    localStorage.setItem("selectedLanguage", language); // Save language to localStorage
-  };
+//   // Store selected language in localStorage
+//   const handleLanguageChange = (language) => {
+//     setSelectedLanguage(language);
+//     localStorage.setItem("selectedLanguage", language); // Save language to localStorage
+//   };
 
-  const toggleExpand = () => {
-    setIsExpanded((prev) => !prev);
-  };
+//   const toggleExpand = () => {
+//     setIsExpanded((prev) => !prev);
+//   };
 
-  const pageClickPrevHandler = (e) => {
-    e.preventDefault();
-    if (slug > 1) {
-      setSlug((prev) => prev - 1);
-    } else {
-      router.push("/"); // Go to homepage if slug is 1
-    }
-  };
+//   const pageClickPrevHandler = (e) => {
+//     e.preventDefault();
+//     if (slug > 1) {
+//       setSlug((prev) => prev - 1);
+//     } else {
+//       router.push("/"); // Go to homepage if slug is 1
+//     }
+//   };
 
-  const pageClickNextHandler = (e) => {
-    e.preventDefault();
-    if (slug < 27) {
-      setSlug((prev) => prev + 1);
-    }
-  };
+//   const pageClickNextHandler = (e) => {
+//     e.preventDefault();
+//     if (slug < 27) {
+//       setSlug((prev) => prev + 1);
+//     }
+//   };
 
-  if (!pageContent) {
-    return <div>Loading...</div>;
-  }
+//   if (!pageContent) {
+//     return <div>Loading...</div>;
+//   }
 
-  const imgURL1 = getCldImageUrl({
-    src: pageContent.imageUrl,
-  });
+//   const imgURL1 = getCldImageUrl({
+//     src: pageContent.imageUrl,
+//   });
 
-  return (
-    <>
-      {/* Language Switcher Component */}
-      <LanguageSwitcher
-        onLanguageChange={handleLanguageChange} // Pass the language change handler
-      />
+//   return (
+//     <>
+//       {/* Language Switcher Component */}
+//       <LanguageSwitcher
+//         onLanguageChange={handleLanguageChange} // Pass the language change handler
+//       />
 
-      <div>
-        {isPortrait ? (
-          <PortraitLayout />
-        ) : (
-          <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center force-landscape">
-            {/* Main Content Container */}
-            <div className="flex justify-center items-center min-h-[80vh]">
-              <button
-                className="bg-white rounded-full p-2 text-black"
-                onClick={pageClickPrevHandler}
-                disabled={slug <= 1}
-              >
-                <ArrowLeft />
-              </button>
+//       <div>
+//         {isPortrait ? (
+//           <PortraitLayout />
+//         ) : (
+//           <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center force-landscape">
+//             {/* Main Content Container */}
+//             <div className="flex justify-center items-center min-h-[80vh]">
+//               <button
+//                 className="bg-white rounded-full p-2 text-black"
+//                 onClick={pageClickPrevHandler}
+//                 disabled={slug <= 1}
+//               >
+//                 <ArrowLeft />
+//               </button>
 
-              <div className="grid grid-cols-2 p-4">
-                {/* Text Section */}
-                <div className="cursor-pointer">
-                  <div className="bgText bg-white text-black">
-                    <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
-                      <div
-                        className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
-                      >
-                        <div
-                          className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
-                            isExpanded ? "overflow-auto" : "overflow-hidden"
-                          }`}
-                          style={{
-                            maxHeight: "320px",
-                            transition: "max-height 0.3s ease",
-                          }}
-                        >
-                          {/* Translate the content based on the selected language */}
-                          <TranslateText text={pageContent.content?.text} targetLanguage={selectedLanguage} />
-                        </div>
-                        <button
-                          onClick={toggleExpand}
-                          className="text-black hover:text-cyan-700 focus:outline-none mb-10"
-                        >
-                          {isExpanded ? "Read Less" : "Read More"}
-                        </button>
-                      </div>
+//               <div className="grid grid-cols-2 p-4">
+//                 {/* Text Section */}
+//                 <div className="cursor-pointer">
+//                   <div className="bgText bg-white text-black">
+//                     <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
+//                       <div
+//                         className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
+//                       >
+//                         <div
+//                           className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
+//                             isExpanded ? "overflow-auto" : "overflow-hidden"
+//                           }`}
+//                           style={{
+//                             maxHeight: "320px",
+//                             transition: "max-height 0.3s ease",
+//                           }}
+//                         >
+//                           {/* Translate the content based on the selected language */}
+//                           <TranslateText text={pageContent.content?.text} targetLanguage={selectedLanguage} />
+//                         </div>
+//                         <button
+//                           onClick={toggleExpand}
+//                           className="text-black hover:text-cyan-700 focus:outline-none mb-10"
+//                         >
+//                           {isExpanded ? "Read Less" : "Read More"}
+//                         </button>
+//                       </div>
 
-                      {/* Audio Player Section */}
-                      <AudioPlayer />
-                    </div>
-                  </div>
-                </div>
+//                       {/* Audio Player Section */}
+//                       <AudioPlayer />
+//                     </div>
+//                   </div>
+//                 </div>
 
-                {/* Image Section */}
-                <div className="cursor-pointer flex justify-center items-center">
-                  <div className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white">
-                    <Image
-                      src={imgURL1}
-                      className="bg-white h-full w-full object-cover"
-                      alt="Cover Image"
-                      width={800}
-                      height={1400}
-                      unoptimized
-                    />
-                  </div>
-                </div>
-              </div>
+//                 {/* Image Section */}
+//                 <div className="cursor-pointer flex justify-center items-center">
+//                   <div className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white">
+//                     <Image
+//                       src={imgURL1}
+//                       className="bg-white h-full w-full object-cover"
+//                       alt="Cover Image"
+//                       width={800}
+//                       height={1400}
+//                       unoptimized
+//                     />
+//                   </div>
+//                 </div>
+//               </div>
 
-              <button
-                className="bg-white rounded-full p-2 text-black"
-                onClick={pageClickNextHandler}
-                disabled={slug >= 27}
-              >
-                <ArrowRight />
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-    </>
-  );
-}
+//               <button
+//                 className="bg-white rounded-full p-2 text-black"
+//                 onClick={pageClickNextHandler}
+//                 disabled={slug >= 27}
+//               >
+//                 <ArrowRight />
+//               </button>
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     </>
+//   );
+// }
