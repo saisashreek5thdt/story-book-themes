@@ -3,7 +3,7 @@ import { Repeat, Play, Pause, Volume2 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-export default function AudioPlayer() {
+export default function AudioPlayer({ audioSrc }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -73,7 +73,7 @@ export default function AudioPlayer() {
       <div className="sticky xl:h-16 xl:w-[450px] flex flex-col items-center justify-center sm:mt-5 xl:mt-3 md:mt-3 md:ml-5 xl:ml-6 sm:h-40 sm:w-[100px] md:w-[100%]">
         <audio
           ref={audioRef}
-          src="https://res.cloudinary.com/dydh2rfnk/video/upload/v1735797748/NBT-Chandrayaan3/audios/obaczxdevotey9zxrrxt.mp3"
+          src={audioSrc}
           onTimeUpdate={handleTimeUpdate}
           onEnded={handleAudioEnd} // Listen for the end of the audio
         />
