@@ -115,7 +115,7 @@ export default function Page1() {
                     <p className="py-4">
 >>>>>>> 2f0de0e5d9d0807323b830440863270982cc86cb
                       Dadaji - (Laughing) Veer, this is a story from the times
-                      when thost folks knew nothing about the moon. You laughed
+                      when those folks knew nothing about the moon. You laughed
                       at the princess because you know that måny silly myths
                       about the moon have been cleared. Now I will tell you all
 <<<<<<< HEAD

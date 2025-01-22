@@ -236,15 +236,21 @@ export default function Page1() {
             <div className="grid grid-cols-2 p-4">
               {/* Text Section */}
               <div className="cursor-pointer">
-                <div className="bgText  text-black">
-                  <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
+                {/* <div className="bgText  text-black"> */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src={"https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/bgImages/yyyvwswl6q8qxvysdvek"}
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Background Image"
+                  />
+                  <div className="flex flex-col absolute items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                     >
                       <div
-                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
-                          isExpanded ? "overflow-auto" : "overflow-hidden"
-                        }`}
+                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
+                          }`}
                         style={{
                           maxHeight: "320px",
                           transition: "max-height 0.3s ease",
