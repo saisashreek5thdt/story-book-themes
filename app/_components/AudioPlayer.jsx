@@ -50,7 +50,7 @@ export default function AudioPlayer() {
   return (
     <>
       <hr 
-        className="sm:w-[320px] md:w-[350px] lg:w-[450px] xl:w-[520px] xs:w-[100px]  sm:mt-4 md:-mt-5 lg:mt-28  xl:-mt-4 h-[2px] opacity-70 bg-gray-300" 
+        className="sm:w-[320px] md:w-[350px] lg:w-[450px] xl:w-[520px] xs:w-[100px]  sm:mt-4 md:-mt-5 lg:mt-28  xl:-mt-4 h-[2px] bg-black" 
       />
       
       <div 

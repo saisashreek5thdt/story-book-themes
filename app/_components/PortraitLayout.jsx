@@ -23,9 +23,14 @@ export default function Page1() {
   };
 
   // Function to navigate to the next page
-  const pageClickHandler = (e) => {
+  const pageClickNextHandler = (e) => {
     e.preventDefault();
     router.push("/pages/page/02");
+  };
+
+  const pageClickPrevHandler = (e) => {
+    e.preventDefault();
+    router.push("/");
   };
 
   return (
@@ -50,7 +55,7 @@ export default function Page1() {
 
             {/* Text Section */}
             <div className="cursor-pointer overflow-hidden">
-              <div className="bgText opacity-75 text-white">
+              <div className="bgText  text-black">
                 <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[380px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                   <div
                     className={`xl:py-12 sm:pr-10 max-h-[290px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -88,13 +93,13 @@ export default function Page1() {
 
                   {/* Audio Player Section */}
                   <div className="flex justify-center items-center gap-3 mb-20">
-                    <button className="bg-white rounded-full p-2 text-black">
+                    <button className="bg-white rounded-full p-2 text-black" onClick={pageClickPrevHandler}>
                       <ArrowLeft />
                     </button>
                     <div className="sm:h-10 sm:mt-2 ">
                       <PortraitAudioPlayer />
                     </div>
-                    <button className="bg-white rounded-full p-2 text-black" onClick={pageClickHandler}>
+                    <button className="bg-white rounded-full p-2 text-black" onClick={pageClickNextHandler}>
                       <ArrowRight />
                     </button>
                   </div>
