@@ -3,7 +3,7 @@
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import CoverPage from "./_components/page/CoverPageText.js";
 // import TranslateText from "../app/_components/page/api/translate3.js";
 export default function Home() {
