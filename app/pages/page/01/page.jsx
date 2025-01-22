@@ -222,7 +222,7 @@ export default function Page1() {
                     </div>
 
                     {/* Audio Player Section */}
-                    <AudioPlayer />
+                    <AudioPlayer audioSrc={`https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548658/page1Audio_vgvmcf.mp3`} />
                   </div>
                 </div>
               </div>
