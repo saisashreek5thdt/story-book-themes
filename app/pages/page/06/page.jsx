@@ -66,7 +66,7 @@ export default function Page1() {
                       wanted to listen tonight.
                     </p>
                     <p className="py-4">
-                      Veer - What a silly princess. Who would belleve this
+                      Veer - What a silly princess. Who would believe this
                       story?
                     </p>
                     <p className="py-4">
