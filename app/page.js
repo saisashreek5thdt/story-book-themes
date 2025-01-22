@@ -10,6 +10,7 @@ export default function Home() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [handleLanguageChange, sethandlelanguagechange] = useState("en");
   const [isEnglish, setIsEnglish] = useState(true);
+  const [isPortrait, setIsPortrait] = useState(false); 
 
   const coverImg1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/coverImages/home/znrri581t1m0yfeg2emd",
