@@ -9,7 +9,7 @@ export default function TranslateText(props){
         const randomfunc = async ()=>{
             setTargetLanguage(props.targetlanguage)
             const response = await fetch(
-                `https://translation.googleapis.com/language/translate/v2?key=${process.env.GOOGLE_TRANSLATE_API_KEY}`,
+                `https://translation.googleapis.com/language/translate/v2?key=${process.env.NEXT_PUBLIC_GOOGLE_TRANSLATE_API_KEY}`,
                  {
                    method: "POST",
                    headers: {
