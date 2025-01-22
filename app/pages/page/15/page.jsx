@@ -263,6 +263,7 @@ export default function Page1() {
                           // text:"justify",
                         
                           // whiteSpace: "pre-wrap",
+                          
                          
                         }}
                       >
