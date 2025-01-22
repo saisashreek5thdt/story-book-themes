@@ -38,7 +38,7 @@ export default function Home() {
 
   const pageClickHandler = (e) => {
     e.preventDefault();
-    router.push("/pages/page/01");
+    router.push("/pages/page/[id]");
   };
 
   // const handleLanguageSelection = (language, isEnglishFlag) => {
