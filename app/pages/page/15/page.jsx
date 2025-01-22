@@ -1,21 +1,19 @@
 "use client";
-import { useState, useEffect  } from "react";
-import { getCldImageUrl } from "next-cloudinary";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import graphQLClient from "@/lib/graphql-client";
 import { GET_PAGE_BY_SLUG } from "@/lib/queries";
 import AudioPlayer from "../../../_components/AudioPlayer";
-import { useRouter } from "next/navigation";
+import { getCldImageUrl } from "next-cloudinary";
+import LanguageSwitcher from "../../../_components/page/LanguageBox";
+import TranslatteText from "../../../_components/page/api/TranslateText";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [pageContent, setPageContent] = useState(null);
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
-  });
+  const [pageContent, setPageContent] = useState(null); // Store fetched content
+  const [targetLanguage, setTargetLanguage] = useState("en"); // Default language is English
 
-  const gifImgUrl = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
-  });
+  const router = useRouter();
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -27,10 +25,9 @@ export default function Page1() {
         console.error("Error fetching page content:", error); // Debugging
       }
     };
+
     fetchContent();
   }, []);
-
-  const router = useRouter();
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
@@ -38,34 +35,45 @@ export default function Page1() {
 
   const pageClickHandler = (e) => {
     e.preventDefault();
-    router.push("/pages/page/16");
+    router.push("/pages/page/16"); // Navigate to the next page
+  };
+
+  const handleLanguageChange = (language, isEnglishFlag) => {
+    setTargetLanguage(language); // Update target language when user selects a language
   };
 
   if (!pageContent) {
     return <div>Loading...</div>;
   }
 
+  const imgURL1 = getCldImageUrl({
+    src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
+  });
+
   return (
-    <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center">
-      <div className="flex justify-center items-center min-h-[80vh]">
-        <div className="grid grid-cols-2 p-4">
-          {/* Text Section */}
-          <div className="cursor-pointer">
-            <div className="bg-white text-slate-700">
-              <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
-                <div
-                  className={`xl:py-12 sm:pr-10 sm:max-h-[310px] md:max-h-[250px] lg:max-h-[280px] xl:max-h-[430px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
-                >
+    <> {/* Language Switcher Component */}
+      <LanguageSwitcher
+        onLanguageChange={handleLanguageChange} // Update target language when user changes language
+      />
+      <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center">
+        <div className="flex justify-center items-center min-h-[80vh]">
+          <div className="grid grid-cols-2 p-4">
+            {/* Text Section */}
+            <div className="cursor-pointer">
+              <div className="bg-white text-slate-700">
+                <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                   <div
-                    className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
-                      isExpanded ? "overflow-auto" : "overflow-hidden"
-                    }`}
-                    style={{
-                      // maxHeight: "320px",
-                      transition: "max-height 0.3s ease",
-                    }}
+                    className={`xl:py-12 sm:pr-10 sm:max-h-[310px] md:max-h-[250px] lg:max-h-[280px] xl:max-h-[430px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
                   >
-                    <p>Veer nodded as he gulped down the now cold milk.</p>
+                    <div
+                      className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
+                        }`}
+                      style={{
+                        // maxHeight: "320px",
+                        transition: "max-height 0.3s ease",
+                      }}
+                    >
+                      {/* <p>Veer nodded as he gulped down the now cold milk.</p>
                     <p className="py-2">
                       He faintly remembered watching this news five years ago.
                     </p>
@@ -84,17 +92,21 @@ export default function Page1() {
                     <p className="py-2">
                       Veer - I can imagine how disappointing it must have been
                       for the whole team.
-                    </p>
-                    <div dangerouslySetInnerHTML={{ __html: pageContent.content?.text }} />
+                    </p> */}
+                      <div targetLanguage={targetLanguage} />
+                      <TranslatteText
+                        text={pageContent.content?.text} // Pass text to TranslationFunction component
+                        targetLanguage={targetLanguage} // Pass selected language to translation function
+                      />
+                    </div>
+                    <button
+                      onClick={toggleExpand}
+                      className=" text-blue-500 hover:text-blue-700 focus:outline-none mb-20"
+                    >
+                      {isExpanded ? "Read Less" : "Read More"}
+                    </button>
                   </div>
-                  <button
-                    onClick={toggleExpand}
-                    className=" text-blue-500 hover:text-blue-700 focus:outline-none mb-20"
-                  >
-                    {isExpanded ? "Read Less" : "Read More"}
-                  </button>
-                </div>
-                {/* <div className="-mt-2">
+                  {/* <div className="-mt-2">
                   <Image
                     src={gifImgUrl}
                     alt="Astronaut Gif"
@@ -103,27 +115,28 @@ export default function Page1() {
                     unoptimized
                   />
                 </div> */}
-                {/* Use the AudioPlayer component */}
-                <AudioPlayer />
+                  {/* Use the AudioPlayer component */}
+                  <AudioPlayer />
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Image Section */}
-          <div className="cursor-pointer flex justify-center items-center ">
-            <div className="h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" onClick={pageClickHandler}>
-              <Image
-                src={imgURL1}
-                className="bg-cover rounded-r-sm shadow-md bg-white h-full w-full object-cover"
-                alt="Cover Image"
-                width={800}
-                height={1400}
-                unoptimized
-              />
+            {/* Image Section */}
+            <div className="cursor-pointer flex justify-center items-center ">
+              <div className="h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" onClick={pageClickHandler}>
+                <Image
+                  src={imgURL1}
+                  className="bg-cover rounded-r-sm shadow-md bg-white h-full w-full object-cover"
+                  alt="Cover Image"
+                  width={800}
+                  height={1400}
+                  unoptimized
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
