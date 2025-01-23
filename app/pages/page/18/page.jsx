@@ -98,7 +98,7 @@ export default function Page1() {
                     </button>
                   </div>
                   {/* AudioPlayer Component */}
-                  <AudioPlayer />
+                  <AudioPlayer audioSrc={`https://res.cloudinary.com/dydh2rfnk/video/upload/v1737606176/Page18_k3ddaw.mp3`} />
                 </div>
               </div>
             </div>
