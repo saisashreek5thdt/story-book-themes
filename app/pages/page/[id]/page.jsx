@@ -71,10 +71,17 @@ export default function Page1() {
   if (!pageContent) {
     return <div>Loading...</div>;
   }
+  const audioSrc = pageContent.audioUrl; // Fetch audio URL dynamically
+
 
   const imgURL1 = getCldImageUrl({
     src: pageContent.imageUrl, // Use the image URL from the fetched content
   });
+
+  const backgroundImageUrl = getCldImageUrl({
+    src: pageContent.backgroundImageUrl, // Fetch dynamic background image URL
+  });
+
 
   return (
     <div>
@@ -94,8 +101,16 @@ export default function Page1() {
 
             <div className="grid grid-cols-2 p-4">
               {/* Text Section */}
-              <div className="cursor-pointer">
-                <div className="bgText text-black">
+              <div className="cursor-pointer relative">
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={backgroundImageUrl} // Dynamically set the background image
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Background Image"
+                  />
+                </div>
+                <div className="relative z-10 bgText text-black">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -120,7 +135,9 @@ export default function Page1() {
                     </div>
 
                     {/* Audio Player Section */}
-                    <AudioPlayer />
+                    <AudioPlayer 
+                      audio={audioSrc}
+                    />
                   </div>
                 </div>
               </div>
