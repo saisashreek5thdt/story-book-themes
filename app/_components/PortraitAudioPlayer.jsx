@@ -2,7 +2,7 @@
 import { Repeat, Play, Pause, Volume2, ArrowRight,ArrowLeft } from "lucide-react";
 import { useRef, useState } from "react";
 
-export default function AudioPlayer() {
+export default function AudioPlayer({audio}) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -55,7 +55,7 @@ export default function AudioPlayer() {
       >
         <audio
           ref={audioRef}
-          src="https://res.cloudinary.com/dydh2rfnk/video/upload/v1735797748/NBT-Chandrayaan3/audios/obaczxdevotey9zxrrxt.mp3"
+          src={audio}
           onLoadedMetadata={handleLoadedMetadata}
           onTimeUpdate={handleTimeUpdate}
         />

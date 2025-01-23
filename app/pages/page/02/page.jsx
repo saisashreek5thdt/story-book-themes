@@ -169,20 +169,22 @@
 // }
 
 "use client";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { useRouter } from "next/navigation";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import TranslateText from "../../../_components/page/api/translate3";
 // import LanguageSwitcher from "../../../_components/LanguageSwitcher";
 import LanguageSwitcher from "../../../_components/page/LangaugeBox";
+import PortraitLayout from "../../../_components/PortraitLayout";
 
 export default function Page1() {
   const [handleLanguageChange, setHandleLanguageChange] = useState("en");
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
-
+  const [isPortrait, setIsPortrait] = useState(false);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
   });
@@ -197,10 +199,33 @@ export default function Page1() {
     setIsExpanded((prev) => !prev);
   };
 
-  const pageClickHandler = (e) => {
+  const pageClickNextHandler = (e) => {
     e.preventDefault();
     router.push("/pages/page/03");
   };
+
+  const pageClickPrevHandler = (e) => {
+    e.preventDefault();
+    router.push("/pages/page/01");
+  };
+
+  
+
+  useEffect(() => {
+      // Check for window object availability and set initial orientation
+      if (typeof window !== "undefined") {
+        setIsPortrait(window.innerHeight > window.innerWidth);
+  
+        const handleResize = () => {
+          setIsPortrait(window.innerHeight > window.innerWidth);
+        };
+  
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }
+    }, []);
+
+  const audioSrc='https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548767/Page2_gsib1m.mp3'
 
   return (
     <>
@@ -212,8 +237,19 @@ export default function Page1() {
         }}
       />
 
+      <div>
+            {isPortrait ? (
+              <PortraitLayout 
+                text={"Ten-year-old Veer is a very intelligent and curious boy. He and his Dadaji are great friends. They sleep in the same room. At bedtime, before falling asleep. Dadaji makes up interesting stories on any topic that he feels little Veer should be aware of. Veer loves to hear these stories. Veer&apos;s school was soon to hold a workshop on Space."}
+                audio={audioSrc}
+              />
+            ) :(
+
       <div className="w-full min-h-screen bg-cover select-none">
         <div className="flex justify-center items-center min-h-screen">
+        <button className="bg-white rounded-full p-2 text-black" onClick={pageClickPrevHandler}>
+              <ArrowLeft />
+            </button>
           <div className="grid grid-cols-1 md:grid-cols-2 p-4 gap-0">
             {/* Text Section */}
             <div className="cursor-pointer">
@@ -266,7 +302,7 @@ export default function Page1() {
                     </button>
                   </div>
                   {/* AudioPlayer Component */}
-                  <AudioPlayer audioSrc={`https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548767/Page2_gsib1m.mp3`} />
+                  <AudioPlayer audio={audioSrc} />
                 </div>
               </div>
             </div>
@@ -275,8 +311,7 @@ export default function Page1() {
             <div className="cursor-pointer flex justify-center items-center">
               <div
                 className="rounded h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full max-w-[550px] xl:bg-white shadow-lg"
-                onClick={pageClickHandler}
-              >
+                  >
                 <Image
                   src={imgURL1}
                   className="bg-white h-full w-full pt-0 xs:h-[100px] xs:w-[100px] sm:h-[380px] md:h-[360px] lg:h-[450px] xl:h-[500px] xl:w-[600px] object-cover"
@@ -288,8 +323,16 @@ export default function Page1() {
               </div>
             </div>
           </div>
+          <button
+              className="bg-white rounded-full p-2 text-black"
+              onClick={pageClickNextHandler}
+            >
+              <ArrowRight />
+            </button>
         </div>
       </div>
+      )}
+    </div>
     </>
   );
 }

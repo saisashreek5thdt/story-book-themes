@@ -125,6 +125,9 @@ import { useRouter } from "next/navigation";
 import PortraitLayout from "../../../_components/PortraitLayout";
 
 export default function Page1() {
+
+  const pageAudio = ""
+
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false); // Initialize with default false
 
@@ -164,10 +167,15 @@ export default function Page1() {
     router.push("/");
   };
 
+  const audioSrc='https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548658/page1Audio_vgvmcf.mp3'
+
   return (
     <div>
       {isPortrait ? (
-        <PortraitLayout />
+        <PortraitLayout 
+          text={"Ten-year-old Veer is a very intelligent and curious boy. He and his Dadaji are great friends. They sleep in the same room. At bedtime, before falling asleep. Dadaji makes up interesting stories on any topic that he feels little Veer should be aware of. Veer loves to hear these stories. Veer&apos;s school was soon to hold a workshop on Space."}
+          audio={audioSrc}
+        />
       ) : (
         <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center force-landscape">
           {/* Main Content Container */}
@@ -222,7 +230,7 @@ export default function Page1() {
                     </div>
 
                     {/* Audio Player Section */}
-                    <AudioPlayer audioSrc={`https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548658/page1Audio_vgvmcf.mp3`} />
+                    <AudioPlayer audio={audioSrc} />
                   </div>
                 </div>
               </div>
