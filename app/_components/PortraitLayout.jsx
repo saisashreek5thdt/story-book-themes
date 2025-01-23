@@ -9,7 +9,7 @@ import Image from "next/image";
 import PortraitAudioPlayer from "./PortraitAudioPlayer";
 import { useRouter } from "next/navigation";
 
-export default function Page1() {
+export default function  PortraitLayout({text,audio}) {
   const [isExpanded, setIsExpanded] = useState(false);
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
