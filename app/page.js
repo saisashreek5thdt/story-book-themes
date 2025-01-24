@@ -3,14 +3,14 @@
 import { getCldImageUrl } from "next-cloudinary";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import {useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 // import CoverPage from "./_components/page/CoverPageText.js";
 import PortraitCover from "../app/_components/PortraitCover.js";
 export default function Home() {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [handleLanguageChange, sethandlelanguagechange] = useState("en");
+  const [isEnglish, setIsEnglish] = useState(true);
   const [isPortrait, setIsPortrait] = useState(false); 
-  // const [showDropdown, setShowDropdown] = useState(false);
-  // const [handleLanguageChange, sethandlelanguagechange] = useState("en");
-  // const [isEnglish, setIsEnglish] = useState(true);
 
   const coverImg1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/coverImages/home/znrri581t1m0yfeg2emd",

@@ -10,15 +10,21 @@ import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
+  const [handleLanguageChange, setHandleLanguageChange] = useState("en");
+  const [isEnglish, setIsEnglish] = useState(true);
+  
   // const imgURL1 = getCldImageUrl({
   //   src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
   // });
+  
+  
 
   const imgURL1 = "/images/27.jpg";
 
   // const textBg = getCldImageUrl({
   //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   // });
+
 
   const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737612614/Page26_ykwtyu.mp3'
 

@@ -111,7 +111,7 @@ export default function AudioPlayer({audio}) {
           </div>
         </div>
       </div>
-      {/* {console.log('Current Time:', currentTime, 'Duration:', duration) } */}
+      {console.log('Current Time:', currentTime, 'Duration:', duration) }
       {/* {showPrompt && (
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-5 rounded-lg text-center">

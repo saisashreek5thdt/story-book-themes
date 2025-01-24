@@ -69,19 +69,10 @@ export default function  PortraitLayout({text,audio}) {
                         transition: "max-height 0.3s ease",
                       }}
                     >
-                      <p>
-                        Ten-year-old Veer is a very intelligent and curious boy.
-                        He and his Dadaji are great friends. They sleep in the
-                        same room. At bedtime, before falling asleep.
-                      </p>
-                      <p className="py-4">
-                        Dadaji makes up interesting stories on any topic that he
-                        feels little Veer should be aware of.
-                      </p>
-                      <p className="py-2">
-                        Veer loves to hear these stories. Veer&apos;s school was
-                        soon to hold a workshop on Space.
-                      </p>
+                     <p>
+                          {text}
+                        </p>
+                        
                     </div>
                     <button
                       onClick={toggleExpand}
@@ -97,7 +88,7 @@ export default function  PortraitLayout({text,audio}) {
                       <ArrowLeft />
                     </button>
                     <div className="sm:h-10 sm:mt-2 ">
-                      <PortraitAudioPlayer />
+                      <PortraitAudioPlayer audio={audio} />
                     </div>
                     <button className="bg-white rounded-full p-2 text-black" onClick={pageClickNextHandler}>
                       <ArrowRight />

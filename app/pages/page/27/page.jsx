@@ -7,6 +7,9 @@ import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import PortraitLayout from "../../../_components/PortraitLayout";
 import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
+  
+
+
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
@@ -14,7 +17,8 @@ export default function Page1() {
   //   src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
   // });
 
-  const imgURL1 = "/images/28.jpg";
+
+  const imgURL1 = "/images/page28/28.jpg";
 
   // const textBg = getCldImageUrl({
   //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
