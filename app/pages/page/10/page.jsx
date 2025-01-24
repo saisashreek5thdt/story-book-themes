@@ -10,11 +10,14 @@ import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
+
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/jwvbo0kh5u7i7ykbliqo.png",
   });
-  
-  const audioSrc='https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548863/Page10_nmctrc.mp3'
+
+  const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737633005/Page10BG_hydxae.png"
+
+  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548863/Page10_nmctrc.mp3'
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -72,8 +75,16 @@ export default function Page1() {
               </div>
 
               {/* Text Section */}
-              <div className="cursor-pointer overflow-hidden">
-                <div className="bgText  text-black">
+              <div className="cursor-pointer relative">
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={textBg} // Dynamically set the background image
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Background Image"
+                  />
+                </div>
+                <div className="relative z-10 bgText text-black">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[380px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 max-h-[290px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -117,7 +128,7 @@ export default function Page1() {
                         <ArrowLeft />
                       </button>
                       <div className="sm:h-10 sm:mt-2 ">
-                        <PortraitAudioPlayer audio={audioSrc}/>
+                        <PortraitAudioPlayer audio={audioSrc} />
                       </div>
                       <button className="bg-white rounded-full p-2 text-black" onClick={pageClickNextHandler}>
                         <ArrowRight />
@@ -137,8 +148,16 @@ export default function Page1() {
             </button>
             <div className="grid grid-cols-2 p-4">
               {/* Text Section */}
-              <div className="cursor-pointer">
-                <div className="bg-white text-slate-700">
+              <div className="cursor-pointer relative">
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={textBg} // Dynamically set the background image
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Background Image"
+                  />
+                </div>
+                <div className="relative z-10 bgText text-black">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 sm:max-h-[310px] md:max-h-[250px] lg:max-h-[280px] xl:max-h-[430px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}

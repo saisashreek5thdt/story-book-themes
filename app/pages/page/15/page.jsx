@@ -20,6 +20,10 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
   });
 
+  const textBg = getCldImageUrl({
+    src: "NBT-Chandrayaan3/assets/bgImages/page15/fvtabwhabfv7tgatnjs9.png",
+  });
+
   const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page15_o47pow.mp3'
 
   const router = useRouter();
@@ -102,8 +106,16 @@ export default function Page1() {
                 </div>
 
                 {/* Text Section */}
-                <div className="cursor-pointer overflow-hidden">
-                  <div className="bgText  text-black">
+                <div className="cursor-pointer relative">
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={textBg} // Dynamically set the background image
+                      layout="fill"
+                      objectFit="cover"
+                      alt="Background Image"
+                    />
+                  </div>
+                  <div className="relative z-10 bgText text-black">
                     <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[380px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                       <div
                         className={`xl:py-12 sm:pr-10 max-h-[290px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -171,8 +183,16 @@ export default function Page1() {
               </button>
               <div className="grid grid-cols-2 p-4">
                 {/* Text Section */}
-                <div className="cursor-pointer">
-                  <div className="bg-white text-slate-700">
+                <div className="cursor-pointer relative">
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={textBg} // Dynamically set the background image
+                      layout="fill"
+                      objectFit="cover"
+                      alt="Background Image"
+                    />
+                  </div>
+                  <div className="relative z-10 bgText text-black">
                     <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                       <div
                         className={`xl:py-12 sm:pr-10 sm:max-h-[310px] md:max-h-[250px] lg:max-h-[280px] xl:max-h-[430px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium `}
@@ -185,7 +205,7 @@ export default function Page1() {
                             transition: "max-height 0.3s ease",
                           }}
                         >
-                          {/* <p>Veer nodded as he gulped down the now cold milk.</p>
+                          <p>Veer nodded as he gulped down the now cold milk.</p>
                     <p className="py-2">
                       He faintly remembered watching this news five years ago.
                     </p>
@@ -204,12 +224,12 @@ export default function Page1() {
                     <p className="py-2">
                       Veer - I can imagine how disappointing it must have been
                       for the whole team.
-                    </p> */}
-                          <div targetLanguage={targetLanguage} />
+                    </p>
+                          {/* <div targetLanguage={targetLanguage} />
                           <TranslatteText
                             text={pageContent.content?.text} // Pass text to TranslationFunction component
                             targetLanguage={targetLanguage} // Pass selected language to translation function
-                          />
+                          /> */}
                         </div>
                         <button
                           onClick={toggleExpand}

@@ -16,7 +16,11 @@ export default function Page1() {
 
   const imgURL1 = "/images/26.jpg";
 
-  const audioSrc='https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550478/Page25_qb4oao.mp3'
+  // const textBg = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+  // });
+
+  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550478/Page25_qb4oao.mp3'
 
   useEffect(() => {
     // Check for window object availability and set initial orientation
@@ -74,8 +78,17 @@ export default function Page1() {
               </div>
 
               {/* Text Section */}
-              <div className="cursor-pointer overflow-hidden">
-                <div className="bgText  text-black">
+              <div className="cursor-pointer relative">
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    className="brightness-50"
+                    src={imgURL1} // Dynamically set the background image
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Background Image"
+                  />
+                </div>
+                <div className="relative z-10 bgText text-white">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[380px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 max-h-[290px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -90,22 +103,22 @@ export default function Page1() {
                       >
                         <p>
                           Veer - Dadaji, I also want to go to a space centre to see the
-                          spacecraft and learn about India's space programme. Dadaji - Good
+                          spacecraft and learn about India's space programme.
+                        </p>
+                        <p className="py-4">
+                          Dadaji - Good
                           idea. In your next holidays, we will go to the space centre at
-                          Sriharikota and the ISRO Headquarters at Bengaluru. We can also go
+                          Sriharikota and the ISRO Headquarters at Bengaluru.
+                        </p>
+                        <p className="py-4">
+                          We can also go
                           to Hyderabad to see the Space Science Museum. Veer Dadaji, what is
                           the full form of ISRO? Dadaji ISRO stands for Indian Space
-                          Research Organistion. It works to reap the benefits of outer space
-                          for India and mankind.
-                        </p>
-                        <p className="py-4">
-                          One night, after completing his homework, packing his bag for school, and getting his uniform ready, Veer jumped into bed and snuggled against Dadaji.
-                        </p>
-                        <p className="py-4">
-                          Veer - Dadaji, tell me a story about space, the moon, and astronauts.
+                          Research Organistion.
                         </p>
                         <p className="py-2">
-                          Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school, and had seen his excited preparations.
+                          It works to reap the benefits of outer space
+                          for India and mankind.
                         </p>
                       </div>
                       <button
@@ -122,7 +135,7 @@ export default function Page1() {
                         <ArrowLeft />
                       </button>
                       <div className="sm:h-10 sm:mt-2 ">
-                        <PortraitAudioPlayer audio={audioSrc}/>
+                        <PortraitAudioPlayer audio={audioSrc} />
                       </div>
                       <button className="bg-white rounded-full p-2 text-black" onClick={pageClickNextHandler}>
                         <ArrowRight />
@@ -142,8 +155,17 @@ export default function Page1() {
             </button>
             <div className="grid grid-cols-2 p-4">
               {/* Text Section */}
-              <div className="cursor-pointer">
-                <div className="bg-white text-slate-700">
+              <div className="cursor-pointer relative">
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    className="brightness-50"
+                    src={imgURL1} // Dynamically set the background image
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Background Image"
+                  />
+                </div>
+                <div className="relative z-10 bgText text-white">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 sm:max-h-[310px] md:max-h-[250px] lg:max-h-[280px] xl:max-h-[430px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -158,27 +180,27 @@ export default function Page1() {
                       >
                         <p>
                           Veer - Dadaji, I also want to go to a space centre to see the
-                          spacecraft and learn about India's space programme. Dadaji - Good
+                          spacecraft and learn about India's space programme.
+                        </p>
+                        <p className="py-4">
+                          Dadaji - Good
                           idea. In your next holidays, we will go to the space centre at
-                          Sriharikota and the ISRO Headquarters at Bengaluru. We can also go
+                          Sriharikota and the ISRO Headquarters at Bengaluru.
+                        </p>
+                        <p className="py-4">
+                          We can also go
                           to Hyderabad to see the Space Science Museum. Veer Dadaji, what is
                           the full form of ISRO? Dadaji ISRO stands for Indian Space
-                          Research Organistion. It works to reap the benefits of outer space
-                          for India and mankind.
-                        </p>
-                        <p className="py-4">
-                          One night, after completing his homework, packing his bag for school, and getting his uniform ready, Veer jumped into bed and snuggled against Dadaji.
-                        </p>
-                        <p className="py-4">
-                          Veer - Dadaji, tell me a story about space, the moon, and astronauts.
+                          Research Organistion.
                         </p>
                         <p className="py-2">
-                          Dadaji's eyes twinkle. He had been expecting this question from Veer for quite some time now. He knew about the forthcoming workshop in the boy's school, and had seen his excited preparations.
+                          It works to reap the benefits of outer space
+                          for India and mankind.
                         </p>
                       </div>
                       <button
                         onClick={toggleExpand}
-                        className=" text-blue-500 hover:text-blue-700 focus:outline-none mb-10"
+                        className=" text-white hover:text-slate-200 focus:outline-none mb-10"
                       >
                         {isExpanded ? "Read Less" : "Read More"}
                       </button>
@@ -193,7 +215,7 @@ export default function Page1() {
                   />
                 </div> */}
                     {/* Use the AudioPlayer component */}
-                    <AudioPlayer audio={audioSrc}/>
+                    <AudioPlayer audio={audioSrc} />
                   </div>
                 </div>
               </div>

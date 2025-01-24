@@ -14,7 +14,11 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
   });
 
-  const audioSrc='https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548767/Page2_gsib1m.mp3'
+  const textBg = getCldImageUrl({
+    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+  });
+
+  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548767/Page2_gsib1m.mp3'
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -72,8 +76,16 @@ export default function Page1() {
               </div>
 
               {/* Text Section */}
-              <div className="cursor-pointer overflow-hidden">
-                <div className="bgText  text-black">
+              <div className="cursor-pointer relative">
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    className="bg-white " // Dynamically set the background image
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Background Image"
+                  />
+                </div>
+                <div className="relative z-10 bgText text-black">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[380px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 max-h-[290px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -121,7 +133,7 @@ export default function Page1() {
                         <ArrowLeft />
                       </button>
                       <div className="sm:h-10 sm:mt-2 ">
-                        <PortraitAudioPlayer audio={audioSrc}/>
+                        <PortraitAudioPlayer audio={audioSrc} />
                       </div>
                       <button className="bg-white rounded-full p-2 text-black" onClick={pageClickNextHandler}>
                         <ArrowRight />
@@ -141,8 +153,17 @@ export default function Page1() {
             </button>
             <div className="grid grid-cols-2 p-4">
               {/* Text Section */}
-              <div className="cursor-pointer  ">
-                <div className="bg-white  text-black ">
+              <div className="cursor-pointer relative">
+                <div className="absolute inset-0 z-0 bg-white">
+                  {/* <Image
+                    // className="bg-white "
+                    src={textBg} // Dynamically set the background image
+                    layout="fill"
+                    objectFit="cover"
+                    alt="Background Image"
+                  /> */}
+                </div>
+                <div className="relative z-10 bgText text-black">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px]  md:p-6 xl:p-6 lg:p-6 ">
                     <div
                       className={` xl:py-12  sm:pr-10 sm:max-h-[270px]  xl:max-h-[460px] sm:pt-6 lg:pt-10  md:pt-10 md:pl-4  flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
