@@ -345,7 +345,6 @@ import graphQLClient from "@/lib/graphql-client";
 import { GET_PAGE_BY_SLUG } from "@/lib/queries";
 import { getCldImageUrl } from "next-cloudinary";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-import AudioPlayer from "../../../_components/AudioPlayer";
 import PortraitAudioPlayer from "@/app/_components/PortraitAudioPlayer";
 import TranslateText from "@/app/_components/page/api/TranslateText";
 import AudioPlayer from "@/app/_components/AudioPlayer";
