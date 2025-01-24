@@ -347,9 +347,7 @@ import { getCldImageUrl } from "next-cloudinary";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import PortraitAudioPlayer from "@/app/_components/PortraitAudioPlayer";
-import PortraitLayout from "../../../_components/PortraitLayout";
 import TranslateText from "@/app/_components/page/api/TranslateText";
-import PortraitLayout from "@/app/_components/PortraitLayout";
 import AudioPlayer from "@/app/_components/AudioPlayer";
 
 export default function Page1() {
