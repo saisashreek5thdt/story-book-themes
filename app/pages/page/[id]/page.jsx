@@ -73,7 +73,6 @@ export default function Page1() {
   }
   const audioSrc = pageContent.audioUrl; // Fetch audio URL dynamically
 
-
   const imgURL1 = getCldImageUrl({
     src: pageContent.imageUrl, // Use the image URL from the fetched content
   });
@@ -82,6 +81,11 @@ export default function Page1() {
     src: pageContent.backgroundImageUrl, // Fetch dynamic background image URL
   });
 
+  // Define the slugs that require white text color
+  const whiteTextSlugs = [7, 12, 14, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
+
+  // Determine the text color based on the current slug
+  const textColor = whiteTextSlugs.includes(slug) ? "white" : "black";
 
   return (
     <div>
@@ -104,14 +108,17 @@ export default function Page1() {
               <div className="cursor-pointer relative">
                 <div className="absolute inset-0 z-0">
                   <Image
+                    className="brightness-75"
                     src={backgroundImageUrl} // Dynamically set the background image
                     layout="fill"
                     objectFit="cover"
                     alt="Background Image"
                   />
                 </div>
-                <div className="relative z-10 bgText text-black">
-                  <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
+                <div className="relative z-10 bgText">
+                  <div
+                    className={`flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6`}
+                  >
                     <div
                       className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                     >
@@ -122,22 +129,22 @@ export default function Page1() {
                         style={{
                           maxHeight: "320px",
                           transition: "max-height 0.3s ease",
+                          color: textColor, // Conditional text color
                         }}
                       >
                         <div dangerouslySetInnerHTML={{ __html: pageContent.content?.text }} />
                       </div>
                       <button
                         onClick={toggleExpand}
-                        className="text-black hover:text-cyan-700 focus:outline-none mb-10"
+                        className="hover:text-cyan-700 focus:outline-none mb-10"
+                        style={{ color: textColor }} // Button text color
                       >
                         {isExpanded ? "Read Less" : "Read More"}
                       </button>
                     </div>
 
                     {/* Audio Player Section */}
-                    <AudioPlayer 
-                      audio={audioSrc}
-                    />
+                    <AudioPlayer audio={audioSrc} />
                   </div>
                 </div>
               </div>
