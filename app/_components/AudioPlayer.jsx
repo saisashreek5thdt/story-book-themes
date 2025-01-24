@@ -3,6 +3,7 @@ import { Repeat, Play, Pause, Volume2 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom"; // Import useNavigate
 
+export default function AudioPlayer({audio}) {
 export default function AudioPlayer({ audio }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -130,8 +131,8 @@ export default function AudioPlayer({ audio }) {
           />
         </div>
       </div>
-      
-      {showPrompt && (
+      {console.log('Current Time:', currentTime, 'Duration:', duration) }
+      {/* {showPrompt && (
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-5 rounded-lg text-center">
             <p className="text-xl">Do you want to continue?</p>
@@ -141,7 +142,7 @@ export default function AudioPlayer({ audio }) {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }

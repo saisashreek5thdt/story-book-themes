@@ -2,7 +2,7 @@
 import { Repeat, Play, Pause, Volume2, ArrowRight,ArrowLeft } from "lucide-react";
 import { useRef, useState } from "react";
 
-export default function AudioPlayer({audio}) {
+export default function PortraitAudioPlayer({audio}) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
