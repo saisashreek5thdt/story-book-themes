@@ -4,7 +4,6 @@ import { useRef, useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export default function AudioPlayer({audio}) {
-export default function AudioPlayer({ audio }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -110,25 +109,6 @@ export default function AudioPlayer({ audio }) {
               onChange={handleVolumeChange}
             />
           </div>
-        </div>
-
-        {/* Play and Volume Control */}
-        <div className="flex items-center justify-center gap-2">
-          <div
-            className="w-8 h-8 bg-gray-400 flex justify-center items-center rounded-full cursor-pointer"
-            onClick={togglePlayPause}
-          >
-            {isPlaying ? <Pause /> : <Play />}
-          </div>
-          <Volume2 />
-          <input
-            type="range"
-            className="w-16 h-2 bg-gray-300 rounded-lg cursor-pointer accent-green-500"
-            min={0}
-            max={100}
-            value={volume}
-            onChange={handleVolumeChange}
-          />
         </div>
       </div>
       {console.log('Current Time:', currentTime, 'Duration:', duration) }

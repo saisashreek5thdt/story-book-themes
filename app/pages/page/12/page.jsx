@@ -14,12 +14,7 @@ export default function Page1() {
   //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   // });
 
-
-export default function Page1() {
-  const [handleLanguageChange, setHandleLanguageChange] = useState("en");
-  const [isEnglish, setIsEnglish] = useState(true);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const imgURL1 = "/images/page12/12.jpg";
+  const imgURL1 = "/images/12.jpg";
 
   
   const textBg ="https://res.cloudinary.com/dydh2rfnk/image/upload/v1737633282/Page7BG_abdxbx.png";
@@ -29,6 +24,7 @@ export default function Page1() {
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
+
   const router = useRouter();
 
   useEffect(() => {
@@ -249,5 +245,5 @@ export default function Page1() {
         </div>
       )}
     </div>
- );
+  );
 }
