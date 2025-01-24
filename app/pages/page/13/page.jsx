@@ -19,6 +19,7 @@ export default function Page1() {
   const [handleLanguageChange, setHandleLanguageChange] = useState("en");
   const [isEnglish, setIsEnglish] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(false);
 
   const imgURL1 = "/images/page13/13.jpg";
 
