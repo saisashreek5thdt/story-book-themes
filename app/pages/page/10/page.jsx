@@ -11,9 +11,11 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/jwvbo0kh5u7i7ykbliqo.png",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/jwvbo0kh5u7i7ykbliqo.png",
+  // });
+
+  const imgURL1 = "/images/indiaMap.jpg";
 
   const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737633005/Page10BG_hydxae.png"
 

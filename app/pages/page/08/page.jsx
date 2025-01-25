@@ -11,11 +11,21 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/suuqij877k2egsskidti.png", 9
+  // });
+
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/vlcgmwkjodrpiroan425.png",
+  // });
+
+  // const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737632971/Page9BG_cbhwp8.png"
+
   const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/suuqij877k2egsskidti.png",
+    src: "NBT-Chandrayaan3/assets/pages/vlcgmwkjodrpiroan425.png",
   });
 
-  const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737632922/Page8BG_hfimjq.png"
+  const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737632971/Page9BG_cbhwp8.png"
 
   const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548864/Page8_vyh4rb.mp3'
 
