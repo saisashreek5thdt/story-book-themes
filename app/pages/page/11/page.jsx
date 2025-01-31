@@ -5,7 +5,6 @@ import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import PortraitLayout from "../../../_components/PortraitLayout";
 import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);

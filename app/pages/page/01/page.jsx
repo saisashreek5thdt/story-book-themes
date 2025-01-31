@@ -9,8 +9,7 @@ import { useRouter } from "next/navigation";
 import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 
 export default function Page1() {
-
-  const pageAudio = ""
+ 
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false); // Initialize with default false

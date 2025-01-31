@@ -5,7 +5,6 @@ import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import PortraitLayout from "../../../_components/PortraitLayout";
 import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -104,7 +103,7 @@ export default function Page1() {
                           wanted to listen tonight.
                         </p>
                         <p className="py-2">
-                          Veer - What a silly princess. Who would belleve this
+                          Veer - What a silly princess. Who would believe this
                           story?
                         </p>
                         <p className="py-2">
@@ -117,7 +116,7 @@ export default function Page1() {
                         <p className="py-4">
                           Veer - Wow! I can't wait to know more. Tell me all,
                           Dadaji. All the news channels too were very proudly
-                          broadcasting India's moonlanding, and everyone was so
+                          broadcasting India's moon landing, and everyone was so
                           happy. Why was it such a big news? After all, hasn't India
                           learnt about space from other countries who have
                           already been to space?

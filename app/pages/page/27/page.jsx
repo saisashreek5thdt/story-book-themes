@@ -5,7 +5,6 @@ import Image from "next/image";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import PortraitLayout from "../../../_components/PortraitLayout";
 import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
   
 
@@ -18,7 +17,7 @@ export default function Page1() {
   // });
 
 
-  const imgURL1 = "/images/page28/28.jpg";
+  const imgURL1 = "/images/28.jpg";
 
   // const textBg = getCldImageUrl({
   //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
@@ -52,7 +51,7 @@ export default function Page1() {
 
   const pageClickNextHandler = (e) => {
     e.preventDefault();
-    router.push("/pages/page/0");
+    router.push("/Quiz/quiz/02");
   };
 
   const pageClickPrevHandler = (e) => {
