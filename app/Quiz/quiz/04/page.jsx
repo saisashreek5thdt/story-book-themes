@@ -109,7 +109,7 @@ export default function Page1() {
                                             name="q1"
                                             value={option}
                                             checked={selectedAnswer === option} // Controlled component
-                                            onChange={() => setSelectedAnswer(option)} // Update state on change
+                                            onChange={() => !submitted && setSelectedAnswer(option)} // Disable selection after submission
                                             className="appearance-none w-5 h-5 border-2 border-purple-500 rounded-full checked:bg-purple-500 checked:border-transparent focus:outline-none"
                                         />
                                         <label htmlFor={`option-${index}`} className="text-gray-700 font-medium">
@@ -128,8 +128,9 @@ export default function Page1() {
                                 <button
                                     className="p-3 w-30 h-12 px-6 rounded-md bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold text-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
                                     onClick={handleAnswer}
+                                    disabled={submitted} // Disable the button after submission
                                 >
-                                    Submit
+                                    {submitted ? "Submitted" : "Submit"}
                                 </button>
                             </div>
                         </div>
