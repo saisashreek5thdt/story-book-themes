@@ -191,11 +191,11 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import graphQLClient from "@/lib/graphql-client";
-import { GET_PAGE_BY_SLUG } from "@/lib/queries";
+// import graphQLClient from "@/lib/graphql-client";
+// import { GET_PAGE_BY_SLUG } from "@/lib/queries";
 import AudioPlayer from "../../../_components/AudioPlayer";
 import { getCldImageUrl } from "next-cloudinary";
-import LanguageSwitcher from "../../../_components/page/LanguageBox";
+// import LanguageSwitcher from "../../../_components/page/LanguageBox";
 import TranslatteText from "../../../_components/page/api/TranslateText";
 import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 import { ArrowRight, ArrowLeft } from "lucide-react";
@@ -203,7 +203,7 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
   const [pageContent, setPageContent] = useState(null); // Store fetched content
-  const [targetLanguage, setTargetLanguage] = useState("en"); // Default language is English
+  // const [targetLanguage, setTargetLanguage] = useState("en"); // Default language is English
 
   const imgURL1 = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
@@ -231,19 +231,19 @@ export default function Page1() {
     }
   }, []);
 
-  useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        const response = await graphQLClient.request(GET_PAGE_BY_SLUG, { slug: "15" });
-        console.log("Fetched data:", response); // Debugging
-        setPageContent(response.page);
-      } catch (error) {
-        console.error("Error fetching page content:", error); // Debugging
-      }
-    };
+  // useEffect(() => {
+  //   const fetchContent = async () => {
+  //     try {
+  //       const response = await graphQLClient.request(GET_PAGE_BY_SLUG, { slug: "15" });
+  //       console.log("Fetched data:", response); // Debugging
+  //       setPageContent(response.page);
+  //     } catch (error) {
+  //       console.error("Error fetching page content:", error); // Debugging
+  //     }
+  //   };
 
-    fetchContent();
-  }, []);
+  //   fetchContent();
+  // }, []);
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
@@ -259,21 +259,21 @@ export default function Page1() {
     router.push("/pages/page/14");
   };
 
-  const handleLanguageChange = (language, isEnglishFlag) => {
-    setTargetLanguage(language); // Update target language when user selects a language
-  };
+  // const handleLanguageChange = (language, isEnglishFlag) => {
+  //   setTargetLanguage(language); // Update target language when user selects a language
+  // };
 
-  if (!pageContent) {
-    return <div>Loading...</div>;
-  }
+  // if (!pageContent) {
+  //   return <div>Loading...</div>;
+  // }
 
 
 
   return (
     <> {/* Language Switcher Component */}
-      <LanguageSwitcher
+      {/* <LanguageSwitcher
         onLanguageChange={handleLanguageChange} // Update target language when user changes language
-      />
+      /> */}
       <div>
         {isPortrait ? (
           <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center ">
@@ -317,7 +317,7 @@ export default function Page1() {
                             transition: "max-height 0.3s ease",
                           }}
                         >
-                          <p>Veer nodded as he gulped down the now cold milk.</p>
+                          {/* <p>Veer nodded as he gulped down the now cold milk.</p>
                           <p className="py-2">
                             He faintly remembered watching this news five years ago.
                           </p>
@@ -336,7 +336,7 @@ export default function Page1() {
                           <p className="py-2">
                             Veer - I can imagine how disappointing it must have been
                             for the whole team.
-                          </p>
+                          </p> */}
                         </div>
                         <button
                           onClick={toggleExpand}
