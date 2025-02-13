@@ -10,9 +10,10 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/f8tdav7x0vbfuxxl2mo9",
+  // });
+  const imgURL1 = "/images/02.gif";
 
   const textBg = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",

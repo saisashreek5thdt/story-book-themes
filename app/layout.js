@@ -11,6 +11,8 @@ export default function RootLayout({ children }) {
     src: "NBT-Chandrayaan3/video/r71irdpujpafpqcj6gee",
   });
 
+  // const videoUrl = "/images/moonBG.mp4";
+
   return (
     <html lang="en">
       <body>
@@ -21,7 +23,6 @@ export default function RootLayout({ children }) {
             src={videoUrl}
             autoPlay
             loop
-            muted
           ></video>
           <div className="relative">{children}</div>
         </div>

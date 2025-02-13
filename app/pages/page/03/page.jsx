@@ -10,9 +10,11 @@ import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/y6xd9kgtgabbyyo7zupp.png",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/y6xd9kgtgabbyyo7zupp.png",
+  // });
+
+  const imgURL1 = "/images/03.gif";
 
   const textBg = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/bgImages/page5/wbsucpt9psrnckctmuxc.png",

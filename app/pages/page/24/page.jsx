@@ -77,8 +77,8 @@ export default function Page1() {
               </div>
 
               {/* Text Section */}
-              <div className="cursor-pointer relative">
-                <div className="absolute inset-0 z-0">
+              <div className="cursor-pointer relative bg-white">
+                {/* <div className="absolute inset-0 z-0">
                   <Image
                   className="brightness-50"
                     src={imgURL1} // Dynamically set the background image
@@ -86,8 +86,8 @@ export default function Page1() {
                     objectFit="cover"
                     alt="Background Image"
                   />
-                </div>
-                <div className="relative z-10 bgText text-white">
+                </div> */}
+                <div className="relative z-10 bgText text-black">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[380px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 max-h-[290px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -144,8 +144,8 @@ export default function Page1() {
             </button>
             <div className="grid grid-cols-2 p-4">
               {/* Text Section */}
-              <div className="cursor-pointer relative">
-                <div className="absolute inset-0 z-0">
+              <div className="cursor-pointer relative bg-white">
+                {/* <div className="absolute inset-0 z-0">
                   <Image
                     className="brightness-50"
                     src={imgURL1} // Dynamically set the background image
@@ -153,8 +153,8 @@ export default function Page1() {
                     objectFit="cover"
                     alt="Background Image"
                   />
-                </div>
-                <div className="relative z-10 bgText text-white">
+                </div> */}
+                <div className="relative z-10 bgText text-black">
                   <div className="flex flex-col items-center justify-center xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] md:p-6 xl:p-6 lg:p-6">
                     <div
                       className={`xl:py-12 sm:pr-10 sm:max-h-[310px] md:max-h-[250px] lg:max-h-[280px] xl:max-h-[430px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
@@ -179,7 +179,7 @@ export default function Page1() {
                       </div>
                       <button
                         onClick={toggleExpand}
-                        className=" text-white hover:text-slate-200 focus:outline-none mb-10"
+                        className=" text-black hover:text-slate-700 focus:outline-none mb-10"
                       >
                         {isExpanded ? "Read Less" : "Read More"}
                       </button>
