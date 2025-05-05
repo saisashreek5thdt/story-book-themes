@@ -9,15 +9,22 @@ import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/tw26ezhjtqyyobfkcb5a",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/tw26ezhjtqyyobfkcb5a",
+  // });
 
-  const textBg = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page5/wbsucpt9psrnckctmuxc.png",
-  });
+  const imgURL1 = "/images/01.gif";
 
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548863/Page5_smh6xq.mp3'
+  // const textBg = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/bgImages/page5/wbsucpt9psrnckctmuxc.png",
+  // });
+
+  const textBg = "/images/page03/BG3.png";
+
+  // const audioSrc =
+  //   "https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548863/Page5_smh6xq.mp3";
+
+    const audioSrc = "/images/page05/Page5.mp3";  
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -90,30 +97,33 @@ export default function Page1() {
                       className={`xl:py-12 sm:pr-10 max-h-[290px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                     >
                       <div
-                        className={`pr-2 mt-1 mb-2 mx-4 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
-                          }`}
+                        className={`pr-2 mt-1 mb-2 mx-4 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
+                          isExpanded ? "overflow-auto" : "overflow-hidden"
+                        }`}
                         style={{
                           maxHeight: "250px",
                           transition: "max-height 0.3s ease",
                         }}
                       >
                         <p>
-                          When I lift it towards the moon, it completely covers it,
-                          and then I can't see the moon at all.
+                          When I lift it towards the moon, it completely covers
+                          it, and then I can't see the moon at all.
                         </p>
-                        <p className="py-4">Saint - Do you know how high it is?</p>
+                        <p className="py-4">
+                          Saint - Do you know how high it is?
+                        </p>
 
                         <p className="py-4">
-                          Princess - It's visible just above that tree in the palace
-                          garden.
+                          Princess - It's visible just above that tree in the
+                          palace garden.
                         </p>
                         <p className="py-4">
                           I think it is just as high as that tree.
                         </p>
 
                         <p className="py-2">
-                          Saint - What does the moon look like? Princess - It is white
-                          and bright like silver.
+                          Saint - What does the moon look like? Princess - It is
+                          white and bright like silver.
                         </p>
                       </div>
                       <button
@@ -126,13 +136,19 @@ export default function Page1() {
 
                     {/* Audio Player Section */}
                     <div className="flex justify-center items-center gap-3 mb-20">
-                      <button className="bg-white rounded-full p-2 text-black" onClick={pageClickPrevHandler}>
+                      <button
+                        className="bg-white rounded-full p-2 text-black"
+                        onClick={pageClickPrevHandler}
+                      >
                         <ArrowLeft />
                       </button>
                       <div className="sm:h-10 sm:mt-2 ">
                         <PortraitAudioPlayer audio={audioSrc} />
                       </div>
-                      <button className="bg-white rounded-full p-2 text-black" onClick={pageClickNextHandler}>
+                      <button
+                        className="bg-white rounded-full p-2 text-black"
+                        onClick={pageClickNextHandler}
+                      >
                         <ArrowRight />
                       </button>
                     </div>
@@ -145,7 +161,10 @@ export default function Page1() {
       ) : (
         <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center">
           <div className="flex justify-center items-center min-h-[80vh]">
-            <button className="bg-white rounded-full p-2 text-black" onClick={pageClickPrevHandler}>
+            <button
+              className="bg-white rounded-full p-2 text-black"
+              onClick={pageClickPrevHandler}
+            >
               <ArrowLeft />
             </button>
             <div className="grid grid-cols-2 p-4">
@@ -165,30 +184,33 @@ export default function Page1() {
                       className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                     >
                       <div
-                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
-                          }`}
+                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
+                          isExpanded ? "overflow-auto" : "overflow-hidden"
+                        }`}
                         style={{
                           maxHeight: "320px",
                           transition: "max-height 0.3s ease",
                         }}
                       >
                         <p>
-                          When I lift it towards the moon, it completely covers it,
-                          and then I can't see the moon at all.
+                          When I lift it towards the moon, it completely covers
+                          it, and then I can't see the moon at all.
                         </p>
-                        <p className="py-4">Saint - Do you know how high it is?</p>
+                        <p className="py-4">
+                          Saint - Do you know how high it is?
+                        </p>
 
                         <p className="py-4">
-                          Princess - It's visible just above that tree in the palace
-                          garden.
+                          Princess - It's visible just above that tree in the
+                          palace garden.
                         </p>
                         <p className="py-4">
                           I think it is just as high as that tree.
                         </p>
 
                         <p className="py-2">
-                          Saint - What does the moon look like? Princess - It is white
-                          and bright like silver.
+                          Saint - What does the moon look like? Princess - It is
+                          white and bright like silver.
                         </p>
                       </div>
                       <button
@@ -215,7 +237,7 @@ export default function Page1() {
 
               {/* Image Section */}
               <div className="cursor-pointer flex justify-center items-center">
-                <div className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" >
+                <div className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white">
                   <Image
                     src={imgURL1}
                     className="bg-white h-full w-full object-cover"

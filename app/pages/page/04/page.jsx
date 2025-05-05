@@ -10,15 +10,18 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/vfnq2jupoyu5jfligple",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/vfnq2jupoyu5jfligple",
+  // });
+
+  const imgURL1 = "/images/03.gif";
 
   const textBg = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   });
 
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548863/Page4_iekfdq.mp3'
+  // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548863/Page4_iekfdq.mp3'
+  const audioSrc = "/images/page04/Page4.mp3";
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
@@ -79,7 +82,7 @@ export default function Page1() {
               <div className="cursor-pointer relative">
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src={"https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/bgImages/yyyvwswl6q8qxvysdvek"} // Dynamically set the background image
+                    src="/images/page04/bg1.png" // Dynamically set the background image
                     layout="fill"
                     objectFit="cover"
                     alt="Background Image"
@@ -91,27 +94,29 @@ export default function Page1() {
                       className={`xl:py-12 sm:pr-10 max-h-[290px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                     >
                       <div
-                        className={`pr-2 mt-1 mb-2 mx-4 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
-                          }`}
+                        className={`pr-2 mt-1 mb-2 mx-4 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
+                          isExpanded ? "overflow-auto" : "overflow-hidden"
+                        }`}
                         style={{
                           maxHeight: "250px",
                           transition: "max-height 0.3s ease",
                         }}
                       >
                         <p>
-                          Veer - Wow! Tell me quickly, Dadaji. Dadaji - Once upon a
-                          time, a young princess wanted to go to the moon.
+                          Veer - Wow! Tell me quickly, Dadaji. Dadaji - Once
+                          upon a time, a young princess wanted to go to the
+                          moon.
                         </p>
                         <p className="py-4">
-                          The king didn't know how to fulfill his daughter's foolish
-                          wish. He promised a huge reward for anyone who would please
-                          his daughter. Many courtiers came forward with various ideas
-                          but none could please the princess.
+                          The king didn't know how to fulfill his daughter's
+                          foolish wish. He promised a huge reward for anyone who
+                          would please his daughter. Many courtiers came forward
+                          with various ideas but none could please the princess.
                         </p>
                         <p className="py-4">
-                          One day, a saint came and took the challenge. He asked the
-                          king to bring his daughter before him. Saint - Tell me,
-                          little one, how big is the moon?
+                          One day, a saint came and took the challenge. He asked
+                          the king to bring his daughter before him. Saint -
+                          Tell me, little one, how big is the moon?
                         </p>
                         <p className="py-2">
                           Princess - It is as wide as my index finger.
@@ -127,13 +132,19 @@ export default function Page1() {
 
                     {/* Audio Player Section */}
                     <div className="flex justify-center items-center gap-3 mb-20">
-                      <button className="bg-white rounded-full p-2 text-black" onClick={pageClickPrevHandler}>
+                      <button
+                        className="bg-white rounded-full p-2 text-black"
+                        onClick={pageClickPrevHandler}
+                      >
                         <ArrowLeft />
                       </button>
                       <div className="sm:h-10 sm:mt-2 ">
                         <PortraitAudioPlayer audio={audioSrc} />
                       </div>
-                      <button className="bg-white rounded-full p-2 text-black" onClick={pageClickNextHandler}>
+                      <button
+                        className="bg-white rounded-full p-2 text-black"
+                        onClick={pageClickNextHandler}
+                      >
                         <ArrowRight />
                       </button>
                     </div>
@@ -146,7 +157,10 @@ export default function Page1() {
       ) : (
         <div className="w-full min-h-screen bg-cover select-none flex flex-col items-center justify-center">
           <div className="flex justify-center items-center min-h-[80vh]">
-            <button className="bg-white rounded-full p-2 text-black" onClick={pageClickPrevHandler}>
+            <button
+              className="bg-white rounded-full p-2 text-black"
+              onClick={pageClickPrevHandler}
+            >
               <ArrowLeft />
             </button>
             <div className="grid grid-cols-2 p-4">
@@ -154,7 +168,7 @@ export default function Page1() {
               <div className="cursor-pointer relative">
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src={"https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/bgImages/yyyvwswl6q8qxvysdvek"} // Dynamically set the background image
+                    src="/images/page04/bg1.png" // Dynamically set the background image
                     layout="fill"
                     objectFit="cover"
                     alt="Background Image"
@@ -166,27 +180,29 @@ export default function Page1() {
                       className={`xl:py-12 sm:pr-10 sm:max-h-[270px] xl:max-h-[460px] sm:pt-6 lg:pt-10 md:pt-10 md:pl-4 flex items-center justify-center flex-col gap-3 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify font-medium`}
                     >
                       <div
-                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${isExpanded ? "overflow-auto" : "overflow-hidden"
-                          }`}
+                        className={`pr-2 sm:pl-8 sm:w-[300px] md:w-[310px] lg:w-[380px] xl:w-[440px] ${
+                          isExpanded ? "overflow-auto" : "overflow-hidden"
+                        }`}
                         style={{
                           maxHeight: "320px",
                           transition: "max-height 0.3s ease",
                         }}
                       >
                         <p>
-                          Veer - Wow! Tell me quickly, Dadaji. Dadaji - Once upon a
-                          time, a young princess wanted to go to the moon.
+                          Veer - Wow! Tell me quickly, Dadaji. Dadaji - Once
+                          upon a time, a young princess wanted to go to the
+                          moon.
                         </p>
                         <p className="py-4">
-                          The king didn't know how to fulfill his daughter's foolish
-                          wish. He promised a huge reward for anyone who would please
-                          his daughter. Many courtiers came forward with various ideas
-                          but none could please the princess.
+                          The king didn't know how to fulfill his daughter's
+                          foolish wish. He promised a huge reward for anyone who
+                          would please his daughter. Many courtiers came forward
+                          with various ideas but none could please the princess.
                         </p>
                         <p className="py-4">
-                          One day, a saint came and took the challenge. He asked the
-                          king to bring his daughter before him. Saint - Tell me,
-                          little one, how big is the moon?
+                          One day, a saint came and took the challenge. He asked
+                          the king to bring his daughter before him. Saint -
+                          Tell me, little one, how big is the moon?
                         </p>
                         <p className="py-2">
                           Princess - It is as wide as my index finger.
@@ -216,7 +232,7 @@ export default function Page1() {
 
               {/* Image Section */}
               <div className="cursor-pointer flex justify-center items-center">
-                <div className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white" >
+                <div className="rounded h-[300px] xs:h-[100px] xs:w-[100px] sm:h-[350px] sm:w-[400px] md:h-[310px] md:w-[350px] lg:h-[450px] lg:w-[450px] xl:h-[500px] xl:w-[520px] xl:bg-white">
                   <Image
                     src={imgURL1}
                     className="bg-white h-full w-full object-cover"
