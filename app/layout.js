@@ -20,9 +20,10 @@ export default function RootLayout({ children }) {
           {/* Background Video */}
           <video
             className="absolute top-0 left-0 w-full h-full object-cover"
-            src={videoUrl}
+            src="/images/moonBG.mp4"
             autoPlay
             loop
+            muted
           ></video>
           <div className="relative">{children}</div>
         </div>

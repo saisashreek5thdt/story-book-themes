@@ -16,11 +16,14 @@ export default function Page1() {
 
   const imgURL1 = "/images/03.gif";
 
-  const textBg = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page5/wbsucpt9psrnckctmuxc.png",
-  });
+  // const textBg = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/bgImages/page5/wbsucpt9psrnckctmuxc.png",
+  // });
 
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548809/Page3_qbc5hm.mp3'
+  const textBg = "/images/page03/BG3.png";
+
+  // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548809/Page3_qbc5hm.mp3'
+  const audioSrc = '/images/page03/Page3.mp3'
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
