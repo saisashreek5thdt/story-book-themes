@@ -13,7 +13,7 @@ export default function Page1() {
   //   src: "NBT-Chandrayaan3/assets/pages/tw26ezhjtqyyobfkcb5a",
   // });
 
-  const imgURL1 = "/images/01.gif";
+  const imgURL1 = "/images/03.gif";
 
   // const textBg = getCldImageUrl({
   //   src: "NBT-Chandrayaan3/assets/bgImages/page5/wbsucpt9psrnckctmuxc.png",

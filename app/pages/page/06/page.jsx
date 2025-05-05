@@ -10,15 +10,13 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/y6xd9kgtgabbyyo7zupp.png",
-  });
+  
 
-  const textBg = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page5/wbsucpt9psrnckctmuxc.png",
-  });
+  const textBg = "/images/page03/BG3.png";
 
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548864/Page6_xkoqcd.mp3'
+  const imgURL1 = "/images/12.jpg";
+
+  const audioSrc = '/images/page06/Page6.mp3';
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",

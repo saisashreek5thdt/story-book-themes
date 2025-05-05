@@ -16,8 +16,9 @@ export default function Page1() {
 
   const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737695902/Page18BG_lwfyzm.jpg"
 
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737606176/Page18_k3ddaw.mp3'
+  // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737606176/Page18_k3ddaw.mp3'
 
+  const audioSrc = '/images/page18/Page18.mp3';
 
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",

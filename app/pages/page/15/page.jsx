@@ -212,8 +212,8 @@ export default function Page1() {
   const textBg = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/bgImages/page15/fvtabwhabfv7tgatnjs9.png",
   });
-
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page15_o47pow.mp3'
+  const audioSrc = '/images/page15/Page15.mp3';
+  // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page15_o47pow.mp3'
 
   const router = useRouter();
 

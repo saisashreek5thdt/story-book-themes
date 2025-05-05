@@ -27,7 +27,8 @@ export default function Page1() {
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });
 
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550479/Page13_s8l4jk.mp3'
+  // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550479/Page13_s8l4jk.mp3'
+  const audioSrc = '/images/page13/Page13.mp3';
 
   const router = useRouter();
 

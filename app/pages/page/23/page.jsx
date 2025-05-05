@@ -19,9 +19,9 @@ export default function Page1() {
   //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   // });
 
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page23_deyhc6.mp3'
+  // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page23_deyhc6.mp3'
 
-
+  const audioSrc = '/images/page23/Page23.mp3';
   const gifImgUrl = getCldImageUrl({
     src: "NBT-Chandrayaan3/assets/rx8f0g9xjsp3yxbu2qr1",
   });

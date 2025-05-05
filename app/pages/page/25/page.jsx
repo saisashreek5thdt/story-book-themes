@@ -19,7 +19,8 @@ export default function Page1() {
   //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   // });
 
-  const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550478/Page25_qb4oao.mp3'
+  const audioSrc = '/images/page25/Page25.mp3';
+  // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550478/Page25_qb4oao.mp3'
 
   useEffect(() => {
     // Check for window object availability and set initial orientation
