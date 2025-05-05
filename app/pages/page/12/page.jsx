@@ -13,10 +13,12 @@ export default function Page1() {
   //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
   // });
 
+  const textBg ="/images/page03/BG3.png";
+
   const imgURL1 = "/images/12.jpg";
 
   
-  const textBg ="https://res.cloudinary.com/dydh2rfnk/image/upload/v1737633282/Page7BG_abdxbx.png";
+  // const textBg ="https://res.cloudinary.com/dydh2rfnk/image/upload/v1737633282/Page7BG_abdxbx.png";
 
   // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550479/Page12_t72w4u.mp3'
   const audioSrc = '/images/page12/Page12.mp3';

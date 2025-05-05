@@ -9,11 +9,15 @@ import PortraitAudioPlayer from "../../../_components/PortraitAudioPlayer";
 export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+  // });
 
-  const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/bgImages/yyyvwswl6q8qxvysdvek"
+  // const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1734600583/NBT-Chandrayaan3/assets/bgImages/yyyvwswl6q8qxvysdvek"
+
+  const imgURL1 = "/images/22.jpg";
+
+  const textBg ="/images/page03/BG3.png";
 
   // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737606177/Page17_e8gkla.mp3'
   const audioSrc = '/images/page17/Page17.mp3';

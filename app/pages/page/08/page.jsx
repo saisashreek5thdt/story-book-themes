@@ -20,11 +20,15 @@ export default function Page1() {
 
   // const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737632971/Page9BG_cbhwp8.png"
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/vlcgmwkjodrpiroan425.png",
-  });
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/vlcgmwkjodrpiroan425.png",
+  // });
 
-  const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737632971/Page9BG_cbhwp8.png"
+  // const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737632971/Page9BG_cbhwp8.png"
+
+  const imgURL1 = "/images/13.jpg";
+
+  const textBg ="/images/page03/BG3.png";
 
   const audioSrc = '/images/page08/Page8.mp3';
 

@@ -15,9 +15,13 @@ export default function Page1() {
 
   const imgURL1 = "/images/22.jpg";
 
-  const textBg = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
-  });
+  // const imgURL1 = "/images/20.jpg";
+
+  const textBg ="/images/page03/BG3.png";
+
+  // const textBg = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/xwcnzt40a6evsm67z7s4",
+  // });
 
   const audioSrc = '/images/page22/Page22.mp3';
   // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page22_vb1kkd.mp3'

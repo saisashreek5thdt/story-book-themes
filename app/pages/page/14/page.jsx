@@ -15,7 +15,7 @@ export default function Page1() {
 
   const imgURL1 = "/images/14.jpg";
 
-  const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737696010/Page14BG_qlqhyq.jpg"
+  const textBg ="/images/page03/BG3.png";
 
   // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page14_cyeggc.mp3'
   const audioSrc = '/images/page14/Page14.mp3';

@@ -205,13 +205,16 @@ export default function Page1() {
   const [pageContent, setPageContent] = useState(null); // Store fetched content
   // const [targetLanguage, setTargetLanguage] = useState("en"); // Default language is English
 
-  const imgURL1 = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
-  });
+  const imgURL1 = "/images/20.jpg";
 
-  const textBg = getCldImageUrl({
-    src: "NBT-Chandrayaan3/assets/bgImages/page15/fvtabwhabfv7tgatnjs9.png",
-  });
+  const textBg ="/images/page03/BG3.png";
+  // const imgURL1 = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/pages/ekb8fh7jbl4r5icaxeei",
+  // });
+
+  // const textBg = getCldImageUrl({
+  //   src: "NBT-Chandrayaan3/assets/bgImages/page15/fvtabwhabfv7tgatnjs9.png",
+  // });
   const audioSrc = '/images/page15/Page15.mp3';
   // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737550480/Page15_o47pow.mp3'
 

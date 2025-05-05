@@ -10,9 +10,9 @@ export default function Page1() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
-  const imgURL1 = "/images/page03/BG3.png";
+  const imgURL1 = "/images/13.jpg";
 
-  const textBg ="https://res.cloudinary.com/dydh2rfnk/image/upload/v1737633282/Page7BG_abdxbx.png";
+  const textBg ="/images/12.jpg";
 
   // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737548864/Page7_xfwbfu.mp3'
   const audioSrc = '/images/page07/Page7.mp3';

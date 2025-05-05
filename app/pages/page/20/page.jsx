@@ -14,8 +14,11 @@ export default function Page1() {
   // });
 
   const imgURL1 = "/images/20.jpg";
+  // const imgURL1 = "/images/20.jpg";
 
-  const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737696727/Page20BG_vffzce.png"
+  const textBg ="/images/page03/BG3.png";
+
+  // const textBg = "https://res.cloudinary.com/dydh2rfnk/image/upload/v1737696727/Page20BG_vffzce.png"
 
   // const audioSrc = 'https://res.cloudinary.com/dydh2rfnk/video/upload/v1737606176/Page20_j42nkv.mp3'
   const audioSrc = '/images/page20/Page20.mp3';
